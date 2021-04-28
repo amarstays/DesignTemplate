@@ -31,18 +31,20 @@ const Testimonials = () => {
         {testimonials.map((testimonial, index) => (
           <Grid item xs={12} key={index} className="review-card-container">
             <Fade>
-              <Card elevation={0} className="review-card">
-                <CardHeader
-                  avatar={<Avatar className={classes.avatar}>H</Avatar>}
-                  title={
-                    <Typography variant="h6">{testimonial.title}</Typography>
-                  }
-                  subheader={<Rating value={4.5} />}
-                />
-                <CardContent>
-                  <Typography>{testimonial.desc}</Typography>
-                </CardContent>
-              </Card>
+              <Box display="flex" justifyContent="center">
+                <Card elevation={0} className="review-card">
+                  <CardHeader
+                    avatar={<Avatar className={classes.avatar}>H</Avatar>}
+                    title={
+                      <Typography variant="h6">{testimonial.title}</Typography>
+                    }
+                    subheader={<Rating value={4.5} />}
+                  />
+                  <CardContent>
+                    <Typography>{testimonial.desc}</Typography>
+                  </CardContent>
+                </Card>
+              </Box>
             </Fade>
             {index + 1 !== testimonials.length && <Divider variant="middle" />}
           </Grid>
