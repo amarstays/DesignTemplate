@@ -38,7 +38,7 @@ const Testimonials = () => {
                     title={
                       <Typography variant="h6">{testimonial.title}</Typography>
                     }
-                    subheader={<Rating value={4.5} />}
+                    subheader={<Rating value={4.0} />}
                   />
                   <CardContent>
                     <Typography>{testimonial.desc}</Typography>
