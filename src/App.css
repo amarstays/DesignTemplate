@@ -1,0 +1,50 @@
+.text-center {
+  text-align: center;
+}
+
+.para {
+  padding: 0px 30px;
+}
+
+.align-right {
+  justify-content: flex-end !important;
+  margin-right: 20px;
+}
+
+.title-container {
+  text-align: center;
+  margin: 40px 0px;
+}
+
+.title-co {
+  margin: 20px 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: "Satisfy", cursive !important;
+}
+
+.desc-co {
+  padding: 20px 40px;
+  letter-spacing: 1px;
+}
+
+.form-control-wrap {
+  width: 100%;
+  margin: 10px !important;
+}
+
+.field-join {
+  display: flex;
+  margin: 10px !important;
+  justify-content: space-between;
+}
+
+.field-join > .form-control-mr {
+  margin-right: 10px;
+}
+
+.form-label {
+  margin-bottom: 5px;
+  color: black !important;
+  font-size: 0.9em !important;
+}

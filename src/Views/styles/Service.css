@@ -1,0 +1,25 @@
+.services-container {
+  margin: 40px 0px;
+}
+
+.grid-item-ser {
+  padding: 10px 20px;
+}
+
+.service-img-container {
+  margin-bottom: 20px;
+}
+
+.service-img {
+  height: 400px;
+  width: 100%;
+}
+
+.service-title {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.service-desc {
+  font-size: 0.8em;
+}

@@ -1,0 +1,12 @@
+.enquire-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px;
+}
+
+.enquire-form {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}

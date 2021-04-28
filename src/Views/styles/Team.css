@@ -1,0 +1,23 @@
+.team-container {
+  margin: 40px 0px;
+}
+
+.team-image-container {
+  display: flex;
+  justify-content: center;
+  height: 400px;
+  width: 100%;
+  margin: 40px 0px;
+}
+
+.team-image-container > img {
+  max-width: 80%;
+}
+
+.team-para-container {
+  padding: 30px 40px;
+}
+
+.team-para-container > p {
+  font-size: 0.9em;
+}
