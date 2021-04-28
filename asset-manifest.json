@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/IntDesign-FrontEnd/static/css/main.9a240d29.chunk.css",
+    "main.js": "/IntDesign-FrontEnd/static/js/main.ad007147.chunk.js",
+    "main.js.map": "/IntDesign-FrontEnd/static/js/main.ad007147.chunk.js.map",
+    "runtime-main.js": "/IntDesign-FrontEnd/static/js/runtime-main.dcac37a1.js",
+    "runtime-main.js.map": "/IntDesign-FrontEnd/static/js/runtime-main.dcac37a1.js.map",
+    "static/js/2.eefb648c.chunk.js": "/IntDesign-FrontEnd/static/js/2.eefb648c.chunk.js",
+    "static/js/2.eefb648c.chunk.js.map": "/IntDesign-FrontEnd/static/js/2.eefb648c.chunk.js.map",
+    "static/js/3.64264e45.chunk.js": "/IntDesign-FrontEnd/static/js/3.64264e45.chunk.js",
+    "static/js/3.64264e45.chunk.js.map": "/IntDesign-FrontEnd/static/js/3.64264e45.chunk.js.map",
+    "index.html": "/IntDesign-FrontEnd/index.html",
+    "static/css/main.9a240d29.chunk.css.map": "/IntDesign-FrontEnd/static/css/main.9a240d29.chunk.css.map",
+    "static/js/2.eefb648c.chunk.js.LICENSE.txt": "/IntDesign-FrontEnd/static/js/2.eefb648c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.dcac37a1.js",
+    "static/js/2.eefb648c.chunk.js",
+    "static/css/main.9a240d29.chunk.css",
+    "static/js/main.ad007147.chunk.js"
+  ]
+}
