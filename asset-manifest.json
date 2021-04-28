@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/DesignTemplate/static/css/main.9a240d29.chunk.css",
-    "main.js": "/DesignTemplate/static/js/main.ad007147.chunk.js",
-    "main.js.map": "/DesignTemplate/static/js/main.ad007147.chunk.js.map",
-    "runtime-main.js": "/DesignTemplate/static/js/runtime-main.443e6b45.js",
-    "runtime-main.js.map": "/DesignTemplate/static/js/runtime-main.443e6b45.js.map",
-    "static/js/2.eefb648c.chunk.js": "/DesignTemplate/static/js/2.eefb648c.chunk.js",
-    "static/js/2.eefb648c.chunk.js.map": "/DesignTemplate/static/js/2.eefb648c.chunk.js.map",
-    "static/js/3.64264e45.chunk.js": "/DesignTemplate/static/js/3.64264e45.chunk.js",
-    "static/js/3.64264e45.chunk.js.map": "/DesignTemplate/static/js/3.64264e45.chunk.js.map",
-    "index.html": "/DesignTemplate/index.html",
-    "static/css/main.9a240d29.chunk.css.map": "/DesignTemplate/static/css/main.9a240d29.chunk.css.map",
-    "static/js/2.eefb648c.chunk.js.LICENSE.txt": "/DesignTemplate/static/js/2.eefb648c.chunk.js.LICENSE.txt"
+    "main.css": "/yashverma2110/IntDesign-FrontEnd/static/css/main.9a240d29.chunk.css",
+    "main.js": "/yashverma2110/IntDesign-FrontEnd/static/js/main.ad007147.chunk.js",
+    "main.js.map": "/yashverma2110/IntDesign-FrontEnd/static/js/main.ad007147.chunk.js.map",
+    "runtime-main.js": "/yashverma2110/IntDesign-FrontEnd/static/js/runtime-main.44cff722.js",
+    "runtime-main.js.map": "/yashverma2110/IntDesign-FrontEnd/static/js/runtime-main.44cff722.js.map",
+    "static/js/2.eefb648c.chunk.js": "/yashverma2110/IntDesign-FrontEnd/static/js/2.eefb648c.chunk.js",
+    "static/js/2.eefb648c.chunk.js.map": "/yashverma2110/IntDesign-FrontEnd/static/js/2.eefb648c.chunk.js.map",
+    "static/js/3.64264e45.chunk.js": "/yashverma2110/IntDesign-FrontEnd/static/js/3.64264e45.chunk.js",
+    "static/js/3.64264e45.chunk.js.map": "/yashverma2110/IntDesign-FrontEnd/static/js/3.64264e45.chunk.js.map",
+    "index.html": "/yashverma2110/IntDesign-FrontEnd/index.html",
+    "static/css/main.9a240d29.chunk.css.map": "/yashverma2110/IntDesign-FrontEnd/static/css/main.9a240d29.chunk.css.map",
+    "static/js/2.eefb648c.chunk.js.LICENSE.txt": "/yashverma2110/IntDesign-FrontEnd/static/js/2.eefb648c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.443e6b45.js",
+    "static/js/runtime-main.44cff722.js",
     "static/js/2.eefb648c.chunk.js",
     "static/css/main.9a240d29.chunk.css",
     "static/js/main.ad007147.chunk.js"
