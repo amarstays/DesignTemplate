@@ -20,7 +20,7 @@ const CarouselDisplay = () => {
     <div>
       <Divider variant="middle" />
       <Grid container>
-        <Grid item xs={5}>
+        <Grid item xs={12} md={5}>
           <Box className="desginer-se-det">
             <Typography variant="h6">MEET OUR DESIGNERS</Typography>
             <br />
@@ -34,7 +34,7 @@ const CarouselDisplay = () => {
             </Typography>
           </Box>
         </Grid>
-        <Grid item xs={7}>
+        <Grid item xs={12} md={7}>
           <Carousel
             animation="slide"
             interval={10000}
@@ -66,7 +66,7 @@ export const DesignerCard = ({ designer, summaryCard }: DesignerCardProps) => {
     <Box className="designer-card-container">
       <Card elevation={3}>
         <Box className="designer-card">
-          <Box>
+          <Box style={{ width: "50%" }}>
             <CardMedia className="designer-photo" image={designer.profile} />
           </Box>
           <Box className="designer-details">

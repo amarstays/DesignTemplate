@@ -8,7 +8,7 @@
 
 .designer-photo {
   height: 100%;
-  width: 250px;
+  width: 100%;
 }
 
 .desginer-se-det {
@@ -21,11 +21,11 @@
 
 .designer-details {
   text-align: center;
-  width: 100%;
+  width: 50%;
 }
 
 .designer-actions {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   width: 100%;
 }
