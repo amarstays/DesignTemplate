@@ -1,0 +1,31 @@
+.designer-card-container {
+  padding: 20px 30px;
+}
+
+.designer-card {
+  display: flex;
+}
+
+.designer-photo {
+  height: 100%;
+  width: 250px;
+}
+
+.desginer-se-det {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.designer-details {
+  text-align: center;
+  width: 100%;
+}
+
+.designer-actions {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}

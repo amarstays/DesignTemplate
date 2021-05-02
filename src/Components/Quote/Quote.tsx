@@ -4,7 +4,7 @@ import "./Quote.css";
 
 interface QuoteProps {
   quote: string;
-  author: string;
+  author?: string;
 }
 
 const Quote = ({ quote, author }: QuoteProps) => {
@@ -15,9 +15,11 @@ const Quote = ({ quote, author }: QuoteProps) => {
           <i>"{quote}"</i>
         </Typography>
       </Grid>
-      <Grid item xs={12}>
-        <Typography className="author">-{author}</Typography>
-      </Grid>
+      {author && (
+        <Grid item xs={12}>
+          <Typography className="author">-{author}</Typography>
+        </Grid>
+      )}
     </Grid>
   );
 };

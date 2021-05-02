@@ -11,6 +11,7 @@ import EnquireSection from "./Components/Enquire/EnquireSection";
 import Team from "./Views/Team";
 import Testimonials from "./Views/Testimonials";
 import Enquire from "./Views/Enquire";
+import CarouselDisplay from "./Components/Carousel/CarouselDisplay";
 
 function App() {
   return (
@@ -20,28 +21,36 @@ function App() {
           <Route path="/" exact>
             <Home />
             <EnquireSection />
+            <CarouselDisplay />
           </Route>
-          <Route path="/gallery" exact>
+          <Route path="/gallery/:designer" exact>
             <Gallery />
             <EnquireSection />
           </Route>
           <Route path="/services" component={Services} exact>
             <Services />
             <EnquireSection />
+            <CarouselDisplay />
           </Route>
           <Route path="/philosophy" exact>
             <Philosophy />
             <EnquireSection />
+            <CarouselDisplay />
           </Route>
           <Route path="/testimonials" exact>
             <Testimonials />
             <EnquireSection />
+            <CarouselDisplay />
           </Route>
           <Route path="/team" exact>
             <Team />
             <EnquireSection />
+            <CarouselDisplay />
           </Route>
-          <Route path="/enquire" component={Enquire} exact />
+          <Route path="/enquire" exact>
+            <Enquire />
+            <CarouselDisplay />
+          </Route>
         </Switch>
       </Router>
     </MuiThemeProvider>

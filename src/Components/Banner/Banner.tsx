@@ -31,8 +31,8 @@ const Banner = () => {
       <Grid container>
         <Grid item md={5}>
           <Box className="btn-container">
-            <Button color="secondary" onClick={() => history.push("/gallery")}>
-              <Typography>Gallery</Typography>
+            <Button color="secondary" onClick={() => history.push("/enquire")}>
+              <Typography>Enquire</Typography>
             </Button>
             <Button color="secondary" onClick={() => history.push("/services")}>
               <Typography>Services</Typography>
@@ -47,7 +47,7 @@ const Banner = () => {
         </Grid>
         <Grid item md={2}>
           <div className="logo-container" onClick={() => history.push("/")}>
-            Logo
+            GRUHAM Ti'AMORE
           </div>
         </Grid>
         <Grid item md={5}>
@@ -61,8 +61,8 @@ const Banner = () => {
             >
               <Typography>Testimonials</Typography>
             </Button>
-            <Button color="secondary" onClick={() => history.push("/enquire")}>
-              <Typography>Enquire</Typography>
+            <Button color="secondary" onClick={() => history.push("/login")}>
+              <Typography>Login</Typography>
             </Button>
           </Box>
         </Grid>
@@ -101,7 +101,7 @@ const Banner = () => {
         <div className="center-txt">
           <Zoom>
             <Typography variant="h3" className="heading">
-              <b>Luxury Interior Design</b>
+              <b>GRUHAM Ti'AMORE</b>
             </Typography>
           </Zoom>
         </div>

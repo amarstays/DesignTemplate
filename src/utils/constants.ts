@@ -7,73 +7,151 @@ export const navOptions = [
   "Enquire",
 ];
 
-export const portfolio = [
+export const designerDetails = [
   {
-    title: "Eiusmod eiusmod ",
-    src:
-      "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
-    desc: "Mollit labore nisi laboris ",
+    key: "axo",
+    name: "LOREM IPSUM",
+    designation: "Lead Designer",
+    profile:
+      "https://images.unsplash.com/photo-1554151228-14d9def656e4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=633&q=80",
+    summary: `Ea mollit nulla officia nulla dolor minim qui esse quis ea ad
+    qui ex.`,
+    portfolio: [
+      {
+        title: "Eiusmod eiusmod ",
+        src:
+          "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+        desc: "Mollit labore nisi laboris ",
+      },
+      {
+        title: "Eiusmod eiusmod ",
+        src:
+          "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+        desc: "Mollit labore nisi laboris ",
+        major: false,
+      },
+    ],
   },
   {
-    title: "Eiusmod eiusmod ",
-    src:
-      "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
-    desc: "Mollit labore nisi laboris ",
+    key: "axo",
+    name: "LOREM IPSUM",
+    designation: "Lead Designer",
+
+    profile:
+      "https://images.unsplash.com/photo-1554151228-14d9def656e4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=633&q=80",
+    summary: `Ea mollit nulla officia nulla dolor minim qui esse quis ea ad
+    qui ex.`,
+    portfolio: [
+      {
+        title: "Eiusmod eiusmod ",
+        src:
+          "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+        desc: "Mollit labore nisi laboris ",
+      },
+      {
+        title: "Eiusmod eiusmod ",
+        src:
+          "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+        desc: "Mollit labore nisi laboris ",
+        major: false,
+      },
+    ],
   },
   {
-    title: "Eiusmod eiusmod ",
-    src:
-      "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
-    desc: "Mollit labore nisi laboris ",
+    key: "axo",
+    name: "LOREM IPSUM",
+    designation: "Lead Designer",
+
+    profile:
+      "https://images.unsplash.com/photo-1554151228-14d9def656e4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=633&q=80",
+    summary: `Ea mollit nulla officia nulla dolor minim qui esse quis ea ad
+    qui ex.`,
+    portfolio: [
+      {
+        title: "Eiusmod eiusmod ",
+        src:
+          "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+        desc: "Mollit labore nisi laboris ",
+      },
+      {
+        title: "Eiusmod eiusmod ",
+        src:
+          "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+        desc: "Mollit labore nisi laboris ",
+        major: false,
+      },
+    ],
   },
   {
-    title: "Eiusmod eiusmod ",
-    src:
-      "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
-    desc: "Mollit labore nisi laboris ",
-    major: true,
-  },
-  {
-    title: "Eiusmod eiusmod ",
-    src:
-      "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
-    desc: "Mollit labore nisi laboris ",
+    key: "axo",
+    name: "LOREM IPSUM",
+    designation: "Lead Designer",
+
+    profile:
+      "https://images.unsplash.com/photo-1554151228-14d9def656e4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=633&q=80",
+    summary: `Ea mollit nulla officia nulla dolor minim qui esse quis ea ad
+    qui ex.`,
+    portfolio: [
+      {
+        title: "Eiusmod eiusmod ",
+        src:
+          "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+        desc: "Mollit labore nisi laboris ",
+      },
+      {
+        title: "Eiusmod eiusmod ",
+        src:
+          "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+        desc: "Mollit labore nisi laboris ",
+        major: false,
+      },
+    ],
   },
 ];
 
 export const services = [
   {
-    title: "INTERIOR DESIGN & ARCHITECTURE",
-    desc:
-      "Our professional team offers a wide range of luxury design services including full-service interior design, renovation projects, home styling, interior architecture consultation and integrated smart design. We use years of design experience to realise our clients’ goals by carefully interpreting the design brief, developing a unique design proposal and executing the design beyond expectations—making the ordinary extraordinary. With experience in both the residential and hospitality sphere, our team is skilled to tackle any type of interior design project, large or small, near or far.",
+    title: "Design",
+    desc: `Just like our design philosophy, we also follow a client profiling practice. The reason for this is so that we
+      are able to understand the needs and requirements of the client before we begin any sort of ground
+      work. That's why we are known for building a strong and personalized bond with every single client, from
+      the design stage, through execution and right till completion.`,
     imgSrc:
       "https://images.unsplash.com/photo-1610341857041-1fb85125de76?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80",
   },
   {
-    title: "INTERIOR DESIGN & ARCHITECTURE",
-    desc:
-      "Our professional team offers a wide range of luxury design services including full-service interior design, renovation projects, home styling, interior architecture consultation and integrated smart design. We use years of design experience to realise our clients’ goals by carefully interpreting the design brief, developing a unique design proposal and executing the design beyond expectations—making the ordinary extraordinary. With experience in both the residential and hospitality sphere, our team is skilled to tackle any type of interior design project, large or small, near or far.",
+    title: "Execution",
+    desc: `Just like our design philosophy, we also follow a client profiling practice. The reason for this is so that we
+      are able to understand the needs and requirements of the client before we begin any sort of ground
+      work. That's why we are known for building a strong and personalized bond with every single client, from
+      the design stage, through execution and right till completion.`,
     imgSrc:
       "https://images.unsplash.com/photo-1610341857041-1fb85125de76?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80",
   },
   {
-    title: "INTERIOR DESIGN & ARCHITECTURE",
-    desc:
-      "Our professional team offers a wide range of luxury design services including full-service interior design, renovation projects, home styling, interior architecture consultation and integrated smart design. We use years of design experience to realise our clients’ goals by carefully interpreting the design brief, developing a unique design proposal and executing the design beyond expectations—making the ordinary extraordinary. With experience in both the residential and hospitality sphere, our team is skilled to tackle any type of interior design project, large or small, near or far.",
+    title: "Customization",
+    desc: `Just like our design philosophy, we also follow a client profiling practice. The reason for this is so that we
+      are able to understand the needs and requirements of the client before we begin any sort of ground
+      work. That's why we are known for building a strong and personalized bond with every single client, from
+      the design stage, through execution and right till completion.`,
     imgSrc:
       "https://images.unsplash.com/photo-1610341857041-1fb85125de76?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80",
   },
   {
-    title: "INTERIOR DESIGN & ARCHITECTURE",
-    desc:
-      "Our professional team offers a wide range of luxury design services including full-service interior design, renovation projects, home styling, interior architecture consultation and integrated smart design. We use years of design experience to realise our clients’ goals by carefully interpreting the design brief, developing a unique design proposal and executing the design beyond expectations—making the ordinary extraordinary. With experience in both the residential and hospitality sphere, our team is skilled to tackle any type of interior design project, large or small, near or far.",
+    title: "Stylizing",
+    desc: `Just like our design philosophy, we also follow a client profiling practice. The reason for this is so that we
+      are able to understand the needs and requirements of the client before we begin any sort of ground
+      work. That's why we are known for building a strong and personalized bond with every single client, from
+      the design stage, through execution and right till completion.`,
     imgSrc:
       "https://images.unsplash.com/photo-1610341857041-1fb85125de76?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80",
   },
   {
-    title: "INTERIOR DESIGN & ARCHITECTURE",
-    desc:
-      "Our professional team offers a wide range of luxury design services including full-service interior design, renovation projects, home styling, interior architecture consultation and integrated smart design. We use years of design experience to realise our clients’ goals by carefully interpreting the design brief, developing a unique design proposal and executing the design beyond expectations—making the ordinary extraordinary. With experience in both the residential and hospitality sphere, our team is skilled to tackle any type of interior design project, large or small, near or far.",
+    title: "Delivery",
+    desc: `Just like our design philosophy, we also follow a client profiling practice. The reason for this is so that we
+      are able to understand the needs and requirements of the client before we begin any sort of ground
+      work. That's why we are known for building a strong and personalized bond with every single client, from
+      the design stage, through execution and right till completion.`,
     imgSrc:
       "https://images.unsplash.com/photo-1610341857041-1fb85125de76?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80",
   },

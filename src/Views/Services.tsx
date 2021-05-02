@@ -25,7 +25,9 @@ const Services = () => {
             <Box className="service-img-container">
               <img src={service.imgSrc} alt="service" className="service-img" />
             </Box>
-            <Typography className="service-title">{service.title}</Typography>
+            <Typography className="service-title">
+              <b>{service.title}</b>
+            </Typography>
             <Typography className="service-desc" paragraph>
               {service.desc}
             </Typography>

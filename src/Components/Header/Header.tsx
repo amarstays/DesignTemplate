@@ -30,8 +30,8 @@ const Header = () => {
       <Grid container>
         <Grid item md={5}>
           <Box className="btn-container">
-            <Button color="secondary" onClick={() => history.push("/gallery")}>
-              <Typography className="nav-item">Gallery</Typography>
+            <Button color="secondary" onClick={() => history.push("/enquire")}>
+              <Typography className="nav-item">Enquire</Typography>
             </Button>
             <Button color="secondary" onClick={() => history.push("/services")}>
               <Typography className="nav-item">Services</Typography>
@@ -46,7 +46,7 @@ const Header = () => {
         </Grid>
         <Grid item md={2}>
           <div className="logo-med" onClick={() => history.push("/")}>
-            Logo
+            GRUHAM Ti'AMORE
           </div>
         </Grid>
         <Grid item md={5}>
@@ -60,8 +60,9 @@ const Header = () => {
             >
               <Typography className="nav-item">Testimonials</Typography>
             </Button>
-            <Button color="secondary" onClick={() => history.push("/enquire")}>
-              <Typography className="nav-item">Enquire</Typography>
+
+            <Button color="secondary" onClick={() => history.push("/login")}>
+              <Typography className="nav-item">Login</Typography>
             </Button>
           </Box>
         </Grid>
