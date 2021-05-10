@@ -15,6 +15,7 @@ import Menu from "@material-ui/icons/Menu";
 import { navOptions } from "../../utils/constants";
 import "./Header.css";
 import { useHistory } from "react-router";
+import { getAuthToken, getUser } from "../../utils/methods";
 
 const Header = () => {
   const classes = useStyles();
@@ -30,9 +31,24 @@ const Header = () => {
       <Grid container>
         <Grid item md={5}>
           <Box className="btn-container">
-            <Button color="secondary" onClick={() => history.push("/enquire")}>
-              <Typography className="nav-item">Enquire</Typography>
-            </Button>
+            {getUser() &&
+            getUser()[0] &&
+            getUser()[0].roles.includes("admin") ? (
+              <Button
+                color="secondary"
+                onClick={() => history.push("/dashboard")}
+              >
+                <Typography className="nav-item">DASHBOARD</Typography>
+              </Button>
+            ) : (
+              <Button
+                color="secondary"
+                onClick={() => history.push("/enquire")}
+              >
+                <Typography className="nav-item">Enquire</Typography>
+              </Button>
+            )}
+
             <Button color="secondary" onClick={() => history.push("/services")}>
               <Typography className="nav-item">Services</Typography>
             </Button>
@@ -61,9 +77,21 @@ const Header = () => {
               <Typography className="nav-item">Testimonials</Typography>
             </Button>
 
-            <Button color="secondary" onClick={() => history.push("/login")}>
-              <Typography className="nav-item">Login</Typography>
-            </Button>
+            {!Boolean(getAuthToken()) ? (
+              <Button color="secondary" onClick={() => history.push("/login")}>
+                <Typography className="nav-item">Login</Typography>
+              </Button>
+            ) : (
+              <Button
+                color="secondary"
+                onClick={() => {
+                  localStorage.clear();
+                  history.push("/login");
+                }}
+              >
+                <Typography className="nav-item">Logout</Typography>
+              </Button>
+            )}
           </Box>
         </Grid>
       </Grid>
@@ -83,7 +111,7 @@ const Header = () => {
             className="logo-med align-right"
             onClick={() => history.push("/")}
           >
-            Logo
+            GRUHAM Ti'AMORE
           </div>
         </Grid>
       </Grid>
@@ -92,7 +120,7 @@ const Header = () => {
 
   return (
     <>
-      <div>
+      <div style={{ height: "50px" }}>
         <div className={classes.desktop}>{getDesktopNav()}</div>
         <div className={classes.mobile}>{getMobileNav()}</div>
       </div>

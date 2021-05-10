@@ -75,7 +75,9 @@ export const DesignerCard = ({ designer, summaryCard }: DesignerCardProps) => {
               subheader={designer.designation}
             />
             <CardContent>
-              <Typography paragraph>{designer.summary}</Typography>
+              <Typography paragraph>
+                {summaryCard ? designer.fullDetails : designer.summary}
+              </Typography>
             </CardContent>
             <CardActions>
               <Box className="designer-actions">

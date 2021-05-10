@@ -12,6 +12,9 @@ import Team from "./Views/Team";
 import Testimonials from "./Views/Testimonials";
 import Enquire from "./Views/Enquire";
 import CarouselDisplay from "./Components/Carousel/CarouselDisplay";
+import Login from "./Views/Login";
+import { getUser } from "./utils/methods";
+import Dashboard from "./Views/Dashboard";
 
 function App() {
   return (
@@ -23,6 +26,11 @@ function App() {
             <EnquireSection />
             <CarouselDisplay />
           </Route>
+          {getUser() && getUser()?.[0]?.roles.includes("admin") && (
+            <Route path="/dashboard" exact>
+              <Dashboard />
+            </Route>
+          )}
           <Route path="/gallery/:designer" exact>
             <Gallery />
             <EnquireSection />
@@ -50,6 +58,9 @@ function App() {
           <Route path="/enquire" exact>
             <Enquire />
             <CarouselDisplay />
+          </Route>
+          <Route path="/login" exact>
+            <Login />
           </Route>
         </Switch>
       </Router>

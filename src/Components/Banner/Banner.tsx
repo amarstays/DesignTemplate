@@ -16,6 +16,8 @@ import "./Banner.css";
 import { navOptions } from "../../utils/constants";
 import { useHistory } from "react-router";
 import { Zoom } from "react-awesome-reveal";
+import { getAuthToken, getUser } from "../../utils/methods";
+import { videoBg } from "../../assets/urls";
 
 const Banner = () => {
   const classes = useStyles();
@@ -31,9 +33,23 @@ const Banner = () => {
       <Grid container>
         <Grid item md={5}>
           <Box className="btn-container">
-            <Button color="secondary" onClick={() => history.push("/enquire")}>
-              <Typography>Enquire</Typography>
-            </Button>
+            {getUser() &&
+            getUser()[0] &&
+            getUser()[0].roles.includes("admin") ? (
+              <Button
+                color="secondary"
+                onClick={() => history.push("/dashboard")}
+              >
+                <Typography>Dashboard</Typography>
+              </Button>
+            ) : (
+              <Button
+                color="secondary"
+                onClick={() => history.push("/enquire")}
+              >
+                <Typography>Enquire</Typography>
+              </Button>
+            )}
             <Button color="secondary" onClick={() => history.push("/services")}>
               <Typography>Services</Typography>
             </Button>
@@ -61,9 +77,21 @@ const Banner = () => {
             >
               <Typography>Testimonials</Typography>
             </Button>
-            <Button color="secondary" onClick={() => history.push("/login")}>
-              <Typography>Login</Typography>
-            </Button>
+            {!Boolean(getAuthToken()) ? (
+              <Button color="secondary" onClick={() => history.push("/login")}>
+                <Typography>Login</Typography>
+              </Button>
+            ) : (
+              <Button
+                color="secondary"
+                onClick={() => {
+                  localStorage.clear();
+                  history.push("/login");
+                }}
+              >
+                <Typography>Logout</Typography>
+              </Button>
+            )}
           </Box>
         </Grid>
       </Grid>
@@ -79,7 +107,7 @@ const Banner = () => {
           </IconButton>
         </Grid>
         <Grid item xs={6}>
-          <div className="logo-container align-right">Logo</div>
+          <div className="logo-container align-right">GRUHAM Ti'AMORE</div>
         </Grid>
       </Grid>
     );
@@ -88,12 +116,10 @@ const Banner = () => {
   return (
     <>
       <div className="fullscreen">
-        {/* <iframe
-        title="gif"
-        src="https://giphy.com/embed/IWsz1enyrhjBm"
-        frameBorder="0"
-        allowFullScreen
-      /> */}
+        <video className="fullscreen-video" loop muted autoPlay>
+          <source src={videoBg} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
         <div className="fullscreen-nav">
           <div className={classes.desktop}>{getDesktopNav()}</div>
           <div className={classes.mobile}>{getMobileNav()}</div>

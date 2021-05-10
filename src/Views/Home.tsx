@@ -2,6 +2,7 @@ import { Box, Divider, Typography } from "@material-ui/core";
 import Banner from "../Components/Banner/Banner";
 import "./styles/Home.css";
 import Section from "../Components/Section/Section";
+import { imgs } from "../assets/urls";
 
 const Home = () => {
   return (
@@ -35,31 +36,31 @@ const Home = () => {
         Luxury is about class
         Luxury is about being comfortable"
         align="left"
-        imgSrc="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+        imgSrc={imgs.chef_kitchen}
       />
       <Divider variant="middle" />
       <Section
-        link="/philosophy"
-        title="Our Philosophy"
-        desc="Our design philosophy is simple: interiors matter. They influence how we feel, how we act and how we live."
+        link="/services"
+        title="Services we offer"
+        desc="Clients  are our assets and it is our endevour to make their dream home become a reality with our best of dedicated designers and the Execution Experts."
         align="right"
-        imgSrc="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+        imgSrc={imgs.flowers}
       />
       <Divider variant="middle" />
       <Section
-        link="/philosophy"
-        title="Our Philosophy"
+        link="/team"
+        title="Our team"
         desc="Our design philosophy is simple: interiors matter. They influence how we feel, how we act and how we live."
         align="left"
-        imgSrc="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+        imgSrc={imgs.white_kitchen}
       />
       <Divider variant="middle" />
       <Section
-        link="/philosophy"
-        title="Our Philosophy"
-        desc="Our design philosophy is simple: interiors matter. They influence how we feel, how we act and how we live."
+        link="/testimonials"
+        title="Something from our customers"
+        desc="We value your feedback. Here's what our customers have to say!"
         align="right"
-        imgSrc="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+        imgSrc={imgs.wooden_living}
       />
     </div>
   );

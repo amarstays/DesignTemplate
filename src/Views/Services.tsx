@@ -2,6 +2,7 @@ import Header from "../Components/Header/Header";
 import { Box, Divider, Grid, Typography } from "@material-ui/core";
 import { services } from "../utils/constants";
 import "./styles/Service.css";
+import { Fade } from "react-awesome-reveal";
 
 const Services = () => {
   return (
@@ -12,28 +13,31 @@ const Services = () => {
           Services
         </Typography>
         <Typography paragraph className="desc-co">
-          SPECIALISING IN HIGH-END RESIDENTIAL AND HOSPITALITY INTERIOR DESIGN,
-          LUXDECO STUDIO’S INTERNATIONAL, MULTI-DISCIPLINARY TEAM COMBINES
-          DECADES OF EXPERIENCE TO PROVIDE THE MOST PROFESSIONAL, ENJOYABLE AND
-          EFFICIENT DESIGN EXPERIENCE.{" "}
+          CLIENTS ARE OUR ASSETS AND IT IS OUR ENDEVOUR TO MAKE THEIR DREAM HOME
+          BECOME A REALITY WITH OUR BEST OF DEDICATED DESIGNERS AND THE
+          EXECUTION EXPERTS{" "}
         </Typography>
       </Box>
       <Divider variant="middle" />
-      <Grid container className="services-container">
-        {services.map((service, index) => (
-          <Grid key={index} item xs={12} md={4} className="grid-item-ser">
-            <Box className="service-img-container">
+      <Box className="service-parent">
+        <Grid container className="services-container">
+          {services.map((service, index) => (
+            <Grid key={index} item xs={12} md={6} className="grid-item-ser">
               <img src={service.imgSrc} alt="service" className="service-img" />
-            </Box>
-            <Typography className="service-title">
-              <b>{service.title}</b>
-            </Typography>
-            <Typography className="service-desc" paragraph>
-              {service.desc}
-            </Typography>
-          </Grid>
-        ))}
-      </Grid>
+              <Fade>
+                <Box className="services-text-container">
+                  <Typography className="service-title">
+                    <b>{service.title}</b>
+                  </Typography>
+                  <Typography className="service-desc" paragraph>
+                    {service.desc}
+                  </Typography>
+                </Box>
+              </Fade>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
     </div>
   );
 };

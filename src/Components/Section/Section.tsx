@@ -26,7 +26,7 @@ const Section = ({ imgSrc, title, desc, align, link }: SectionProps) => {
           <img
             src={imgSrc}
             alt="portfolio"
-            className="image"
+            className="section-image"
             data-aos="zoom-in"
           />
         </Zoom>

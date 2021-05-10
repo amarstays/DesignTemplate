@@ -1,22 +1,47 @@
 import {
   Avatar,
   Box,
+  Button,
   Card,
+  CardActions,
   CardContent,
   CardHeader,
   Divider,
   Grid,
   makeStyles,
+  Modal,
+  TextField,
   Typography,
 } from "@material-ui/core";
 import Header from "../Components/Header/Header";
 import { Rating } from "@material-ui/lab";
-import "./styles/Testimonials.css";
 import { testimonials } from "../utils/constants";
 import { Fade } from "react-awesome-reveal";
+import "./styles/Testimonials.css";
+import { useRef, useState } from "react";
+import { client } from "../utils/api.config";
+import { getAuthToken } from "../utils/methods";
 
 const Testimonials = () => {
   const classes = useStyles();
+  const [openModal, setOpenModal] = useState(false);
+  const ratingRef = useRef<any>();
+  const messageRef = useRef<any>();
+
+  const handleSubmit = () => {
+    client.post(
+      "/customer/testimonial",
+      {
+        rating: ratingRef.current.value,
+        message: messageRef.current.value,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${getAuthToken()}`,
+        },
+      }
+    );
+  };
 
   return (
     <div>
@@ -25,6 +50,7 @@ const Testimonials = () => {
         <Typography variant="h3" className="title-co">
           Testimonials
         </Typography>
+        <Button onClick={() => setOpenModal(true)}>Give us feedback</Button>
       </Box>
       <Divider variant="middle" />
       <Grid container>
@@ -50,6 +76,43 @@ const Testimonials = () => {
           </Grid>
         ))}
       </Grid>
+      <Modal
+        open={openModal}
+        onClose={() => setOpenModal(false)}
+        className="testimonial-modal"
+      >
+        <Card>
+          <CardHeader title="How did we do?" />
+          <CardContent>
+            <form className="testimonial-form">
+              <Box className="rating-parent">
+                <Typography>Rating</Typography>
+                <Rating
+                  className="rating-control"
+                  onChange={(e: any, value: any) => {
+                    ratingRef.current = {};
+                    ratingRef.current.value = value;
+                  }}
+                />
+              </Box>
+              <TextField
+                label="Message"
+                name="details"
+                variant="outlined"
+                placeholder="Leave us a message"
+                inputRef={messageRef}
+                multiline
+                rows={4}
+              />
+            </form>
+          </CardContent>
+          <CardActions>
+            <Button variant="contained" color="primary" onClick={handleSubmit}>
+              Submit
+            </Button>
+          </CardActions>
+        </Card>
+      </Modal>
     </div>
   );
 };

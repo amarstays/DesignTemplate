@@ -1,6 +1,7 @@
 import Header from "../Components/Header/Header";
 import {
   Box,
+  Button,
   Divider,
   FormControl,
   FormLabel,
@@ -10,8 +11,43 @@ import {
 } from "@material-ui/core";
 import "./styles/Enquire.css";
 import { projectTypes } from "../utils/constants";
+import { useEffect, useState } from "react";
+import { getUser } from "../utils/methods";
+import { client } from "../utils/api.config";
+
+interface enquireProps {
+  name?: string;
+  email?: string;
+  phone?: number;
+  project?: string;
+  message?: string;
+}
 
 const Enquire = () => {
+  const [formData, setFormData] = useState<enquireProps>();
+
+  useEffect(() => {
+    const user = getUser();
+    if (user)
+      setFormData({
+        name: user.name,
+        email: user.email,
+      });
+  }, []);
+
+  const handleChange = (
+    event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
+  ) => {
+    setFormData({
+      ...formData,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const handleSubmit = async () => {
+    await client.post("/customer/enquire", formData);
+  };
+
   return (
     <div>
       <Header />
@@ -33,16 +69,37 @@ const Enquire = () => {
         <form className="enquire-form">
           <FormControl margin="normal" fullWidth>
             <FormLabel className="form-label">Name</FormLabel>
-            <TextField type="text" name="name" variant="outlined" />
+            <TextField
+              type="text"
+              name="name"
+              variant="outlined"
+              inputProps={{
+                autocomplete: "off",
+              }}
+              value={formData?.name}
+              onChange={handleChange}
+            />
           </FormControl>
           <Box className="field-join">
             <FormControl className="form-control-mr">
               <FormLabel className="form-label">Email</FormLabel>
-              <TextField type="email" name="email" variant="outlined" />
+              <TextField
+                type="email"
+                name="email"
+                variant="outlined"
+                value={formData?.email}
+                onChange={handleChange}
+              />
             </FormControl>
             <FormControl>
               <FormLabel className="form-label">Number</FormLabel>
-              <TextField type="number" name="phone" variant="outlined" />
+              <TextField
+                type="text"
+                name="phone"
+                variant="outlined"
+                value={formData?.phone}
+                onChange={handleChange}
+              />
             </FormControl>
           </Box>
           <FormControl margin="normal" fullWidth>
@@ -51,6 +108,9 @@ const Enquire = () => {
               select
               variant="outlined"
               placeholder=" Select Project Type"
+              name="project_type"
+              value={formData?.message}
+              onChange={handleChange}
             >
               {projectTypes.map((type, index) => (
                 <MenuItem key={index} value={type}>
@@ -67,8 +127,13 @@ const Enquire = () => {
               variant="outlined"
               multiline
               rows={4}
+              value={formData?.message}
+              onChange={handleChange}
             />
           </FormControl>
+          <Button color="primary" variant="contained" onClick={handleSubmit}>
+            Submit
+          </Button>
         </form>
       </Box>
     </div>
