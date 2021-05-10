@@ -13,6 +13,7 @@ import {
 import Carousel from "react-material-ui-carousel";
 import { useHistory } from "react-router";
 import { designerDetails } from "../../utils/constants";
+import classnames from "classnames";
 import "./CarouselDisplay.css";
 
 const CarouselDisplay = () => {
@@ -63,13 +64,17 @@ export const DesignerCard = ({ designer, summaryCard }: DesignerCardProps) => {
   };
 
   return (
-    <Box className="designer-card-container">
+    <Box className={`designer-card-container${summaryCard ? "-top" : ""}`}>
       <Card elevation={3}>
-        <Box className="designer-card">
-          <Box style={{ width: "50%" }}>
+        <Box
+          className={classnames({
+            "designer-card": !summaryCard,
+          })}
+        >
+          <Box className="width-50">
             <CardMedia className="designer-photo" image={designer.profile} />
           </Box>
-          <Box className="designer-details">
+          <Box className="designer-details width-50">
             <CardHeader
               title={designer.name}
               subheader={designer.designation}

@@ -2,6 +2,10 @@
   padding: 20px 30px;
 }
 
+.designer-card-container-top {
+  padding: 20px 0px;
+}
+
 .designer-card {
   display: flex;
 }
@@ -21,11 +25,26 @@
 
 .designer-details {
   text-align: center;
-  width: 50%;
 }
 
 .designer-actions {
   display: flex;
   justify-content: center;
   width: 100%;
+}
+
+.width-50 {
+  width: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+  .designer-photo {
+    min-height: 100%;
+    height: 250px;
+    width: 100%;
+  }
+
+  .width-50 {
+    width: 100%;
+  }
 }
