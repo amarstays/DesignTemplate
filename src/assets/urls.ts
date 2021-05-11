@@ -23,8 +23,8 @@ export const imgs = {
 
 export const teamUrls = {
   founder:
-    "https://res.cloudinary.com/yashwork2110/image/upload/v1620758948/gruhamtiamor/team/sachii-removebg-preview_ricwka.jpg",
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620760320/gruhamtiamor/team/WhatsApp_Image_2021-05-10_at_08.46.31-removebg-preview_zi6mv3.jpg",
   technical:
     "https://res.cloudinary.com/yashwork2110/image/upload/v1620669610/gruhamtiamor/team/WhatsApp_Image_2021-05-10_at_13.20.17_oeozty.jpg",
-  lead: "https://res.cloudinary.com/yashwork2110/image/upload/v1620758714/gruhamtiamor/team/lead-removebg-preview_tinu1v.jpg",
+  lead: "https://res.cloudinary.com/yashwork2110/image/upload/v1620760142/gruhamtiamor/team/lead-removebg-preview_1_dob6ak.jpg",
 };
