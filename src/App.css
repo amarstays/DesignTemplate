@@ -4,6 +4,8 @@
 
 .para {
   padding: 0px 30px;
+  font-family: "KoHo", sans-serif !important;
+  font-weight: 500 !important;
 }
 
 .align-right {
@@ -26,6 +28,8 @@
 .desc-co {
   padding: 20px 40px;
   letter-spacing: 1px;
+  font-family: "KoHo", sans-serif !important;
+  font-weight: 500 !important;
 }
 
 .form-control-wrap {

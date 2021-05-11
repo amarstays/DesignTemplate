@@ -5,17 +5,13 @@ import {
   Box,
   Button,
   IconButton,
-  Drawer,
-  List,
-  ListItem,
-  ListItemText,
   Typography,
 } from "@material-ui/core";
 import Menu from "@material-ui/icons/Menu";
-import { navOptions } from "../../utils/constants";
 import "./Header.css";
 import { useHistory } from "react-router";
 import { getAuthToken, getUser } from "../../utils/methods";
+import DrawerSection from "../Drawer/Drawer";
 
 const Header = () => {
   const classes = useStyles();
@@ -124,20 +120,7 @@ const Header = () => {
         <div className={classes.desktop}>{getDesktopNav()}</div>
         <div className={classes.mobile}>{getMobileNav()}</div>
       </div>
-      <Drawer anchor="top" open={openDrawer} onClose={toggleDrawer}>
-        <List>
-          {navOptions.map((text, index) => (
-            <ListItem button key={index}>
-              <ListItemText
-                primary={
-                  <Typography className="text-center">{text}</Typography>
-                }
-                onClick={() => history.push(`/${text.toLowerCase()}`)}
-              />
-            </ListItem>
-          ))}
-        </List>
-      </Drawer>
+      <DrawerSection openDrawer={openDrawer} setOpenDrawer={setOpenDrawer} />
     </>
   );
 };

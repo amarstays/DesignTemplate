@@ -1,5 +1,14 @@
 import Header from "../Components/Header/Header";
-import { Box, Divider, Grid, Typography } from "@material-ui/core";
+import {
+  Box,
+  Card,
+  CardContent,
+  CardHeader,
+  CardMedia,
+  Divider,
+  Grid,
+  Typography,
+} from "@material-ui/core";
 import { services } from "../utils/constants";
 import "./styles/Service.css";
 import { Fade } from "react-awesome-reveal";
@@ -22,17 +31,33 @@ const Services = () => {
       <Box className="service-parent">
         <Grid container className="services-container">
           {services.map((service, index) => (
-            <Grid key={index} item xs={12} md={6} className="grid-item-ser">
-              <img src={service.imgSrc} alt="service" className="service-img" />
+            <Grid key={index} item xs={12} md={4} className="grid-item-ser">
               <Fade>
-                <Box className="services-text-container">
-                  <Typography className="service-title">
-                    <b>{service.title}</b>
-                  </Typography>
-                  <Typography className="service-desc" paragraph>
-                    {service.desc}
-                  </Typography>
-                </Box>
+                <Card elevation={3} className="service-card">
+                  <Box>
+                    <CardMedia image={service.imgSrc} className="service-img" />
+                    <CardContent>
+                      <Typography paragraph className="service-desc">
+                        {service.desc}
+                      </Typography>
+                    </CardContent>
+                  </Box>
+                  <CardHeader
+                    title={
+                      <Box>
+                        {service.title.split("").map((text, index) => (
+                          <Typography
+                            key={index}
+                            className="service-title-item"
+                          >
+                            {text}
+                          </Typography>
+                        ))}
+                      </Box>
+                    }
+                    className="service-title"
+                  />
+                </Card>
               </Fade>
             </Grid>
           ))}

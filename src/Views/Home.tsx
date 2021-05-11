@@ -3,6 +3,7 @@ import Banner from "../Components/Banner/Banner";
 import "./styles/Home.css";
 import Section from "../Components/Section/Section";
 import { imgs } from "../assets/urls";
+import Quote from "../Components/Quote/Quote";
 
 const Home = () => {
   return (
@@ -17,16 +18,14 @@ const Home = () => {
           turns into the "home" of your dreams. We visualize and create
           different styles catering to your discerning tastes and preferences.
           We aim to make you fall in love with your home every time you wake up.
-          <br />
-          <br />
-          <b>
-            <i>
-              "A home where your feet may leave, but not your heart" - Gruham
-              Ti'Amore.
-            </i>
-          </b>
         </Typography>
         <br />
+        <Divider variant="middle" />
+        <Quote
+          quote="“A home where your feet may leave, but not your heart”."
+          author="- Gruham
+              Ti'Amore"
+        />
         <Divider variant="middle" />
       </Box>
       <Section
@@ -36,7 +35,7 @@ const Home = () => {
         Luxury is about class
         Luxury is about being comfortable"
         align="left"
-        imgSrc={imgs.chef_kitchen}
+        imgSrc={imgs.pic6}
       />
       <Divider variant="middle" />
       <Section
@@ -44,7 +43,7 @@ const Home = () => {
         title="Services we offer"
         desc="Clients  are our assets and it is our endevour to make their dream home become a reality with our best of dedicated designers and the Execution Experts."
         align="right"
-        imgSrc={imgs.flowers}
+        imgSrc={imgs.pic7}
       />
       <Divider variant="middle" />
       <Section
@@ -52,7 +51,7 @@ const Home = () => {
         title="Our team"
         desc="Our design philosophy is simple: interiors matter. They influence how we feel, how we act and how we live."
         align="left"
-        imgSrc={imgs.white_kitchen}
+        imgSrc={imgs.pic8}
       />
       <Divider variant="middle" />
       <Section
@@ -60,7 +59,7 @@ const Home = () => {
         title="Something from our customers"
         desc="We value your feedback. Here's what our customers have to say!"
         align="right"
-        imgSrc={imgs.wooden_living}
+        imgSrc={imgs.pic9}
       />
     </div>
   );

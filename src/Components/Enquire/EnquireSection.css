@@ -4,11 +4,13 @@
 }
 
 .enq-title {
-  font-size: 1.5em;
+  font-size: 1.5em !important;
+  font-family: "Satisfy", cursive !important;
+  font-weight: 600 !important;
 }
 
 .enq-details {
-  letter-spacing: 1px;
-  font-size: 0.9em !important;
-  padding: 10px 20px;
+  font-family: "KoHo", sans-serif !important;
+  color: black;
+  font-weight: 500 !important;
 }

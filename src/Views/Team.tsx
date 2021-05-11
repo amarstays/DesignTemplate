@@ -8,7 +8,7 @@ import {
   Grid,
   Typography,
 } from "@material-ui/core";
-import { Slide } from "react-awesome-reveal";
+import { Fade } from "react-awesome-reveal";
 import Header from "../Components/Header/Header";
 import { team } from "../utils/constants";
 import "./styles/Team.css";
@@ -31,7 +31,7 @@ const Team = () => {
       <Grid container className="team-container">
         {team.map((item, index) => (
           <Grid item xs={12} key={index}>
-            <Slide direction={index % 2 ? "right" : "left"}>
+            <Fade>
               <Card className="team-card" elevation={3}>
                 <CardMedia
                   image={item.profile_image}
@@ -39,20 +39,29 @@ const Team = () => {
                 />
                 <Box>
                   <CardHeader
-                    title={item.name}
+                    title={
+                      <Typography variant="h5" className="member-name">
+                        {item.name}
+                      </Typography>
+                    }
                     subheader={
-                      <Typography style={{ color: "white" }}>
+                      <Typography
+                        style={{ color: "white" }}
+                        className="member-role"
+                      >
                         {item.role}
                       </Typography>
                     }
                     className="team-card-header"
                   />
                   <CardContent>
-                    <Typography paragraph>{item.summary}</Typography>
+                    <Typography paragraph className="member-summary">
+                      {item.summary}
+                    </Typography>
                   </CardContent>
                 </Box>
               </Card>
-            </Slide>
+            </Fade>
           </Grid>
         ))}
       </Grid>

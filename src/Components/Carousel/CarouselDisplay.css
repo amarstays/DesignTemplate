@@ -1,9 +1,35 @@
+.designer-section-title {
+  font-size: 1.5em !important;
+  font-family: "Satisfy", cursive !important;
+  font-weight: 600 !important;
+}
+
 .designer-card-container {
   padding: 20px 30px;
 }
 
+.designer-section-details {
+  font-family: "KoHo", sans-serif !important;
+  color: black;
+  font-weight: 500 !important;
+}
+
+.designer-summary {
+  font-family: "KoHo", sans-serif !important;
+  color: black;
+  font-weight: 500 !important;
+}
+
 .designer-card-container-top {
   padding: 20px 0px;
+}
+
+.designer-name {
+  font-family: "Satisfy", cursive !important;
+}
+
+.designer-role {
+  font-family: "KoHo", sans-serif !important;
 }
 
 .designer-card {

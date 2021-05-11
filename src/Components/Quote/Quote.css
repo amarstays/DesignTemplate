@@ -4,10 +4,11 @@
 
 .quote {
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1.5em !important;
   letter-spacing: 2px;
-  font-weight: 300;
   padding: 0px 25px;
+  font-family: "Satisfy", cursive !important;
+  font-weight: 600 !important;
 }
 
 .author {

@@ -1,23 +1,19 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   Box,
   Button,
-  Drawer,
   Grid,
   IconButton,
-  List,
-  ListItem,
-  ListItemText,
   makeStyles,
   Typography,
 } from "@material-ui/core";
 import Menu from "@material-ui/icons/Menu";
 import "./Banner.css";
-import { navOptions } from "../../utils/constants";
 import { useHistory } from "react-router";
 import { Zoom } from "react-awesome-reveal";
 import { getAuthToken, getUser } from "../../utils/methods";
 import { videoBg } from "../../assets/urls";
+import DrawerSection from "../Drawer/Drawer";
 
 const Banner = () => {
   const classes = useStyles();
@@ -132,20 +128,7 @@ const Banner = () => {
           </Zoom>
         </div>
       </div>
-      <Drawer anchor="top" open={openDrawer} onClose={toggleDrawer}>
-        <List>
-          {navOptions.map((text, index) => (
-            <ListItem button key={index}>
-              <ListItemText
-                primary={
-                  <Typography className="text-center">{text}</Typography>
-                }
-                onClick={() => history.push(`/${text.toLowerCase()}`)}
-              />
-            </ListItem>
-          ))}
-        </List>
-      </Drawer>
+      <DrawerSection openDrawer={openDrawer} setOpenDrawer={setOpenDrawer} />
     </>
   );
 };

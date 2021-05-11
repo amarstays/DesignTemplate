@@ -23,15 +23,13 @@ const CarouselDisplay = () => {
       <Grid container>
         <Grid item xs={12} md={5}>
           <Box className="desginer-se-det">
-            <Typography variant="h6">MEET OUR DESIGNERS</Typography>
+            <Typography variant="h6" className="designer-section-title">
+              MEET OUR DESIGNERS
+            </Typography>
             <br />
-            <Typography paragraph>
-              Ipsum officia eu nisi amet exercitation. Sit nostrud cillum anim
-              id ea excepteur sint. Laborum aute ea sit fugiat cupidatat
-              consequat minim dolor nostrud nostrud nisi. Veniam nisi et ea non
-              irure pariatur eu enim aliquip anim voluptate deserunt ea anim.
-              Dolor non pariatur et cupidatat minim ut occaecat dolore ex
-              commodo anim non ut adipisicing.
+            <Typography paragraph className="designer-section-details">
+              The great and exquisite design is capturing the spirit of the
+              client and the essence of the space
             </Typography>
           </Box>
         </Grid>
@@ -76,11 +74,19 @@ export const DesignerCard = ({ designer, summaryCard }: DesignerCardProps) => {
           </Box>
           <Box className="designer-details width-50">
             <CardHeader
-              title={designer.name}
-              subheader={designer.designation}
+              title={
+                <Typography variant="h5" className="designer-name">
+                  {designer.name}
+                </Typography>
+              }
+              subheader={
+                <Typography className="designer-role">
+                  {designer.designation}
+                </Typography>
+              }
             />
             <CardContent>
-              <Typography paragraph>
+              <Typography paragraph className="designer-summary">
                 {summaryCard ? designer.fullDetails : designer.summary}
               </Typography>
             </CardContent>

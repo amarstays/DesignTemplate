@@ -17,6 +17,20 @@
   color: white;
 }
 
+.member-name {
+  font-family: "Satisfy", cursive !important;
+}
+
+.member-role {
+  font-family: "KoHo", sans-serif !important;
+  font-weight: 500 !important;
+}
+
+.member-summary {
+  font-family: "KoHo", sans-serif !important;
+  font-weight: 500 !important;
+}
+
 @media only screen and (max-width: 600px) {
   .team-card {
     display: block;

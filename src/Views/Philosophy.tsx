@@ -1,4 +1,5 @@
 import { Box, Divider, Typography } from "@material-ui/core";
+import { imgs } from "../assets/urls";
 import Header from "../Components/Header/Header";
 import Quote from "../Components/Quote/Quote";
 import Section from "../Components/Section/Section";
@@ -29,7 +30,7 @@ const Philosophy = () => {
         We just want to build homes that you’re proud of, homes that you can’t wait to get back to and most
         importantly be the proud owner of:-"
         align="left"
-        imgSrc="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+        imgSrc={imgs.pic11}
       />
       <Divider variant="middle" />
       <Quote quote="“Casa Di Amore E Fede, A House Of Love And Faith”." />
@@ -41,7 +42,7 @@ const Philosophy = () => {
         make your home extremely unique & exquisite while not compromising on the safety or longevity of the
         home. Also, every project that we undertake is with a minimal wastage footprint of any kind."
         align="right"
-        imgSrc="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+        imgSrc={imgs.pic12}
       />
       <Divider variant="middle" />
       <Section
@@ -51,7 +52,7 @@ const Philosophy = () => {
         work. That's why we are known for building a strong and personalized bond with every single client, from
         the design stage, through execution and right till completion."
         align="left"
-        imgSrc="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+        imgSrc={imgs.pic13}
       />
     </div>
   );

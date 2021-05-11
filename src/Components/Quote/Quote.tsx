@@ -12,7 +12,7 @@ const Quote = ({ quote, author }: QuoteProps) => {
     <Grid container className="root">
       <Grid item xs={12}>
         <Typography className="quote">
-          <i>"{quote}"</i>
+          <i>{quote}</i>
         </Typography>
       </Grid>
       {author && (
