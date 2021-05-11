@@ -106,11 +106,12 @@ export const team = [
     role: "Founder & Managing Director",
     profile_image:
       "https://res.cloudinary.com/yashwork2110/image/upload/v1620669618/gruhamtiamor/team/WhatsApp_Image_2021-05-10_at_08.46.31_g9vku3.jpg",
-    summary: `Basically from Bangalore, Srilekha holds a Bachelor’s degree in Architecture, and has completed various
-    projects of different scales across the city. Her versatility and eye for detail is what brought her to
-    Gruham Ti'Amore, along with her unique ability to design an impressive space where the aesthetics and
-    functionality are balanced perfectly for a project. She can bring new ideas and innovative solutions as
-    per a client's style and requirements.`,
+    summary: `Originally graduating with a BSc degree in IT from Dehradun, Sachii has a distinct flair for interior design
+    with an extremely discerning eye for colors and hues. After completing quite a few projects for her family
+    & friends in Dehradun, her talent and skills brought her all the way to Bangalore. She then obtained an
+    MBA in finance & marketing while continuing to do interior design projects on the side. But fundamentally
+    hailing from a business family and the youngest among 4 daughters of an extremely self-reliant and self-
+    made father, Sachii decided to strike it out on her own. Thus, came about the birth of Gruham Ti'Amore.`,
   },
   {
     name: "Amresh Anand",
