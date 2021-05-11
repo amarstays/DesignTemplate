@@ -80,28 +80,26 @@ const Enquire = () => {
               onChange={handleChange}
             />
           </FormControl>
-          <Box className="field-join">
-            <FormControl className="form-control-mr">
-              <FormLabel className="form-label">Email</FormLabel>
-              <TextField
-                type="email"
-                name="email"
-                variant="outlined"
-                value={formData?.email}
-                onChange={handleChange}
-              />
-            </FormControl>
-            <FormControl>
-              <FormLabel className="form-label">Number</FormLabel>
-              <TextField
-                type="text"
-                name="phone"
-                variant="outlined"
-                value={formData?.phone}
-                onChange={handleChange}
-              />
-            </FormControl>
-          </Box>
+          <FormControl margin="normal" fullWidth>
+            <FormLabel className="form-label">Email</FormLabel>
+            <TextField
+              type="email"
+              name="email"
+              variant="outlined"
+              value={formData?.email}
+              onChange={handleChange}
+            />
+          </FormControl>
+          <FormControl margin="normal" fullWidth>
+            <FormLabel className="form-label">Number</FormLabel>
+            <TextField
+              type="text"
+              name="phone"
+              variant="outlined"
+              value={formData?.phone}
+              onChange={handleChange}
+            />
+          </FormControl>
           <FormControl margin="normal" fullWidth>
             <FormLabel className="form-label">Project Type</FormLabel>
             <TextField

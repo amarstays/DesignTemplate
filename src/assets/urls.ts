@@ -10,7 +10,7 @@ export const imgs = {
   pic6: "https://res.cloudinary.com/yashwork2110/image/upload/v1620748330/gruhamtiamor/assets/Dining_room_2_wo4e39.webp",
   pic7: "https://res.cloudinary.com/yashwork2110/image/upload/v1620748330/gruhamtiamor/assets/chefs-kitchen_-_4_gugqox.webp",
   pic8: "https://res.cloudinary.com/yashwork2110/image/upload/v1620748330/gruhamtiamor/assets/Dining_room_3_amqk0r.webp",
-  pic9: "https://res.cloudinary.com/yashwork2110/image/upload/v1620748329/gruhamtiamor/assets/Bedroom_10_skyy6y.webp",
+  pic9: "https://res.cloudinary.com/yashwork2110/image/upload/v1620748323/gruhamtiamor/assets/bathroom_4_bctmfv.webp",
   pic10:
     "https://res.cloudinary.com/yashwork2110/image/upload/v1620748329/gruhamtiamor/assets/Bedroom_14_hmlcq1.webp",
   pic11:
@@ -23,8 +23,8 @@ export const imgs = {
 
 export const teamUrls = {
   founder:
-    "https://res.cloudinary.com/yashwork2110/image/upload/v1620669618/gruhamtiamor/team/WhatsApp_Image_2021-05-10_at_08.46.31_g9vku3.jpg",
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620758948/gruhamtiamor/team/sachii-removebg-preview_ricwka.jpg",
   technical:
     "https://res.cloudinary.com/yashwork2110/image/upload/v1620669610/gruhamtiamor/team/WhatsApp_Image_2021-05-10_at_13.20.17_oeozty.jpg",
-  lead: "https://res.cloudinary.com/yashwork2110/image/upload/v1620749243/gruhamtiamor/team/lead_designer_mv7qx6.webp",
+  lead: "https://res.cloudinary.com/yashwork2110/image/upload/v1620758714/gruhamtiamor/team/lead-removebg-preview_tinu1v.jpg",
 };

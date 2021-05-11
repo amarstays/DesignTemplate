@@ -6,6 +6,7 @@ import {
   CardHeader,
   CircularProgress,
   TextField,
+  Typography,
 } from "@material-ui/core";
 import "./styles/Login.css";
 import Header from "../Components/Header/Header";
@@ -49,7 +50,13 @@ const Login = () => {
       <Header />
       <div className="form-parent">
         <Card elevation={3}>
-          <CardHeader title={isLogin ? "Log In" : "Join Us"} />
+          <CardHeader
+            title={
+              <Typography variant="h5" className="login-card-header">
+                {isLogin ? "Log In" : "Join Us"}
+              </Typography>
+            }
+          />
           <CardContent>
             <form className="form-container">
               {!isLogin && (
