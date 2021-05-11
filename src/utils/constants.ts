@@ -1,4 +1,4 @@
-import { imgs } from "../assets/urls";
+import { teamUrls, imgs } from "../assets/urls";
 
 export const navOptions = ["Services", "Philosophy", "Team", "Testimonials"];
 
@@ -7,8 +7,7 @@ export const designerDetails = [
     key: "axo",
     name: "Nikita Srilekha L",
     designation: "Lead Designer",
-    profile:
-      "https://images.unsplash.com/photo-1554151228-14d9def656e4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cGVyc29ufGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    profile: teamUrls.lead,
     summary: `With her unique ability to design an impressive space where the aesthetics and
     functionality are balanced perfectly for a project.`,
     fullDetails: `Basically from Bangalore, Srilekha holds a Bachelor’s degree in Architecture, and has completed various
@@ -104,8 +103,7 @@ export const team = [
   {
     name: "Sachii Bharatt",
     role: "Founder & Managing Director",
-    profile_image:
-      "https://res.cloudinary.com/yashwork2110/image/upload/v1620669618/gruhamtiamor/team/WhatsApp_Image_2021-05-10_at_08.46.31_g9vku3.jpg",
+    profile_image: teamUrls.founder,
     summary: `Originally graduating with a BSc degree in IT from Dehradun, Sachii has a distinct flair for interior design
     with an extremely discerning eye for colors and hues. After completing quite a few projects for her family
     & friends in Dehradun, her talent and skills brought her all the way to Bangalore. She then obtained an
@@ -116,8 +114,7 @@ export const team = [
   {
     name: "Amresh Anand",
     role: "Director, Technical Operations",
-    profile_image:
-      "https://res.cloudinary.com/yashwork2110/image/upload/v1620669610/gruhamtiamor/team/WhatsApp_Image_2021-05-10_at_13.20.17_oeozty.jpg",
+    profile_image: teamUrls.technical,
     summary: `Hailing from Bihar, and a software engineer by profession, Amresh began his journey in the world of
     interior design by assisting Sachii in the digital design development, technical & executional aspects of
     the company. Amresh is usually the go to person for design issues, operational feasibility & procedure of
@@ -127,8 +124,7 @@ export const team = [
   {
     name: "Nikita Srilekha L",
     role: "Lead Designer",
-    profile_image:
-      "https://images.unsplash.com/photo-1554151228-14d9def656e4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cGVyc29ufGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    profile_image: teamUrls.lead,
     summary: `Basically from Bangalore, Srilekha holds a Bachelor’s degree in Architecture, and has completed various
     projects of different scales across the city. Her versatility and eye for detail is what brought her to
     Gruham Ti'Amore, along with her unique ability to design an impressive space where the aesthetics and

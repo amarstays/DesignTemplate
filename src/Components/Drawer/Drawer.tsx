@@ -32,21 +32,25 @@ const DrawerSection = ({ openDrawer, setOpenDrawer }: DrawerSectionProps) => {
           >
             <ListItemText
               primary={
-                <Typography className="text-center">Dashboard</Typography>
+                <Typography className="drawer-list-item">Dashboard</Typography>
               }
             />
           </ListItem>
         ) : (
           <ListItem color="secondary" onClick={() => history.push("/enquire")}>
             <ListItemText
-              primary={<Typography className="text-center">Enquire</Typography>}
+              primary={
+                <Typography className="drawer-list-item">Enquire</Typography>
+              }
             />
           </ListItem>
         )}
         {navOptions.map((text, index) => (
           <ListItem button key={index}>
             <ListItemText
-              primary={<Typography className="text-center">{text}</Typography>}
+              primary={
+                <Typography className="drawer-list-item">{text}</Typography>
+              }
               onClick={() => history.push(`/${text.toLowerCase()}`)}
             />
           </ListItem>
@@ -54,7 +58,9 @@ const DrawerSection = ({ openDrawer, setOpenDrawer }: DrawerSectionProps) => {
         {!Boolean(getAuthToken()) ? (
           <ListItem color="secondary" onClick={() => history.push("/login")}>
             <ListItemText
-              primary={<Typography className="text-center">Login</Typography>}
+              primary={
+                <Typography className="drawer-list-item">Login</Typography>
+              }
             />
           </ListItem>
         ) : (
@@ -66,7 +72,9 @@ const DrawerSection = ({ openDrawer, setOpenDrawer }: DrawerSectionProps) => {
             }}
           >
             <ListItemText
-              primary={<Typography className="text-center">Logout</Typography>}
+              primary={
+                <Typography className="drawer-list-item">Logout</Typography>
+              }
             />
           </ListItem>
         )}

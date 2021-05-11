@@ -21,8 +21,10 @@ export const imgs = {
     "https://res.cloudinary.com/yashwork2110/image/upload/v1620748328/gruhamtiamor/assets/Bedroom_13_gs2sel.webp",
 };
 
-export const team = {
+export const teamUrls = {
   founder:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620669618/gruhamtiamor/team/WhatsApp_Image_2021-05-10_at_08.46.31_g9vku3.jpg",
+  technical:
     "https://res.cloudinary.com/yashwork2110/image/upload/v1620669610/gruhamtiamor/team/WhatsApp_Image_2021-05-10_at_13.20.17_oeozty.jpg",
-  lead: "https://res.cloudinary.com/yashwork2110/image/upload/v1620669618/gruhamtiamor/team/WhatsApp_Image_2021-05-10_at_08.46.31_g9vku3.jpg",
+  lead: "https://res.cloudinary.com/yashwork2110/image/upload/v1620749243/gruhamtiamor/team/lead_designer_mv7qx6.webp",
 };
