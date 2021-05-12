@@ -34,6 +34,7 @@
 
 .designer-card {
   display: flex;
+  height: 300px;
 }
 
 .designer-photo {
@@ -64,6 +65,12 @@
 }
 
 @media only screen and (max-width: 600px) {
+  .designer-card {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+  }
+
   .designer-photo {
     min-height: 100%;
     height: 250px;

@@ -27,4 +27,34 @@ export const teamUrls = {
   technical:
     "https://res.cloudinary.com/yashwork2110/image/upload/v1620669610/gruhamtiamor/team/WhatsApp_Image_2021-05-10_at_13.20.17_oeozty.jpg",
   lead: "https://res.cloudinary.com/yashwork2110/image/upload/v1620760142/gruhamtiamor/team/lead-removebg-preview_1_dob6ak.jpg",
+  shinchana:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620834250/gruhamtiamor/team/shinchana_y1ra1s.jpg",
+  pooja:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620829764/gruhamtiamor/team/pooja-nobg_pgc5fk.jpg",
+};
+
+export const pooja = {
+  living1:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620832966/gruhamtiamor/team/pooja/WhatsApp_Image_2021-05-12_at_11.38.11_1_mliyxp.jpg",
+  living2:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620832964/gruhamtiamor/team/pooja/WhatsApp_Image_2021-05-12_at_11.38.12_1_gdeibx.jpg",
+  bed1: "https://res.cloudinary.com/yashwork2110/image/upload/v1620832965/gruhamtiamor/team/pooja/WhatsApp_Image_2021-05-12_at_11.38.12_wwagsb.jpg",
+  bed2: "https://res.cloudinary.com/yashwork2110/image/upload/v1620832966/gruhamtiamor/team/pooja/WhatsApp_Image_2021-05-12_at_11.38.11_2_xkqxjh.jpg",
+  kitchen1:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620832964/gruhamtiamor/team/pooja/WhatsApp_Image_2021-05-12_at_11.38.11_nz9nd8.jpg",
+  kitchen2:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620832966/gruhamtiamor/team/pooja/WhatsApp_Image_2021-05-12_at_11.38.11_3_beqfae.jpg",
+};
+
+export const shinchana = {
+  living1:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620833875/gruhamtiamor/team/shinchana/WhatsApp_Image_2021-05-12_at_12.53.14_hltlqh.jpg",
+  living2:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620833875/gruhamtiamor/team/shinchana/WhatsApp_Image_2021-05-12_at_12.53.13_ndswqk.jpg",
+  bed1: "https://res.cloudinary.com/yashwork2110/image/upload/v1620833876/gruhamtiamor/team/shinchana/WhatsApp_Image_2021-05-12_at_12.53.15_eablnp.jpg",
+  bed2: "https://res.cloudinary.com/yashwork2110/image/upload/v1620833875/gruhamtiamor/team/shinchana/WhatsApp_Image_2021-05-12_at_12.53.13_1_y9psbz.jpg",
+  kitchen1:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620833875/gruhamtiamor/team/shinchana/WhatsApp_Image_2021-05-12_at_12.00.09_1_ojtrvv.jpg",
+  kitchen2:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620833875/gruhamtiamor/team/shinchana/WhatsApp_Image_2021-05-12_at_12.00.09_fsr4dl.jpg",
 };

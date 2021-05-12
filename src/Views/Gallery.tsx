@@ -1,4 +1,4 @@
-import { Box, Divider, Grid, Typography } from "@material-ui/core";
+import { Box, Divider, Grid, Paper, Typography } from "@material-ui/core";
 import { useEffect, useState } from "react";
 import Header from "../Components/Header/Header";
 import { designerDetails } from "../utils/constants";
@@ -28,15 +28,22 @@ const Gallery = () => {
       </Box>
       <Divider variant="middle" />
       <Grid container className="image-grid">
-        {designer?.portfolio.map((item: any, index: number) => (
-          <Grid key={index} item xs={12} md={6} className="grid-item">
-            <img src={item.src} alt="bg-port" className="image" />
-            <Box className="portfolio-txt-item">
-              <Typography className="portfolio-title">{item.title}</Typography>
-              <Typography className="portfolio-desc">{item.desc}</Typography>
-            </Box>
-          </Grid>
-        ))}
+        {designer?.portfolio.map((item: any, index: number) => {
+          return (
+            <Grid item xs={12} key={index}>
+              <Paper className="port-sec-title" elevation={2}>
+                <Typography variant="h5">{item.category}</Typography>
+              </Paper>
+              <Grid container>
+                {item.images.map((img: any, i: number) => (
+                  <Grid key={i} item xs={12} md={6} className="grid-item">
+                    <img src={img.src} alt="bg-port" className="image" />
+                  </Grid>
+                ))}
+              </Grid>
+            </Grid>
+          );
+        })}
       </Grid>
     </div>
   );

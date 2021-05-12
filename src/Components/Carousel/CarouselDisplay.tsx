@@ -13,7 +13,6 @@ import {
 import Carousel from "react-material-ui-carousel";
 import { useHistory } from "react-router";
 import { designerDetails } from "../../utils/constants";
-import classnames from "classnames";
 import "./CarouselDisplay.css";
 
 const CarouselDisplay = () => {
@@ -34,11 +33,7 @@ const CarouselDisplay = () => {
           </Box>
         </Grid>
         <Grid item xs={12} md={7}>
-          <Carousel
-            animation="slide"
-            interval={10000}
-            navButtonsAlwaysInvisible
-          >
+          <Carousel animation="slide" interval={5000} navButtonsAlwaysInvisible>
             {designerDetails.map((designer, i) => (
               <DesignerCard key={i} designer={designer} />
             ))}
@@ -64,11 +59,7 @@ export const DesignerCard = ({ designer, summaryCard }: DesignerCardProps) => {
   return (
     <Box className={`designer-card-container${summaryCard ? "-top" : ""}`}>
       <Card elevation={3}>
-        <Box
-          className={classnames({
-            "designer-card": !summaryCard,
-          })}
-        >
+        <Box className="designer-card">
           <Box className="width-50">
             <CardMedia className="designer-photo" image={designer.profile} />
           </Box>

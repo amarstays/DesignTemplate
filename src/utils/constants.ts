@@ -1,4 +1,4 @@
-import { teamUrls, imgs } from "../assets/urls";
+import { teamUrls, imgs, pooja, shinchana } from "../assets/urls";
 
 export const navOptions = ["Services", "Philosophy", "Team", "Testimonials"];
 
@@ -17,15 +17,106 @@ export const designerDetails = [
     per a client's style and requirements.`,
     portfolio: [
       {
-        title: "Eiusmod eiusmod ",
-        src: "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
-        desc: "Mollit labore nisi laboris ",
+        category: "Bedroom",
+        images: [
+          {
+            title: "Eiusmod eiusmod ",
+            src: "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+            desc: "Mollit labore nisi laboris ",
+          },
+          {
+            title: "Eiusmod eiusmod ",
+            src: "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+            desc: "Mollit labore nisi laboris ",
+            major: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    key: "Shinchana",
+    name: "Shinchana",
+    designation: "Designer",
+    profile: teamUrls.shinchana,
+    summary: `Nisi laboris sunt esse nulla magna ex mollit est Lorem.`,
+    fullDetails: `Dolor aute tempor anim reprehenderit occaecat ullamco fugiat eiusmod nostrud ex laboris. `,
+    portfolio: [
+      {
+        category: "Living Room",
+        images: [
+          {
+            src: shinchana.living1,
+          },
+          {
+            src: shinchana.living2,
+          },
+        ],
       },
       {
-        title: "Eiusmod eiusmod ",
-        src: "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
-        desc: "Mollit labore nisi laboris ",
-        major: false,
+        category: "Bed Room",
+        images: [
+          {
+            src: shinchana.bed1,
+          },
+          {
+            src: shinchana.bed2,
+          },
+        ],
+      },
+      {
+        category: "Kitchen",
+        images: [
+          {
+            src: shinchana.kitchen1,
+          },
+          {
+            src: shinchana.kitchen2,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    key: "Pooja",
+    name: "Pooja",
+    designation: "Designer",
+    profile: teamUrls.pooja,
+    summary: `Nisi laboris sunt esse nulla magna ex mollit est Lorem.`,
+    fullDetails: `Dolor aute tempor anim reprehenderit occaecat ullamco fugiat eiusmod nostrud ex laboris. `,
+    portfolio: [
+      {
+        category: "Living Room",
+        images: [
+          {
+            src: pooja.living1,
+          },
+          {
+            src: pooja.living2,
+          },
+        ],
+      },
+      {
+        category: "Bed Room",
+        images: [
+          {
+            src: pooja.bed1,
+          },
+          {
+            src: pooja.bed2,
+          },
+        ],
+      },
+      {
+        category: "Kitchen",
+        images: [
+          {
+            src: pooja.kitchen1,
+          },
+          {
+            src: pooja.kitchen2,
+          },
+        ],
       },
     ],
   },

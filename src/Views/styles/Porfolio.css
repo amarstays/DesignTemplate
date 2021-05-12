@@ -1,10 +1,9 @@
 .image-grid {
-  margin: 40px 0px;
+  margin: 10px 0px;
 }
 
 .grid-item {
   margin: 5px 0px;
-  position: relative;
   overflow: hidden !important;
 }
 
@@ -31,16 +30,10 @@
   flex-direction: column;
 }
 
-.portfolio-title {
-  color: white;
-  font-weight: 600;
-  font-size: 1.5em;
-  text-shadow: 3px 3px 7px rgba(150, 150, 150, 1);
-}
-
-.portfolio-desc {
-  color: white;
-  font-weight: 600;
-  font-size: 1.1em;
-  text-shadow: 3px 3px 7px rgba(150, 150, 150, 1);
+.port-sec-title {
+  color: white !important;
+  background: black !important;
+  padding: 20px 10px;
+  margin: 0px 9px;
+  margin-top: 20px;
 }
