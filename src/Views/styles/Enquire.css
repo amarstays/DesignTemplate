@@ -1,5 +1,9 @@
+.enquire-form-parent {
+  padding: 40px 20px;
+}
+
 .enquire-form-container {
-  margin: 40px;
+  margin: 0px 20px;
 }
 
 .enq-card-header {
@@ -8,16 +12,9 @@
   color: white;
 }
 
-.enq-form-title {
-}
-
 .enquire-formc-container {
   display: flex;
   flex-direction: column;
-}
-
-.enquire-form {
-  margin: 0px 20px;
 }
 
 .enq-submit-btn {
@@ -31,4 +28,16 @@
 
 .enq-img-container > img {
   max-width: 100%;
+}
+
+.enq-form-img {
+  max-width: 100%;
+  height: 350px;
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .enquire-form-container {
+    margin: 10px 0px;
+  }
 }

@@ -118,3 +118,9 @@ export const logos = {
 
 export const enquireImg =
   "https://res.cloudinary.com/yashwork2110/image/upload/v1620935558/gruhamtiamor/assets/WhatsApp_Image_2021-05-13_at_22.24.31_hypxp9.jpg";
+
+export const enquireFormImg =
+  "https://res.cloudinary.com/yashwork2110/image/upload/v1620938438/gruhamtiamor/assets/WhatsApp_Image_2021-05-14_at_02.06.03_ibcorc.jpg";
+
+export const enquireFormImg2 =
+  "https://res.cloudinary.com/yashwork2110/image/upload/v1620938943/gruhamtiamor/assets/WhatsApp_Image_2021-05-14_at_02.06.02_qbrzdf.jpg";

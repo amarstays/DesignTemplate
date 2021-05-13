@@ -8,6 +8,7 @@ import {
   Divider,
   FormControl,
   FormLabel,
+  Grid,
   MenuItem,
   TextField,
   Typography,
@@ -18,7 +19,7 @@ import { useEffect, useState } from "react";
 import { getUser } from "../utils/methods";
 import { client } from "../utils/api.config";
 import Send from "@material-ui/icons/Send";
-import { enquireImg } from "../assets/urls";
+import { enquireFormImg, enquireFormImg2, enquireImg } from "../assets/urls";
 import { Fade } from "react-awesome-reveal";
 
 interface enquireProps {
@@ -71,91 +72,119 @@ const Enquire = () => {
         </Typography>
       </Box>
       <Divider variant="middle" />
-      <Card className="enquire-form-container" elevation={3}>
-        <CardHeader
-          className="enq-card-header"
-          title={
-            <Typography variant="h5" className="enq-form-title">
-              Write to us
-            </Typography>
-          }
-        />
-        <CardContent className="enquire-formc-container">
-          <form className="enquire-form">
-            <FormControl margin="normal" fullWidth>
-              <FormLabel className="form-label">Name</FormLabel>
-              <TextField
-                type="text"
-                name="name"
-                variant="outlined"
-                inputProps={{
-                  autocomplete: "off",
-                }}
-                value={formData?.name}
-                onChange={handleChange}
+      <Grid container className="enquire-form-parent">
+        <Grid item xs={12} md={6}>
+          <Grid container>
+            <Fade>
+              <Grid item xs={12}>
+                <img
+                  src={enquireFormImg}
+                  alt="enq-form-img"
+                  className="enq-form-img"
+                />
+              </Grid>
+            </Fade>
+            <Fade>
+              <Grid item xs={12}>
+                <img
+                  src={enquireFormImg2}
+                  alt="enq-form-img"
+                  className="enq-form-img"
+                />
+              </Grid>
+            </Fade>
+          </Grid>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Fade>
+            <Card className="enquire-form-container" elevation={3}>
+              <CardHeader
+                className="enq-card-header"
+                title={
+                  <Typography variant="h5" className="enq-form-title">
+                    Write to us
+                  </Typography>
+                }
               />
-            </FormControl>
-            <FormControl margin="normal" fullWidth>
-              <FormLabel className="form-label">Email</FormLabel>
-              <TextField
-                type="email"
-                name="email"
-                variant="outlined"
-                value={formData?.email}
-                onChange={handleChange}
-              />
-            </FormControl>
-            <FormControl margin="normal" fullWidth>
-              <FormLabel className="form-label">Number</FormLabel>
-              <TextField
-                type="text"
-                name="phone"
-                variant="outlined"
-                value={formData?.phone}
-                onChange={handleChange}
-              />
-            </FormControl>
-            <FormControl margin="normal" fullWidth>
-              <FormLabel className="form-label">Project Type</FormLabel>
-              <TextField
-                select
-                variant="outlined"
-                placeholder=" Select Project Type"
-                name="project_type"
-                value={formData?.message}
-                onChange={handleChange}
-              >
-                {projectTypes.map((type, index) => (
-                  <MenuItem key={index} value={type}>
-                    {type}
-                  </MenuItem>
-                ))}
-              </TextField>
-            </FormControl>
-            <FormControl margin="normal" fullWidth>
-              <FormLabel className="form-label">Message</FormLabel>
-              <TextField
-                type="text"
-                name="message"
-                variant="outlined"
-                multiline
-                rows={4}
-                value={formData?.message}
-                onChange={handleChange}
-              />
-            </FormControl>
-            <Button
-              color="primary"
-              variant="contained"
-              onClick={handleSubmit}
-              className="enq-submit-btn"
-              endIcon={<Send />}
-            >
-              Send
-            </Button>
-          </form>
-        </CardContent>
-      </Card>
+              <CardContent className="enquire-formc-container">
+                <form className="enquire-form">
+                  <FormControl margin="normal" fullWidth>
+                    <FormLabel className="form-label">Name</FormLabel>
+                    <TextField
+                      type="text"
+                      name="name"
+                      variant="outlined"
+                      inputProps={{
+                        autocomplete: "off",
+                      }}
+                      value={formData?.name}
+                      onChange={handleChange}
+                    />
+                  </FormControl>
+                  <FormControl margin="normal" fullWidth>
+                    <FormLabel className="form-label">Email</FormLabel>
+                    <TextField
+                      type="email"
+                      name="email"
+                      variant="outlined"
+                      value={formData?.email}
+                      onChange={handleChange}
+                    />
+                  </FormControl>
+                  <FormControl margin="normal" fullWidth>
+                    <FormLabel className="form-label">Number</FormLabel>
+                    <TextField
+                      type="text"
+                      name="phone"
+                      variant="outlined"
+                      value={formData?.phone}
+                      onChange={handleChange}
+                    />
+                  </FormControl>
+                  <FormControl margin="normal" fullWidth>
+                    <FormLabel className="form-label">Project Type</FormLabel>
+                    <TextField
+                      select
+                      variant="outlined"
+                      placeholder=" Select Project Type"
+                      name="project_type"
+                      value={formData?.message}
+                      onChange={handleChange}
+                    >
+                      {projectTypes.map((type, index) => (
+                        <MenuItem key={index} value={type}>
+                          {type}
+                        </MenuItem>
+                      ))}
+                    </TextField>
+                  </FormControl>
+                  <FormControl margin="normal" fullWidth>
+                    <FormLabel className="form-label">Message</FormLabel>
+                    <TextField
+                      type="text"
+                      name="message"
+                      variant="outlined"
+                      multiline
+                      rows={4}
+                      value={formData?.message}
+                      onChange={handleChange}
+                    />
+                  </FormControl>
+                  <Button
+                    color="primary"
+                    variant="contained"
+                    onClick={handleSubmit}
+                    className="enq-submit-btn"
+                    endIcon={<Send />}
+                  >
+                    Send
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+          </Fade>
+        </Grid>
+      </Grid>
       <Divider variant="middle" />
       <Fade>
         <Box className="enq-img-container">
