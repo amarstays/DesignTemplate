@@ -67,7 +67,7 @@ const Enquire = () => {
           LET’S DISCUSS HOW WE CAN HELP YOU WITH YOURS.
           <br />
           <br />
-          Get in touch with us on <b>+44 20 3322 8665</b> or contact us below.
+          Get in touch with us on <b>+91 6200568415</b> or contact us below.
         </Typography>
       </Box>
       <Divider variant="middle" />
