@@ -29,7 +29,6 @@
   align-items: center;
   height: 100%;
   color: white;
-  font-family: "Satisfy", cursive !important;
 }
 
 .center-txt {
@@ -44,12 +43,8 @@
   color: white;
 }
 
-.heading {
-  font-weight: 900;
-  z-index: 1;
-  letter-spacing: 1px;
-  mix-blend-mode: difference !important;
-  font-family: "Satisfy", cursive !important;
+.center-logo {
+  width: 500px;
 }
 
 .link {

@@ -20,7 +20,7 @@
   text-align: center;
   text-transform: uppercase;
   font-weight: 600 !important;
-  font-family: "Satisfy", cursive !important;
+
   font-size: 1.1em !important;
 }
 
@@ -40,7 +40,6 @@
 }
 
 .service-desc {
-  font-family: "KoHo", sans-serif !important;
   color: black;
   font-weight: 500 !important;
 }

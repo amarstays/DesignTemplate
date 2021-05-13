@@ -8,7 +8,7 @@ import {
 import { Dispatch } from "react";
 import { useHistory } from "react-router";
 import { navOptions } from "../../utils/constants";
-import { getAuthToken, getUser } from "../../utils/methods";
+import { getUser } from "../../utils/methods";
 
 interface DrawerSectionProps {
   openDrawer: boolean;
@@ -25,26 +25,6 @@ const DrawerSection = ({ openDrawer, setOpenDrawer }: DrawerSectionProps) => {
   return (
     <Drawer anchor="top" open={openDrawer} onClose={toggleDrawer}>
       <List>
-        {getUser() && getUser()[0] && getUser()[0].roles.includes("admin") ? (
-          <ListItem
-            color="secondary"
-            onClick={() => history.push("/dashboard")}
-          >
-            <ListItemText
-              primary={
-                <Typography className="drawer-list-item">Dashboard</Typography>
-              }
-            />
-          </ListItem>
-        ) : (
-          <ListItem color="secondary" onClick={() => history.push("/enquire")}>
-            <ListItemText
-              primary={
-                <Typography className="drawer-list-item">Enquire</Typography>
-              }
-            />
-          </ListItem>
-        )}
         {navOptions.map((text, index) => (
           <ListItem button key={index}>
             <ListItemText
@@ -55,7 +35,7 @@ const DrawerSection = ({ openDrawer, setOpenDrawer }: DrawerSectionProps) => {
             />
           </ListItem>
         ))}
-        {!Boolean(getAuthToken()) ? (
+        {/* {!Boolean(getAuthToken()) ? (
           <ListItem color="secondary" onClick={() => history.push("/login")}>
             <ListItemText
               primary={
@@ -74,6 +54,26 @@ const DrawerSection = ({ openDrawer, setOpenDrawer }: DrawerSectionProps) => {
             <ListItemText
               primary={
                 <Typography className="drawer-list-item">Logout</Typography>
+              }
+            />
+          </ListItem>
+        )} */}
+        {getUser() && getUser()[0] && getUser()[0].roles.includes("admin") ? (
+          <ListItem
+            color="secondary"
+            onClick={() => history.push("/dashboard")}
+          >
+            <ListItemText
+              primary={
+                <Typography className="drawer-list-item">Dashboard</Typography>
+              }
+            />
+          </ListItem>
+        ) : (
+          <ListItem color="secondary" onClick={() => history.push("/enquire")}>
+            <ListItemText
+              primary={
+                <Typography className="drawer-list-item">Enquire</Typography>
               }
             />
           </ListItem>

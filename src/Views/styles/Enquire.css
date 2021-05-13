@@ -1,12 +1,34 @@
 .enquire-form-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin: 40px;
 }
 
-.enquire-form {
+.enq-card-header {
+  padding-left: 20px !important;
+  background: black;
+  color: white;
+}
+
+.enq-form-title {
+}
+
+.enquire-formc-container {
   display: flex;
   flex-direction: column;
-  width: fit-content;
+}
+
+.enquire-form {
+  margin: 0px 20px;
+}
+
+.enq-submit-btn {
+  margin-top: 20px !important;
+  width: 100px;
+}
+
+.enq-img-container {
+  padding: 40px 20px;
+}
+
+.enq-img-container > img {
+  max-width: 100%;
 }

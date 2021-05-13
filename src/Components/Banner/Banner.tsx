@@ -11,8 +11,8 @@ import Menu from "@material-ui/icons/Menu";
 import "./Banner.css";
 import { useHistory } from "react-router";
 import { Zoom } from "react-awesome-reveal";
-import { getAuthToken, getUser } from "../../utils/methods";
-import { videoBg } from "../../assets/urls";
+import { getUser } from "../../utils/methods";
+import { logos, videoBg } from "../../assets/urls";
 import DrawerSection from "../Drawer/Drawer";
 
 const Banner = () => {
@@ -29,25 +29,8 @@ const Banner = () => {
       <Grid container>
         <Grid item md={5}>
           <Box className="btn-container">
-            {getUser() &&
-            getUser()[0] &&
-            getUser()[0].roles.includes("admin") ? (
-              <Button
-                color="secondary"
-                onClick={() => history.push("/dashboard")}
-              >
-                <Typography>Dashboard</Typography>
-              </Button>
-            ) : (
-              <Button
-                color="secondary"
-                onClick={() => history.push("/enquire")}
-              >
-                <Typography>Enquire</Typography>
-              </Button>
-            )}
-            <Button color="secondary" onClick={() => history.push("/services")}>
-              <Typography>Services</Typography>
+            <Button color="secondary" onClick={() => history.push("/gallery")}>
+              <Typography>Gallery</Typography>
             </Button>
             <Button
               color="secondary"
@@ -64,16 +47,20 @@ const Banner = () => {
         </Grid>
         <Grid item md={5}>
           <Box className="btn-container">
+            <Button color="secondary" onClick={() => history.push("/services")}>
+              <Typography>Services</Typography>
+            </Button>
             <Button color="secondary" onClick={() => history.push("/team")}>
               <Typography>Team</Typography>
             </Button>
-            <Button
+
+            {/* <Button
               color="secondary"
               onClick={() => history.push("/testimonials")}
             >
               <Typography>Testimonials</Typography>
-            </Button>
-            {!Boolean(getAuthToken()) ? (
+            </Button> */}
+            {/* {!Boolean(getAuthToken()) ? (
               <Button color="secondary" onClick={() => history.push("/login")}>
                 <Typography>Login</Typography>
               </Button>
@@ -86,6 +73,23 @@ const Banner = () => {
                 }}
               >
                 <Typography>Logout</Typography>
+              </Button>
+            )} */}
+            {getUser() &&
+            getUser()[0] &&
+            getUser()[0].roles.includes("admin") ? (
+              <Button
+                color="secondary"
+                onClick={() => history.push("/dashboard")}
+              >
+                <Typography>Dashboard</Typography>
+              </Button>
+            ) : (
+              <Button
+                color="secondary"
+                onClick={() => history.push("/enquire")}
+              >
+                <Typography>Enquire</Typography>
               </Button>
             )}
           </Box>
@@ -122,9 +126,11 @@ const Banner = () => {
         </div>
         <div className="center-txt">
           <Zoom>
-            <Typography variant="h3" className="heading">
-              <b>GRUHAM Ti'AMORE</b>
-            </Typography>
+            <img
+              src={logos.trans}
+              alt="transparent-logo"
+              className="center-logo"
+            />
           </Zoom>
         </div>
       </div>

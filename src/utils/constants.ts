@@ -1,124 +1,103 @@
-import { teamUrls, imgs, pooja, shinchana } from "../assets/urls";
+import { teamUrls, imgs } from "../assets/urls";
+import { getImages } from "./methods";
 
-export const navOptions = ["Services", "Philosophy", "Team", "Testimonials"];
+export const navOptions = ["Philosophy", "Services", "Team", "Gallery"];
 
 export const designerDetails = [
   {
-    key: "axo",
     name: "Nikita Srilekha L",
     designation: "Lead Designer",
     profile: teamUrls.lead,
-    summary: `With her unique ability to design an impressive space where the aesthetics and
-    functionality are balanced perfectly for a project.`,
-    fullDetails: `Basically from Bangalore, Srilekha holds a Bachelor’s degree in Architecture, and has completed various
+    details: `Basically from Bangalore, Srilekha holds a Bachelor’s degree in Architecture, and has completed various
     projects of different scales across the city. Her versatility and eye for detail is what brought her to
-    Gruham Ti'Amore, along with her unique ability to design an impressive space where the aesthetics and
-    functionality are balanced perfectly for a project. She can bring new ideas and innovative solutions as
-    per a client's style and requirements.`,
-    portfolio: [
-      {
-        category: "Bedroom",
-        images: [
-          {
-            title: "Eiusmod eiusmod ",
-            src: "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
-            desc: "Mollit labore nisi laboris ",
-          },
-          {
-            title: "Eiusmod eiusmod ",
-            src: "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
-            desc: "Mollit labore nisi laboris ",
-            major: false,
-          },
-        ],
-      },
-    ],
+    Gruham Ti'Amore.`,
   },
   {
-    key: "Shinchana",
     name: "Shinchana",
     designation: "Designer",
     profile: teamUrls.shinchana,
-    summary: `Nisi laboris sunt esse nulla magna ex mollit est Lorem.`,
-    fullDetails: `Dolor aute tempor anim reprehenderit occaecat ullamco fugiat eiusmod nostrud ex laboris. `,
-    portfolio: [
-      {
-        category: "Living Room",
-        images: [
-          {
-            src: shinchana.living1,
-          },
-          {
-            src: shinchana.living2,
-          },
-        ],
-      },
-      {
-        category: "Bed Room",
-        images: [
-          {
-            src: shinchana.bed1,
-          },
-          {
-            src: shinchana.bed2,
-          },
-        ],
-      },
-      {
-        category: "Kitchen",
-        images: [
-          {
-            src: shinchana.kitchen1,
-          },
-          {
-            src: shinchana.kitchen2,
-          },
-        ],
-      },
-    ],
+    details: `Based in Bangalore, Her sense of style for colours and textures whats makes her the best designer in her field `,
   },
   {
-    key: "Pooja",
     name: "Pooja",
     designation: "Designer",
     profile: teamUrls.pooja,
-    summary: `Nisi laboris sunt esse nulla magna ex mollit est Lorem.`,
-    fullDetails: `Dolor aute tempor anim reprehenderit occaecat ullamco fugiat eiusmod nostrud ex laboris. `,
-    portfolio: [
-      {
-        category: "Living Room",
-        images: [
-          {
-            src: pooja.living1,
-          },
-          {
-            src: pooja.living2,
-          },
-        ],
-      },
-      {
-        category: "Bed Room",
-        images: [
-          {
-            src: pooja.bed1,
-          },
-          {
-            src: pooja.bed2,
-          },
-        ],
-      },
-      {
-        category: "Kitchen",
-        images: [
-          {
-            src: pooja.kitchen1,
-          },
-          {
-            src: pooja.kitchen2,
-          },
-        ],
-      },
-    ],
+    details: `Based in pune, very energetic and passionate about interiors. She defines designing is love and her design statememt says it all. `,
+  },
+  {
+    name: "Sunil Nibbulal Vishwakarma",
+    designation: "Designer",
+    profile: teamUrls.sunil,
+    details: `Experienced Interior Designer with a demonstrated history of working in the architecture and planning Industry. `,
+  },
+  {
+    name: "Nidhi Mehta",
+    designation: "Designer",
+    profile: teamUrls.nidhi,
+    details: `Creative Interior Design with a strong background in project management, space planning, and computer-aided design, seeking to take next career step with a respected design firm focused on creating world-class hospitality and living spaces. `,
+  },
+  {
+    name: "Simran Lunkad",
+    designation: "Designer",
+    profile: teamUrls.simran,
+    details: `Bangalore based. An interior designer trying to decorate the beauty of houses and Making it a HOME. `,
+  },
+];
+
+export const rooms = [
+  {
+    key: "foyer",
+    quote:
+      "Imagination is everything. It is the preview of life's coming attractions",
+    author: "Albert Eintein",
+    room: "Foyer",
+    images: getImages("foyer"),
+  },
+  {
+    key: "living-room",
+    quote: "Creativity is contagious, pass it on",
+    author: "Albert Einstein",
+    room: "Living Room",
+    images: getImages("living"),
+  },
+  {
+    key: "kitchen",
+    quote:
+      "The most indespensable ingredients of all good home is love for those you are cooking for",
+    author: "Sophia Loren",
+    room: "Kitchen",
+    images: getImages("kitchen"),
+  },
+  {
+    key: "dining-room",
+    quote:
+      "The most indespensable ingredients of all good home is love for those you are cooking for",
+    author: "Sophia Loren",
+    room: "Dining Room",
+    images: getImages("dining"),
+  },
+  {
+    key: "bed-room",
+    room: "Bed Room",
+    quote:
+      " The room should never allow the eye to settle in one place. it should smile at you and create fantasy",
+    author: "Juan Montaya",
+    images: getImages("bed"),
+  },
+  {
+    key: "bath-room",
+    room: "Bath Room",
+    quote: " Beauty begin the moment you decide to be yourself",
+    author: "Coco Chanel",
+    images: getImages("bathroom"),
+  },
+  {
+    key: "walkin-closet",
+    room: "Walk In Closet",
+    quote:
+      "Opening up your closet should be like arriving at a really good party where everyone you see is someone you like",
+    author: "Amy Fine Collins",
+    images: getImages("walkin"),
   },
 ];
 

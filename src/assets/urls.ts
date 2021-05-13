@@ -23,38 +23,98 @@ export const imgs = {
 
 export const teamUrls = {
   founder:
-    "https://res.cloudinary.com/yashwork2110/image/upload/v1620760320/gruhamtiamor/team/WhatsApp_Image_2021-05-10_at_08.46.31-removebg-preview_zi6mv3.jpg",
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620932151/gruhamtiamor/team/sachii-removebg-preview_yqnbyq.jpg",
   technical:
-    "https://res.cloudinary.com/yashwork2110/image/upload/v1620669610/gruhamtiamor/team/WhatsApp_Image_2021-05-10_at_13.20.17_oeozty.jpg",
-  lead: "https://res.cloudinary.com/yashwork2110/image/upload/v1620760142/gruhamtiamor/team/lead-removebg-preview_1_dob6ak.jpg",
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620932357/gruhamtiamor/team/amresh_iek9bw.jpg",
+  lead: "https://res.cloudinary.com/yashwork2110/image/upload/v1620933059/gruhamtiamor/team/srilekha-removebg-preview_uwebx5.jpg",
   shinchana:
-    "https://res.cloudinary.com/yashwork2110/image/upload/v1620834250/gruhamtiamor/team/shinchana_y1ra1s.jpg",
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620932647/gruhamtiamor/team/shinchana-removebg-preview_jf8q6z.jpg",
   pooja:
-    "https://res.cloudinary.com/yashwork2110/image/upload/v1620829764/gruhamtiamor/team/pooja-nobg_pgc5fk.jpg",
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620932453/gruhamtiamor/team/pooja-removebg-preview_tfedey.jpg",
+  sunil:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620932766/gruhamtiamor/team/sunil_nibbulal_vishwakarma-removebg-preview_qxztpv.jpg",
+  nidhi:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620932834/gruhamtiamor/team/nidhi_mehta-removebg-preview_wdfprr.jpg",
+  simran:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620932940/gruhamtiamor/team/simran_lunkad-removebg-preview_dk7qwl.jpg",
 };
 
-export const pooja = {
+export const portfolio: any = {
+  foyer1:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620927066/gruhamtiamor/assets/iStock-465135095_amukam.webp",
+  foyer2:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620927066/gruhamtiamor/assets/foyer_oegjo0.webp",
+  foyer3:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620934481/gruhamtiamor/assets/WhatsApp_Image_2021-05-13_at_23.55.12_txmcyi.jpg",
   living1:
-    "https://res.cloudinary.com/yashwork2110/image/upload/v1620832966/gruhamtiamor/team/pooja/WhatsApp_Image_2021-05-12_at_11.38.11_1_mliyxp.jpg",
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620748312/gruhamtiamor/assets/home-3625018_1920_oqldsv.webp",
   living2:
-    "https://res.cloudinary.com/yashwork2110/image/upload/v1620832964/gruhamtiamor/team/pooja/WhatsApp_Image_2021-05-12_at_11.38.12_1_gdeibx.jpg",
-  bed1: "https://res.cloudinary.com/yashwork2110/image/upload/v1620832965/gruhamtiamor/team/pooja/WhatsApp_Image_2021-05-12_at_11.38.12_wwagsb.jpg",
-  bed2: "https://res.cloudinary.com/yashwork2110/image/upload/v1620832966/gruhamtiamor/team/pooja/WhatsApp_Image_2021-05-12_at_11.38.11_2_xkqxjh.jpg",
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620748310/gruhamtiamor/assets/home-2573375_1920_npoypj.webp",
+  living3:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620748312/gruhamtiamor/assets/Image1_vzcov5.webp",
+  living4:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620748321/gruhamtiamor/assets/Living_room_8_urlpaf.webp",
+  living5:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620748320/gruhamtiamor/assets/Living_Room_3_ecd9q9.webp",
+  living6:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620748319/gruhamtiamor/assets/Living_room_2_adnlo9.webp",
+  living7:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620748317/gruhamtiamor/assets/living_4_pjvnrn.webp",
+  bed1: "https://res.cloudinary.com/yashwork2110/image/upload/v1620748325/gruhamtiamor/assets/Bedroom_5_e6wbro.webp",
+  bed2: "https://res.cloudinary.com/yashwork2110/image/upload/v1620748325/gruhamtiamor/assets/Bedroom_2_dko1nh.webp",
+  bed3: "https://res.cloudinary.com/yashwork2110/image/upload/v1620748326/gruhamtiamor/assets/Bedroom_4_v1ic85.webp",
+  bed4: "https://res.cloudinary.com/yashwork2110/image/upload/v1620748325/gruhamtiamor/assets/Bedroom_1_ai1ww2.webp",
+  bed5: "https://res.cloudinary.com/yashwork2110/image/upload/v1620927064/gruhamtiamor/assets/iStock-1148452746_xqvfdi.webp",
+  bed6: "https://res.cloudinary.com/yashwork2110/image/upload/v1620748334/gruhamtiamor/assets/bedroom-3_sgcpkg.webp",
+  bed7: "https://res.cloudinary.com/yashwork2110/image/upload/v1620748329/gruhamtiamor/assets/Bedroom_10_skyy6y.webp",
+  bed8: "https://res.cloudinary.com/yashwork2110/image/upload/v1620748329/gruhamtiamor/assets/Bedroom_14_hmlcq1.webp",
+  bed9: "https://res.cloudinary.com/yashwork2110/image/upload/v1620748328/gruhamtiamor/assets/bedroom_11_uujizu.webp",
+  bed10:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620748328/gruhamtiamor/assets/Bedroom_13_gs2sel.webp",
   kitchen1:
-    "https://res.cloudinary.com/yashwork2110/image/upload/v1620832964/gruhamtiamor/team/pooja/WhatsApp_Image_2021-05-12_at_11.38.11_nz9nd8.jpg",
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620748330/gruhamtiamor/assets/chefs-kitchen_-_4_gugqox.webp",
   kitchen2:
-    "https://res.cloudinary.com/yashwork2110/image/upload/v1620832966/gruhamtiamor/team/pooja/WhatsApp_Image_2021-05-12_at_11.38.11_3_beqfae.jpg",
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620748323/gruhamtiamor/assets/Kitchen_4_hmt5ej.webp",
+  kitchen3:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620748319/gruhamtiamor/assets/Kitchen_-_5_r4hmnh.webp",
+  kitchen4:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620748315/gruhamtiamor/assets/kitchen-1_lqccwx.webp",
+  kitchen5:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620748316/gruhamtiamor/assets/kitchen-3857476_1920_lxsam2.webp",
+  kitchen6:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620748316/gruhamtiamor/assets/kitchen-2_r0dxjf.webp",
+  kitchen7:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620748320/gruhamtiamor/assets/kitchen-3_wndgvw.webp",
+  dining1:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620748336/gruhamtiamor/assets/Dining_room_6_n8yr0v.webp",
+  dining2:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620748332/gruhamtiamor/assets/home-_5_e8s1ka.webp",
+  dining3:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620748331/gruhamtiamor/assets/Dining_room_4_fcnrrv.webp",
+  dining4:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620748331/gruhamtiamor/assets/dining-room-_1_yeakg2.webp",
+  dining5:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620748330/gruhamtiamor/assets/Dining_room_2_wo4e39.webp",
+  bathroom1:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620748326/gruhamtiamor/assets/Bathroom_5_pvkhhc.webp",
+  bathroom2:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620748323/gruhamtiamor/assets/Bathroom_5_2_fqlc2x.webp",
+  bathroom3:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620748322/gruhamtiamor/assets/bathroom_3_fbnmcr.webp",
+  bathroom4:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620927063/gruhamtiamor/assets/iStock-1208210864_lodvpg.webp",
+  walkin1:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620927060/gruhamtiamor/assets/iStock-1215467698_slnl9f.webp",
+  walkin2:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620927061/gruhamtiamor/assets/iStock-938987470_clcokq.webp",
 };
 
-export const shinchana = {
-  living1:
-    "https://res.cloudinary.com/yashwork2110/image/upload/v1620833875/gruhamtiamor/team/shinchana/WhatsApp_Image_2021-05-12_at_12.53.14_hltlqh.jpg",
-  living2:
-    "https://res.cloudinary.com/yashwork2110/image/upload/v1620833875/gruhamtiamor/team/shinchana/WhatsApp_Image_2021-05-12_at_12.53.13_ndswqk.jpg",
-  bed1: "https://res.cloudinary.com/yashwork2110/image/upload/v1620833876/gruhamtiamor/team/shinchana/WhatsApp_Image_2021-05-12_at_12.53.15_eablnp.jpg",
-  bed2: "https://res.cloudinary.com/yashwork2110/image/upload/v1620833875/gruhamtiamor/team/shinchana/WhatsApp_Image_2021-05-12_at_12.53.13_1_y9psbz.jpg",
-  kitchen1:
-    "https://res.cloudinary.com/yashwork2110/image/upload/v1620833875/gruhamtiamor/team/shinchana/WhatsApp_Image_2021-05-12_at_12.00.09_1_ojtrvv.jpg",
-  kitchen2:
-    "https://res.cloudinary.com/yashwork2110/image/upload/v1620833875/gruhamtiamor/team/shinchana/WhatsApp_Image_2021-05-12_at_12.00.09_fsr4dl.jpg",
+export const logos = {
+  trans:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620931136/gruhamtiamor/logo/transparent_ig7zdi.png",
+  turqoise:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620931475/gruhamtiamor/logo/turquoise_dstbis.jpg",
 };
+
+export const enquireImg =
+  "https://res.cloudinary.com/yashwork2110/image/upload/v1620935558/gruhamtiamor/assets/WhatsApp_Image_2021-05-13_at_22.24.31_hypxp9.jpg";

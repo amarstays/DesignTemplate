@@ -1,6 +1,9 @@
+* {
+  font-family: "KoHo", sans-serif !important;
+}
+
 .drawer-list-item {
   text-align: center;
-  font-family: "KoHo", sans-serif !important;
   font-weight: 600 !important;
   padding-bottom: 15px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -8,7 +11,7 @@
 
 .para {
   padding: 0px 30px;
-  font-family: "KoHo", sans-serif !important;
+
   font-weight: 500 !important;
 }
 
@@ -26,13 +29,12 @@
   margin: 20px 10px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-family: "Satisfy", cursive !important;
 }
 
 .desc-co {
   padding: 20px 40px;
   letter-spacing: 1px;
-  font-family: "KoHo", sans-serif !important;
+
   font-weight: 500 !important;
 }
 

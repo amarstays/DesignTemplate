@@ -9,7 +9,7 @@ import Services from "./Views/Services";
 import Philosophy from "./Views/Philosophy";
 import EnquireSection from "./Components/Enquire/EnquireSection";
 import Team from "./Views/Team";
-import Testimonials from "./Views/Testimonials";
+// import Testimonials from "./Views/Testimonials";
 import Enquire from "./Views/Enquire";
 import CarouselDisplay from "./Components/Carousel/CarouselDisplay";
 import Login from "./Views/Login";
@@ -31,7 +31,7 @@ function App() {
               <Dashboard />
             </Route>
           )}
-          <Route path="/gallery/:designer" exact>
+          <Route path="/gallery" exact>
             <Gallery />
             <EnquireSection />
           </Route>
@@ -45,11 +45,11 @@ function App() {
             <EnquireSection />
             <CarouselDisplay />
           </Route>
-          <Route path="/testimonials" exact>
+          {/* <Route path="/testimonials" exact>
             <Testimonials />
             <EnquireSection />
             <CarouselDisplay />
-          </Route>
+          </Route> */}
           <Route path="/team" exact>
             <Team />
             <EnquireSection />
@@ -57,7 +57,6 @@ function App() {
           </Route>
           <Route path="/enquire" exact>
             <Enquire />
-            <CarouselDisplay />
           </Route>
           <Route path="/login" exact>
             <Login />

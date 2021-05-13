@@ -18,11 +18,16 @@ const Home = () => {
           turns into the "home" of your dreams. We visualize and create
           different styles catering to your discerning tastes and preferences.
           We aim to make you fall in love with your home every time you wake up.
+          <br />
+          <br />
+          <b> “A home where your feet may leave, but not your heart”</b>
         </Typography>
         <br />
         <Divider variant="middle" />
         <Quote
-          quote="“A home where your feet may leave, but not your heart”."
+          // quote="“A home where your feet may leave, but not your heart”."
+
+          quote="“The home you love”"
           author="- Gruham
               Ti'Amore"
         />

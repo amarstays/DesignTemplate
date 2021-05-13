@@ -1,6 +1,6 @@
 .designer-section-title {
   font-size: 1.5em !important;
-  font-family: "Satisfy", cursive !important;
+
   font-weight: 600 !important;
 }
 
@@ -9,13 +9,11 @@
 }
 
 .designer-section-details {
-  font-family: "KoHo", sans-serif !important;
   color: black;
   font-weight: 500 !important;
 }
 
 .designer-summary {
-  font-family: "KoHo", sans-serif !important;
   color: black;
   font-weight: 500 !important;
 }
@@ -25,16 +23,16 @@
 }
 
 .designer-name {
-  font-family: "Satisfy", cursive !important;
+  color: white;
 }
 
 .designer-role {
-  font-family: "KoHo", sans-serif !important;
+  color: white;
 }
 
 .designer-card {
   display: flex;
-  height: 300px;
+  height: 400px;
 }
 
 .designer-photo {
@@ -57,11 +55,21 @@
 .designer-actions {
   display: flex;
   justify-content: center;
+  align-items: flex-end;
   width: 100%;
 }
 
 .width-50 {
   width: 50%;
+  position: relative;
+}
+
+.carousel-logo {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 120px;
+  height: 120px;
 }
 
 @media only screen and (max-width: 600px) {

@@ -12,6 +12,7 @@ import {
 } from "@material-ui/core";
 import Carousel from "react-material-ui-carousel";
 import { useHistory } from "react-router";
+import { logos } from "../../assets/urls";
 import { designerDetails } from "../../utils/constants";
 import "./CarouselDisplay.css";
 
@@ -27,8 +28,10 @@ const CarouselDisplay = () => {
             </Typography>
             <br />
             <Typography paragraph className="designer-section-details">
-              The great and exquisite design is capturing the spirit of the
-              client and the essence of the space
+              The great and exquisite design is to capture the spirit of the
+              client, as well as the essence of the space and thats what Gruham
+              Ti'Amore gives you through it's best of our Designer's to create
+              the magic
             </Typography>
           </Box>
         </Grid>
@@ -52,8 +55,8 @@ interface DesignerCardProps {
 export const DesignerCard = ({ designer, summaryCard }: DesignerCardProps) => {
   const history = useHistory();
 
-  const handleGalleryButtonClick = (key: string) => {
-    history.push(`/gallery/${key}`);
+  const handleGalleryButtonClick = () => {
+    history.push(`/gallery`);
   };
 
   return (
@@ -62,9 +65,11 @@ export const DesignerCard = ({ designer, summaryCard }: DesignerCardProps) => {
         <Box className="designer-card">
           <Box className="width-50">
             <CardMedia className="designer-photo" image={designer.profile} />
+            <img src={logos.trans} alt="logo" className="carousel-logo" />
           </Box>
           <Box className="designer-details width-50">
             <CardHeader
+              style={{ background: "black" }}
               title={
                 <Typography variant="h5" className="designer-name">
                   {designer.name}
@@ -78,20 +83,18 @@ export const DesignerCard = ({ designer, summaryCard }: DesignerCardProps) => {
             />
             <CardContent>
               <Typography paragraph className="designer-summary">
-                {summaryCard ? designer.fullDetails : designer.summary}
+                {designer.details}
               </Typography>
             </CardContent>
             <CardActions>
               <Box className="designer-actions">
-                {!summaryCard && (
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    onClick={() => handleGalleryButtonClick(designer.key)}
-                  >
-                    GALLERY
-                  </Button>
-                )}
+                <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={handleGalleryButtonClick}
+                >
+                  GALLERY
+                </Button>
               </Box>
             </CardActions>
           </Box>
