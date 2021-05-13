@@ -46,6 +46,8 @@ export const portfolio: any = {
     "https://res.cloudinary.com/yashwork2110/image/upload/v1620927066/gruhamtiamor/assets/foyer_oegjo0.webp",
   foyer3:
     "https://res.cloudinary.com/yashwork2110/image/upload/v1620934481/gruhamtiamor/assets/WhatsApp_Image_2021-05-13_at_23.55.12_txmcyi.jpg",
+  foyer4:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620940501/gruhamtiamor/assets/WhatsApp_Image_2021-05-12_at_11.38.12_ikdiqq.jpg",
   living1:
     "https://res.cloudinary.com/yashwork2110/image/upload/v1620748312/gruhamtiamor/assets/home-3625018_1920_oqldsv.webp",
   living2:
@@ -95,6 +97,12 @@ export const portfolio: any = {
     "https://res.cloudinary.com/yashwork2110/image/upload/v1620748331/gruhamtiamor/assets/dining-room-_1_yeakg2.webp",
   dining5:
     "https://res.cloudinary.com/yashwork2110/image/upload/v1620748330/gruhamtiamor/assets/Dining_room_2_wo4e39.webp",
+  dining6:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620940637/gruhamtiamor/assets/WhatsApp_Image_2021-05-12_at_12.53.13_qensak.jpg",
+  dining7:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620940695/gruhamtiamor/assets/WhatsApp_Image_2021-05-12_at_12.53.15_dlncrz.jpg",
+  dining8:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1620940896/gruhamtiamor/assets/WhatsApp_Image_2021-05-12_at_12.53.15_1_totyaf.jpg",
   bathroom1:
     "https://res.cloudinary.com/yashwork2110/image/upload/v1620748326/gruhamtiamor/assets/Bathroom_5_pvkhhc.webp",
   bathroom2:
