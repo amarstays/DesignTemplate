@@ -58,14 +58,14 @@ const Home = () => {
         align="left"
         imgSrc={imgs.pic8}
       />
-      <Divider variant="middle" />
+      {/* <Divider variant="middle" />
       <Section
         link="/testimonials"
         title="Something from our customers"
         desc="We value your feedback. Here's what our customers have to say!"
         align="right"
         imgSrc={imgs.pic9}
-      />
+      /> */}
     </div>
   );
 };
