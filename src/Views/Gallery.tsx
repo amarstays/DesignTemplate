@@ -6,6 +6,7 @@ import {
   Paper,
   Typography,
 } from "@material-ui/core";
+import ArrowBack from "@material-ui/icons/ArrowBack";
 import { useEffect, useState } from "react";
 import { Fade } from "react-awesome-reveal";
 import { logos } from "../assets/urls";
@@ -91,6 +92,18 @@ const Gallery = () => {
       </Fade>
       <Divider variant="middle" />
       <Grid container className="image-grid">
+        <Grid item xs={12}>
+          &nbsp; &nbsp;
+          <Button
+            startIcon={<ArrowBack />}
+            variant="outlined"
+            color="primary"
+            onClick={() => setRoom(rooms)}
+          >
+            Back to Gallery
+          </Button>
+        </Grid>
+
         {room?.map((item: any, index: number) => {
           return (
             <Grid item xs={12} key={index}>
