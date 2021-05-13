@@ -67,7 +67,7 @@ const Enquire = () => {
           LET’S DISCUSS HOW WE CAN HELP YOU WITH YOURS.
           <br />
           <br />
-          Get in touch with us on <b>+91 6200568415</b> or contact us below.
+          Get in touch with us on <b>+91 9980149818</b> or contact us below.
         </Typography>
       </Box>
       <Divider variant="middle" />
