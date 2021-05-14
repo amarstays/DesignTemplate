@@ -13,12 +13,6 @@ export const designerDetails = [
     Gruham Ti'Amore.`,
   },
   {
-    name: "Shinchana",
-    designation: "Designer",
-    profile: teamUrls.shinchana,
-    details: `Based in Bangalore, Her sense of style for colours and textures whats makes her the best designer in her field `,
-  },
-  {
     name: "Pooja",
     designation: "Designer",
     profile: teamUrls.pooja,
