@@ -98,43 +98,48 @@ export const rooms = [
 export const services = [
   {
     title: "Design",
-    desc: `Just like our design philosophy, we also follow a client profiling practice. The reason for this is so that we
-      are able to understand the needs and requirements of the client before we begin any sort of ground
-      work. That's why we are known for building a strong and personalized bond with every single client, from
-      the design stage, through execution and right till completion.`,
+    desc: `The first step to what you finally see as your HOME begins here. And the most important aspect
+    of this step is YOU. We strive to incorporate your uniqueness, your image and your inimitable style into
+    your living spaces.`,
     imgSrc: imgs.pic1,
   },
   {
     title: "Execution",
-    desc: `Just like our design philosophy, we also follow a client profiling practice. The reason for this is so that we
-      are able to understand the needs and requirements of the client before we begin any sort of ground
-      work. That's why we are known for building a strong and personalized bond with every single client, from
-      the design stage, through execution and right till completion.`,
+    desc: `From the first brick being placed, the first coat of paint being laid on the building, we ensure
+    that quality is paramount. Every component is lovingly crafted by sourcing the best materials available at
+    our disposal.`,
     imgSrc: imgs.pic2,
-  },
-
-  {
-    title: "Stylizing",
-    desc: `Just like our design philosophy, we also follow a client profiling practice. The reason for this is so that we
-      are able to understand the needs and requirements of the client before we begin any sort of ground
-      work. That's why we are known for building a strong and personalized bond with every single client, from
-      the design stage, through execution and right till completion.`,
-    imgSrc: imgs.pic3,
   },
   {
     title: "Delivery",
-    desc: `Just like our design philosophy, we also follow a client profiling practice. The reason for this is so that we
-      are able to understand the needs and requirements of the client before we begin any sort of ground
-      work. That's why we are known for building a strong and personalized bond with every single client, from
-      the design stage, through execution and right till completion.`,
+    desc: `We drive and pride ourselves on delivering the finished product to you on or (preferably)
+    before the promised timelines. So that you aren't left just dreaming about your dream home, you actually
+    begin living in your dream home.`,
     imgSrc: imgs.pic4,
   },
   {
+    title: "Stylizing",
+    desc: `- Interiors aren't complete without the right dose of stylistic components. From artifacts to
+    stylistic bric-a-brac, we can source it all for you. Whether your house demands a classic, retro, modern or
+    simply a unique touch, we can fulfil it. If the markets don't have it, our aritsans will create it especially for
+    you.`,
+    imgSrc: imgs.pic3,
+  },
+  {
+    title: "Architectural",
+    desc: `The capabilities of our team in taking just a client's vision and turning it
+    into a real structure are simply unparalleled. Whether it's a simple studio apartment, a 2 bedroom-hall-
+    kitchen residence or a full-fledged duplex house, we can handle it along with our architectural
+    collaborators who are extremely specialized and phenomenally talented at what they do.`,
+    imgSrc: imgs.pic6,
+  },
+  {
     title: "Customization",
-    desc: `Just like our design philosophy, we also follow a client profiling practice. The reason for this is so that we
-      are able to understand the needs and requirements of the client before we begin any sort of ground
-      work. That's why we are known for building a strong and personalized bond with every single client, from
-      the design stage, through execution and right till completion.`,
+    desc: `This is an area of interior design where many have tried, but missed the mark by miles.
+    Not because they lack the capability or resources. But simply because they lack the one important
+    aspect. CREATIVITY. Our team of designers come from different schools of thought and hence are able
+    to transform your dreams and visions into actual and practical works of art. Masterpieces, if we may say
+    so ourselves.`,
     imgSrc: imgs.pic5,
   },
 ];
