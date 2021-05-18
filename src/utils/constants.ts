@@ -13,10 +13,10 @@ export const designerDetails = [
     Gruham Ti'Amore.`,
   },
   {
-    name: "Pooja",
+    name: "Shagufta",
     designation: "Designer",
-    profile: teamUrls.pooja,
-    details: `Based in pune, very energetic and passionate about interiors. She defines designing is love and her design statememt says it all. `,
+    profile: teamUrls.shagufta,
+    details: `Based in Delhi, very energetic and passionate about interiors. She defines designing is love and her design statememt says it all. `,
   },
   {
     name: "Sunil Nibbulal Vishwakarma",
@@ -35,6 +35,14 @@ export const designerDetails = [
     designation: "Designer",
     profile: teamUrls.simran,
     details: `Bangalore based. An interior designer trying to decorate the beauty of houses and Making it a HOME. `,
+  },
+  {
+    name: "Prachi",
+    designation: "Designer",
+    profile: teamUrls.prachi,
+    details: `Bhopal based. Pliable designer executes to bring unique and passionate perspective & athletic design.
+    Professional at measuring & planning designing details, examine & enhance asthetic & developing plans. 
+    `,
   },
 ];
 

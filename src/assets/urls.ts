@@ -27,10 +27,10 @@ export const teamUrls = {
   technical:
     "https://res.cloudinary.com/yashwork2110/image/upload/v1620932357/gruhamtiamor/team/amresh_iek9bw.jpg",
   lead: "https://res.cloudinary.com/yashwork2110/image/upload/v1620933059/gruhamtiamor/team/srilekha-removebg-preview_uwebx5.jpg",
-  shinchana:
-    "https://res.cloudinary.com/yashwork2110/image/upload/v1620932647/gruhamtiamor/team/shinchana-removebg-preview_jf8q6z.jpg",
-  pooja:
-    "https://res.cloudinary.com/yashwork2110/image/upload/v1620932453/gruhamtiamor/team/pooja-removebg-preview_tfedey.jpg",
+  shagufta:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1621338986/gruhamtiamor/team/Shagufta-removebg-preview_iejdmo.jpg",
+  prachi:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1621338986/gruhamtiamor/team/Prachi-removebg-preview_ynyzjx.jpg",
   sunil:
     "https://res.cloudinary.com/yashwork2110/image/upload/v1620932766/gruhamtiamor/team/sunil_nibbulal_vishwakarma-removebg-preview_qxztpv.jpg",
   nidhi:
