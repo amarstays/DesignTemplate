@@ -5,14 +5,6 @@ export const navOptions = ["Philosophy", "Services", "Team", "Gallery"];
 
 export const designerDetails = [
   {
-    name: "Nikita Srilekha L",
-    designation: "Lead Designer",
-    profile: teamUrls.lead,
-    details: `Basically from Bangalore, Srilekha holds a Bachelor’s degree in Architecture, and has completed various
-    projects of different scales across the city. Her versatility and eye for detail is what brought her to
-    Gruham Ti'Amore.`,
-  },
-  {
     name: "Shagufta",
     designation: "Designer",
     profile: teamUrls.shagufta,
@@ -42,6 +34,15 @@ export const designerDetails = [
     profile: teamUrls.prachi,
     details: `Bhopal based. Pliable designer executes to bring unique and passionate perspective & athletic design.
     Professional at measuring & planning designing details, examine & enhance asthetic & developing plans. 
+    `,
+  },
+  {
+    name: "Mohd Furquan",
+    designation: "Designer",
+    profile: teamUrls.furquan,
+    details: `Worked on interior design, architectural design.
+    Worked on air comfort planning in a house for RENSON Inc UK based company.
+    Large Basements and Parking 3D Designing for Air Comfort and Flow Analysis. 
     `,
   },
 ];
@@ -190,22 +191,12 @@ export const team = [
   },
   {
     name: "Amresh Anand",
-    role: "Director, Technical Operations",
+    role: "Co Founder",
     profile_image: teamUrls.technical,
     summary: `Hailing from Bihar, and a software engineer by profession, Amresh began his journey in the world of
     interior design by assisting Sachii in the digital design development, technical & executional aspects of
     the company. Amresh is usually the go to person for design issues, operational feasibility & procedure of
     the project. His exposure to, and expertise with various software development and programs play a great
     deal in his role here at Gruham Ti'Amore. (for user experience and interactive design).`,
-  },
-  {
-    name: "Nikita Srilekha L",
-    role: "Lead Designer",
-    profile_image: teamUrls.lead,
-    summary: `Basically from Bangalore, Srilekha holds a Bachelor’s degree in Architecture, and has completed various
-    projects of different scales across the city. Her versatility and eye for detail is what brought her to
-    Gruham Ti'Amore, along with her unique ability to design an impressive space where the aesthetics and
-    functionality are balanced perfectly for a project. She can bring new ideas and innovative solutions as
-    per a client's style and requirements.`,
   },
 ];
