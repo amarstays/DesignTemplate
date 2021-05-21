@@ -191,7 +191,7 @@ export const team = [
   },
   {
     name: "Amresh Anand",
-    role: "Co Founder | Director, Technical Operations",
+    role: "Co-Founder | Director, Technical Operations",
     profile_image: teamUrls.technical,
     summary: `Hailing from Bihar, and a software engineer by profession, Amresh began his journey in the world of
     interior design by assisting Sachii in the digital design development, technical & executional aspects of
