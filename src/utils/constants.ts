@@ -14,25 +14,25 @@ export const designerDetails = [
     name: "Sunil Nibbulal Vishwakarma",
     designation: "Designer",
     profile: teamUrls.sunil,
-    details: `Mumbai based. Experienced Interior Designer with a demonstrated history of working in the architecture and planning Industry. `,
+    details: `Based in Mumbai. Experienced Interior Designer with a demonstrated history of working in the architecture and planning Industry. `,
   },
   {
     name: "Nidhi Mehta",
     designation: "Designer",
     profile: teamUrls.nidhi,
-    details: `Mumbai based. Creative Interior Design with a strong background in project management, space planning, and computer-aided design, seeking to take next career step with a respected design firm focused on creating world-class hospitality and living spaces. `,
+    details: `Based in Mumbai. Creative Interior Design with a strong background in project management, space planning, and computer-aided design, seeking to take next career step with a respected design firm focused on creating world-class hospitality and living spaces. `,
   },
   {
     name: "Simran Lunkad",
     designation: "Designer",
     profile: teamUrls.simran,
-    details: `Bangalore based. An interior designer trying to decorate the beauty of houses and Making it a HOME. `,
+    details: `Based in Bangalore. An interior designer trying to decorate the beauty of houses and Making it a HOME. `,
   },
   {
     name: "Prachi",
     designation: "Designer",
     profile: teamUrls.prachi,
-    details: `Bhopal based. Pliable designer executes to bring unique and passionate perspective & athletic design.
+    details: `Based in Bhopal. Pliable designer executes to bring unique and passionate perspective & athletic design.
     Professional at measuring & planning designing details, examine & enhance asthetic & developing plans. 
     `,
   },
@@ -40,7 +40,7 @@ export const designerDetails = [
     name: "Mohd Furquan",
     designation: "Designer",
     profile: teamUrls.furquan,
-    details: `Delhi based. Worked on interior design, architectural design.
+    details: `Based in New Delhi. Worked on interior design, architectural design.
     Worked on air comfort planning in a house for RENSON Inc UK based company.
     Large Basements and Parking 3D Designing for Air Comfort and Flow Analysis. 
     `,
