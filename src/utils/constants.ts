@@ -114,7 +114,7 @@ export const services = [
   },
   {
     title: "Execution",
-    desc: `From the first brick being placed, the first coat of paint being laid on the building, we ensure
+    desc: `From the first wood being placed, the first coat of paint being laid on the building, we ensure
     that quality is paramount. Every component is lovingly crafted by sourcing the best materials available at
     our disposal.`,
     imgSrc: imgs.pic2,
