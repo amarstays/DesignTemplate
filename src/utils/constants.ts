@@ -45,6 +45,37 @@ export const designerDetails = [
     Large Basements and Parking 3D Designing for Air Comfort and Flow Analysis. 
     `,
   },
+  {
+    name: "Aditya Pavan Bhamidipati",
+    designation: "Designer",
+    profile: teamUrls.aditya,
+    details: `Based in Hyderabad. Profound knowledge in the field of Interior Design & hands-on experience handling many clients for their personalized requirements makes Aditya standout from the rest 
+    Customer acquisition is not the only priority but catering to their needs & getting the desired luxury interior outcome has always been the main motto
+    `,
+  },
+  {
+    name: "Shruti Verma",
+    designation: "Designer",
+    profile: teamUrls.shruti,
+    details: `Based in Chandigarh. Worked on the sustainabilty bu using more the natural light in the areas than th artificial lights which maintain the thermal effect inside the areas and make it comfortable. 
+    `,
+  },
+  {
+    name: "Vishal Patel",
+    designation: "Designer",
+    profile: teamUrls.shruti,
+    details: `Based in Guajarat. With more than 8 years of experience of architectural and interior design field
+    so I can provide innovative and punctual solutions for various architectural problems.
+    
+    `,
+  },
+  {
+    name: "Divya Agarwal",
+    designation: "Designer",
+    profile: teamUrls.divya,
+    details: `Based in Delhi. Creative and disciplined interior designer collaborates with private and commercial clients to discover their styles, developing environments that grow from costumer’s natural preferences.
+    `,
+  },
 ];
 
 export const rooms = [

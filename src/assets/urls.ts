@@ -39,6 +39,14 @@ export const teamUrls = {
     "https://res.cloudinary.com/yashwork2110/image/upload/v1620932940/gruhamtiamor/team/simran_lunkad-removebg-preview_dk7qwl.jpg",
   furquan:
     "https://res.cloudinary.com/yashwork2110/image/upload/v1621529376/gruhamtiamor/team/furquan-removebg-preview_f1ulws.jpg",
+  aditya:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1621756236/gruhamtiamor/team/aditya-removebg-preview_btefsw.jpg",
+  shruti:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1621756451/gruhamtiamor/team/Shruti-removebg-preview_i76ykz.jpg",
+  vishal:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1621756609/gruhamtiamor/team/Vishal-removebg-preview_nx2bg4.jpg",
+  divya:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1621756763/gruhamtiamor/team/divya-removebg-preview_loeqil.jpg",
 };
 
 export const portfolio: any = {
