@@ -63,7 +63,7 @@ export const designerDetails = [
   {
     name: "Vishal Patel",
     designation: "Designer",
-    profile: teamUrls.shruti,
+    profile: teamUrls.vishal,
     details: `Based in Guajarat. With more than 8 years of experience of architectural and interior design field
     so I can provide innovative and punctual solutions for various architectural problems.
     
