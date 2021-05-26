@@ -49,8 +49,7 @@ export const teamUrls = {
     "https://res.cloudinary.com/yashwork2110/image/upload/v1621756763/gruhamtiamor/team/divya-removebg-preview_loeqil.jpg",
   rashika:
     "https://res.cloudinary.com/yashwork2110/image/upload/v1622041587/gruhamtiamor/team/WhatsApp_Image_2021-05-25_at_20.09.16_rycmey.webp",
-  something:
-    "https://res.cloudinary.com/yashwork2110/image/upload/v1622042208/gruhamtiamor/team/WhatsApp_Image_2021-05-25_at_20.09.32-removebg-preview_nfqjn1.webp",
+  apra: "https://res.cloudinary.com/yashwork2110/image/upload/v1622042208/gruhamtiamor/team/WhatsApp_Image_2021-05-25_at_20.09.32-removebg-preview_nfqjn1.webp",
 };
 
 export const portfolio: any = {

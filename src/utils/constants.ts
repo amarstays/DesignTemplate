@@ -88,9 +88,9 @@ export const designerDetails = [
     details: `Based in Jaipur. Has a keen interest in new and professional looking designs, working passionately and growing professionally in her way of living .`,
   },
   {
-    name: "Aditi Shastri",
+    name: "Apra Khandelwal",
     designation: "Designer",
-    profile: teamUrls.something,
+    profile: teamUrls.apra,
     details: `Based in Jaipur. Her work experience includes PG Specialisation Program - Interior Design from INIFD, 
     Jaipur & interior designing job at Celestial Spaces and The Village Shop in Jaipur, Rajasthan. 
     Appreciates design process and the importance of not only an appealing form, but also the essential function of a space.`,
