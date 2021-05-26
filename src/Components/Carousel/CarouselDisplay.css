@@ -76,7 +76,7 @@
   .designer-card {
     display: flex;
     flex-direction: column;
-    height: fit-content;
+    height: 640px;
   }
 
   .designer-photo {

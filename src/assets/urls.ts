@@ -47,6 +47,10 @@ export const teamUrls = {
     "https://res.cloudinary.com/yashwork2110/image/upload/v1621756609/gruhamtiamor/team/Vishal-removebg-preview_nx2bg4.jpg",
   divya:
     "https://res.cloudinary.com/yashwork2110/image/upload/v1621756763/gruhamtiamor/team/divya-removebg-preview_loeqil.jpg",
+  rashika:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1622041587/gruhamtiamor/team/WhatsApp_Image_2021-05-25_at_20.09.16_rycmey.webp",
+  something:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1622042208/gruhamtiamor/team/WhatsApp_Image_2021-05-25_at_20.09.32-removebg-preview_nfqjn1.webp",
 };
 
 export const portfolio: any = {
@@ -83,6 +87,8 @@ export const portfolio: any = {
   bed9: "https://res.cloudinary.com/yashwork2110/image/upload/v1620748328/gruhamtiamor/assets/bedroom_11_uujizu.webp",
   bed10:
     "https://res.cloudinary.com/yashwork2110/image/upload/v1620748328/gruhamtiamor/assets/Bedroom_13_gs2sel.webp",
+  bed11:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1622040507/gruhamtiamor/assets/bedroom-5540915_1920_juspu5.webp",
   kitchen1:
     "https://res.cloudinary.com/yashwork2110/image/upload/v1620748330/gruhamtiamor/assets/chefs-kitchen_-_4_gugqox.webp",
   kitchen2:
@@ -121,10 +127,20 @@ export const portfolio: any = {
     "https://res.cloudinary.com/yashwork2110/image/upload/v1620748322/gruhamtiamor/assets/bathroom_3_fbnmcr.webp",
   bathroom4:
     "https://res.cloudinary.com/yashwork2110/image/upload/v1620927063/gruhamtiamor/assets/iStock-1208210864_lodvpg.webp",
+  bathroom5:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1622040420/gruhamtiamor/assets/remodeling-1241040_1280_r2alhj.webp",
+  bathroom6:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1622040462/gruhamtiamor/assets/simpolo-2032198_1920_uj3on6.webp",
+  bathroom7:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1622040544/gruhamtiamor/assets/bathroom-2094735_1920_nf996e.webp",
   walkin1:
     "https://res.cloudinary.com/yashwork2110/image/upload/v1620927060/gruhamtiamor/assets/iStock-1215467698_slnl9f.webp",
   walkin2:
     "https://res.cloudinary.com/yashwork2110/image/upload/v1620927061/gruhamtiamor/assets/iStock-938987470_clcokq.webp",
+  walkin3:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1622040343/gruhamtiamor/assets/closet-4696557_1920_jklazf.webp",
+  walkin4:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1622040483/gruhamtiamor/assets/home-663243_1280_pznyn7.webp",
 };
 
 export const logos = {

@@ -20,7 +20,9 @@ export const designerDetails = [
     name: "Nidhi Mehta",
     designation: "Designer",
     profile: teamUrls.nidhi,
-    details: `Based in Mumbai. Creative Interior Design with a strong background in project management, space planning, and computer-aided design, seeking to take next career step with a respected design firm focused on creating world-class hospitality and living spaces. `,
+    details: `Based in Mumbai. Creative Interior Design with a strong background in project management, 
+    space planning, and computer-aided design, seeking to take next career step with a respected design firm 
+    focused on creating world-class hospitality and living spaces. `,
   },
   {
     name: "Simran Lunkad",
@@ -49,7 +51,9 @@ export const designerDetails = [
     name: "Aditya Pavan Bhamidipati",
     designation: "Designer",
     profile: teamUrls.aditya,
-    details: `Based in Hyderabad. Profound knowledge in the field of Interior Design & hands-on experience handling many clients for their personalized requirements makes Aditya standout from the rest 
+    details: `Based in Hyderabad. Profound knowledge in the field of Interior Design & 
+    hands-on experience handling many clients for their personalized requirements makes 
+    Aditya standout from the rest 
     Customer acquisition is not the only priority but catering to their needs & getting the desired luxury interior outcome has always been the main motto
     `,
   },
@@ -73,8 +77,23 @@ export const designerDetails = [
     name: "Divya Agarwal",
     designation: "Designer",
     profile: teamUrls.divya,
-    details: `Based in Delhi. Creative and disciplined interior designer collaborates with private and commercial clients to discover their styles, developing environments that grow from costumer’s natural preferences.
+    details: `Based in Delhi. Creative and disciplined interior designer collaborates with private and commercial clients to discover their styles, 
+    developing environments that grow from costumer’s natural preferences.
     `,
+  },
+  {
+    name: "Rashika Singhal",
+    designation: "Designer",
+    profile: teamUrls.rashika,
+    details: `Based in Jaipur. Has a keen interest in new and professional looking designs, working passionately and growing professionally in her way of living .`,
+  },
+  {
+    name: "Aditi Shastri",
+    designation: "Designer",
+    profile: teamUrls.something,
+    details: `Based in Jaipur. Her work experience includes PG Specialisation Program - Interior Design from INIFD, 
+    Jaipur & interior designing job at Celestial Spaces and The Village Shop in Jaipur, Rajasthan. 
+    Appreciates design process and the importance of not only an appealing form, but also the essential function of a space.`,
   },
 ];
 

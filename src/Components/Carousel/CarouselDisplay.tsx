@@ -36,7 +36,20 @@ const CarouselDisplay = () => {
           </Box>
         </Grid>
         <Grid item xs={12} md={7}>
-          <Carousel animation="slide" interval={5000} navButtonsAlwaysInvisible>
+          <Carousel
+            animation="slide"
+            interval={5000}
+            navButtonsAlwaysVisible
+            indicators={false}
+            navButtonsProps={{
+              style: {
+                backgroundColor: "#9ea0a3",
+                opacity: 0.8,
+                boxShadow: "0px 1px 8px 0px rgba(0,0,0,0.75)",
+              },
+              className: "",
+            }}
+          >
             {designerDetails.map((designer, i) => (
               <DesignerCard key={i} designer={designer} />
             ))}
