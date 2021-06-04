@@ -29,6 +29,11 @@
   align-items: center;
   height: 100%;
   color: white;
+  cursor: pointer;
+}
+
+.logo-container > img {
+  height: 50px;
 }
 
 .center-txt {
@@ -45,6 +50,7 @@
 
 .center-logo {
   width: 500px;
+  max-width: 100vw;
 }
 
 .link {

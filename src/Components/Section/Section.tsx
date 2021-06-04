@@ -23,12 +23,14 @@ const Section = ({ imgSrc, title, desc, align, link }: SectionProps) => {
     >
       <Grid item xs={12} sm={6}>
         <Zoom>
-          <img
-            src={imgSrc}
-            alt="portfolio"
-            className="section-image"
-            data-aos="zoom-in"
-          />
+          <div className="section-image-container">
+            <img
+              src={imgSrc}
+              alt="portfolio"
+              className="section-image"
+              data-aos="zoom-in"
+            />
+          </div>
         </Zoom>
       </Grid>
       <Grid item xs={12} sm={6}>

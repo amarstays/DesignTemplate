@@ -4,6 +4,11 @@
   align-items: center;
   height: 100%;
   color: #000 !important;
+  cursor: pointer;
+}
+
+.logo-med > img {
+  height: 50px;
 }
 
 .nav-item {

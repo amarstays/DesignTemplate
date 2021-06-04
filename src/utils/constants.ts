@@ -225,6 +225,7 @@ export const projectTypes = [
   "Hospitality",
   "Development",
   "Retail",
+  "Renovations",
 ];
 
 export const team = [
@@ -250,3 +251,6 @@ export const team = [
     deal in his role here at Gruham Ti'Amore. (for user experience and interactive design).`,
   },
 ];
+
+export const email_validator_regex =
+  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;

@@ -1,4 +1,5 @@
-import { MuiThemeProvider } from "@material-ui/core";
+import { useState } from "react";
+import { MuiThemeProvider, Snackbar } from "@material-ui/core";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import theme from "./assets/theme";
@@ -15,8 +16,12 @@ import CarouselDisplay from "./Components/Carousel/CarouselDisplay";
 import Login from "./Views/Login";
 import { getUser } from "./utils/methods";
 import Dashboard from "./Views/Dashboard";
+import Footer from "./Components/Footer/Footer";
+import { Alert } from "@material-ui/lab";
 
 function App() {
+  const [message, setMessage] = useState<any>({});
+
   return (
     <MuiThemeProvider theme={theme}>
       <Router basename="/">
@@ -56,13 +61,22 @@ function App() {
             <CarouselDisplay />
           </Route>
           <Route path="/enquire" exact>
-            <Enquire />
+            <Enquire setMessage={setMessage} />
+            <CarouselDisplay />
           </Route>
           <Route path="/login" exact>
             <Login />
           </Route>
         </Switch>
       </Router>
+      <Footer setMessage={setMessage} />
+      <Snackbar
+        open={message.open}
+        autoHideDuration={3000}
+        onClose={() => setMessage({ ...message, open: false })}
+      >
+        <Alert severity={message?.severity}>{message?.msg}</Alert>
+      </Snackbar>
     </MuiThemeProvider>
   );
 }

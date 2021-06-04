@@ -42,6 +42,11 @@ const Banner = () => {
         </Grid>
         <Grid item md={2}>
           <div className="logo-container" onClick={() => history.push("/")}>
+            <img
+              src={logos.only_logo}
+              alt="transparent-logo"
+              className="header-logo"
+            />
             GRUHAM Ti'AMORE
           </div>
         </Grid>

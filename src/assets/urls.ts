@@ -147,6 +147,8 @@ export const logos = {
     "https://res.cloudinary.com/yashwork2110/image/upload/v1620931136/gruhamtiamor/logo/transparent_ig7zdi.png",
   turqoise:
     "https://res.cloudinary.com/yashwork2110/image/upload/v1620931475/gruhamtiamor/logo/turquoise_dstbis.jpg",
+  only_logo:
+    "https://res.cloudinary.com/yashwork2110/image/upload/v1622797472/gruhamtiamor/logo/only-logo_caujge.png",
 };
 
 export const enquireImg =

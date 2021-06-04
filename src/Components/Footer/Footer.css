@@ -1,0 +1,53 @@
+.footer {
+  background: #000 !important;
+  border-radius: 0 !important;
+  color: white !important;
+  padding: 20px;
+}
+
+.foo-email-field {
+  width: 300px;
+  color: white !important;
+  background: black;
+  border: none;
+  border-bottom: 2px solid white;
+  outline: none;
+  margin-top: 20px;
+}
+
+.foo-logo {
+  width: 250px;
+  height: 200px;
+}
+
+.foo-email {
+  height: 100%;
+}
+
+.foo-detail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0px;
+}
+
+.foo-sptop {
+  margin-top: 0px;
+}
+
+.foo-border-top {
+  border: none;
+  padding-top: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .foo-sptop {
+    margin-top: 20px;
+  }
+
+  .foo-border-top {
+    border-top: 1px solid white;
+    padding-top: 10px;
+  }
+  /*Big smartphones [426px -> 600px]*/
+}

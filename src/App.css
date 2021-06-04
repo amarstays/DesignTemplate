@@ -9,6 +9,22 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.fl-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.fl-ce {
+  display: flex;
+  justify-content: center;
+}
+
+.text-ce {
+  text-align: center;
+}
+
 .para {
   padding: 0px 30px;
 

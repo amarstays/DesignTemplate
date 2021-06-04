@@ -16,11 +16,15 @@ import {
 import "./styles/Enquire.css";
 import { projectTypes } from "../utils/constants";
 import { useEffect, useState } from "react";
-import { getUser } from "../utils/methods";
+import { getUser, sendEmail } from "../utils/methods";
 import { client } from "../utils/api.config";
 import Send from "@material-ui/icons/Send";
-import { enquireFormImg, enquireFormImg2, enquireImg } from "../assets/urls";
+import { enquireFormImg, enquireFormImg2 } from "../assets/urls";
 import { Fade } from "react-awesome-reveal";
+
+interface EnquireProps {
+  setMessage: any;
+}
 
 interface enquireProps {
   name?: string;
@@ -30,7 +34,7 @@ interface enquireProps {
   message?: string;
 }
 
-const Enquire = () => {
+const Enquire = ({ setMessage }: EnquireProps) => {
   const [formData, setFormData] = useState<enquireProps>();
 
   useEffect(() => {
@@ -51,7 +55,8 @@ const Enquire = () => {
     });
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e: any) => {
+    sendEmail(e, setMessage);
     await client.post("/customer/enquire", formData);
   };
 
@@ -73,7 +78,7 @@ const Enquire = () => {
       </Box>
       <Divider variant="middle" />
       <Grid container className="enquire-form-parent">
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={5} lg={4}>
           <Grid container>
             <Fade>
               <Grid item xs={12}>
@@ -95,7 +100,7 @@ const Enquire = () => {
             </Fade>
           </Grid>
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={7} lg={8}>
           <Fade>
             <Card className="enquire-form-container" elevation={3}>
               <CardHeader
@@ -107,7 +112,12 @@ const Enquire = () => {
                 }
               />
               <CardContent className="enquire-formc-container">
-                <form className="enquire-form">
+                <form
+                  className="enquire-form"
+                  onSubmit={handleSubmit}
+                  action="https://formspree.io/f/mknkrenb"
+                  method="POST"
+                >
                   <FormControl margin="normal" fullWidth>
                     <FormLabel className="form-label">Name</FormLabel>
                     <TextField
@@ -173,9 +183,9 @@ const Enquire = () => {
                   <Button
                     color="primary"
                     variant="contained"
-                    onClick={handleSubmit}
                     className="enq-submit-btn"
                     endIcon={<Send />}
+                    type="submit"
                   >
                     Send
                   </Button>
@@ -185,12 +195,6 @@ const Enquire = () => {
           </Fade>
         </Grid>
       </Grid>
-      <Divider variant="middle" />
-      <Fade>
-        <Box className="enq-img-container">
-          <img src={enquireImg} alt="call-us" />
-        </Box>
-      </Fade>
     </div>
   );
 };

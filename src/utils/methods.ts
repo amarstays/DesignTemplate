@@ -21,3 +21,31 @@ export const getImages = (type: string) => {
 
   return arr;
 };
+
+export const sendEmail = (ev: any, setMessage: any) => {
+  ev.preventDefault();
+  const form = ev.target;
+  const data = new FormData(form);
+  const xhr = new XMLHttpRequest();
+  xhr.open(form.method, form.action);
+  xhr.setRequestHeader("Accept", "application/json");
+  xhr.onreadystatechange = () => {
+    if (xhr.readyState !== XMLHttpRequest.DONE) return;
+    if (xhr.status === 200) {
+      form.reset();
+      setMessage({
+        open: true,
+        severity: "success",
+        msg: "We'll get back to you soon",
+      });
+    } else {
+      setMessage({
+        open: true,
+        severity: "error",
+        msg: "Sorry! Something went wrong. Please try again.",
+      });
+    }
+  };
+  xhr.send(data);
+  return false;
+};

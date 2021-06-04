@@ -12,6 +12,7 @@ import "./Header.css";
 import { useHistory } from "react-router";
 import { getUser } from "../../utils/methods";
 import DrawerSection from "../Drawer/Drawer";
+import { logos } from "../../assets/urls";
 
 const Header = () => {
   const classes = useStyles();
@@ -40,6 +41,11 @@ const Header = () => {
         </Grid>
         <Grid item md={2}>
           <div className="logo-med" onClick={() => history.push("/")}>
+            <img
+              src={logos.only_logo}
+              alt="transparent-logo"
+              className="header-logo"
+            />
             GRUHAM Ti'AMORE
           </div>
         </Grid>
