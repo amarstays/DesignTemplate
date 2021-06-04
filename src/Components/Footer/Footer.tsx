@@ -23,7 +23,7 @@ const Footer = ({ setMessage }: FooterProps) => {
         <Grid item xs={12} md={6}>
           <Box className="fl-col foo-email">
             <Typography variant="h5">Enter your email</Typography>
-            <Box>
+            <Box display="flex">
               <form
                 onSubmit={handleSubmit}
                 action="https://formspree.io/f/mknkrenb"

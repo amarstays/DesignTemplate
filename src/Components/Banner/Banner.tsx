@@ -106,13 +106,20 @@ const Banner = () => {
   const getMobileNav = () => {
     return (
       <Grid container>
-        <Grid item xs={6}>
+        <Grid item xs={4}>
           <IconButton onClick={toggleDrawer}>
             <Menu color="secondary" />
           </IconButton>
         </Grid>
-        <Grid item xs={6}>
-          <div className="logo-container align-right">GRUHAM Ti'AMORE</div>
+        <Grid item xs={8}>
+          <div className="logo-container" onClick={() => history.push("/")}>
+            <img
+              src={logos.only_logo}
+              alt="transparent-logo"
+              className="header-logo"
+            />
+            GRUHAM Ti'AMORE
+          </div>
         </Grid>
       </Grid>
     );

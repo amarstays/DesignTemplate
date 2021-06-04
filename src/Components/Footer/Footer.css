@@ -49,5 +49,8 @@
     border-top: 1px solid white;
     padding-top: 10px;
   }
-  /*Big smartphones [426px -> 600px]*/
+
+  .foo-email-field {
+    width: 250px;
+  }
 }

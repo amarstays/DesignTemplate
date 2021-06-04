@@ -106,16 +106,18 @@ const Header = () => {
   const getMobileNav = () => {
     return (
       <Grid container>
-        <Grid item xs={6}>
+        <Grid item xs={4}>
           <IconButton onClick={toggleDrawer}>
             <Menu color="primary" />
           </IconButton>
         </Grid>
-        <Grid item xs={6}>
-          <div
-            className="logo-med align-right"
-            onClick={() => history.push("/")}
-          >
+        <Grid item xs={8}>
+          <div className="logo-med" onClick={() => history.push("/")}>
+            <img
+              src={logos.only_logo}
+              alt="transparent-logo"
+              className="header-logo"
+            />
             GRUHAM Ti'AMORE
           </div>
         </Grid>
