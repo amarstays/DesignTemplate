@@ -46,7 +46,7 @@ const Footer = ({ setMessage }: FooterProps) => {
           <Box className="fl-ce">
             <Zoom>
               <img
-                src={logos.trans}
+                src={logos.zoomed_logo}
                 alt="transparent-logo"
                 className="foo-logo"
               />
