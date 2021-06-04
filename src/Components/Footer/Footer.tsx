@@ -69,10 +69,14 @@ const Footer = ({ setMessage }: FooterProps) => {
             </Typography>
             <Typography className="foo-detail">
               <Email />
-              &nbsp;hello@gruhamtiamore.com
+              &nbsp;
+              <a href="mailto:hello@gruhamtiamore.com">
+                hello@gruhamtiamore.com
+              </a>
             </Typography>
             <Typography className="foo-detail">
-              <Phone /> &nbsp;+91 9980149818
+              <Phone /> &nbsp;
+              <a href="tel:+91 9980149818">+91 9980149818</a>
             </Typography>
           </Box>
         </Grid>

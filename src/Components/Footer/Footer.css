@@ -32,6 +32,11 @@
   margin: 10px 0px;
 }
 
+.foo-detail > a {
+  text-decoration: none;
+  color: white;
+}
+
 .foo-sptop {
   margin-top: 0px;
 }
