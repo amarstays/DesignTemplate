@@ -220,13 +220,7 @@ export const testimonials = [
   },
 ];
 
-export const projectTypes = [
-  "Residential",
-  "Hospitality",
-  "Development",
-  "Retail",
-  "Renovations",
-];
+export const projectTypes = ["Residential", "Hospitality", "Renovations"];
 
 export const team = [
   {

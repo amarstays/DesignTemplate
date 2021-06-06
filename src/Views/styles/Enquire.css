@@ -28,9 +28,8 @@
 }
 
 .enq-form-img {
-  width: calc(100% - 40px);
+  width: 90%;
   height: 350px;
-  margin: 0px 20px;
   margin-bottom: 10px;
 }
 

@@ -78,29 +78,33 @@ const Enquire = ({ setMessage }: EnquireProps) => {
       </Box>
       <Divider variant="middle" />
       <Grid container className="enquire-form-parent">
-        <Grid item xs={12} md={5} lg={4}>
+        <Grid item xs={12} md={6}>
           <Grid container>
             <Fade>
               <Grid item xs={12}>
-                <img
-                  src={enquireFormImg}
-                  alt="enq-form-img"
-                  className="enq-form-img"
-                />
+                <Box className="fl-ce">
+                  <img
+                    src={enquireFormImg}
+                    alt="enq-form-img"
+                    className="enq-form-img"
+                  />
+                </Box>
               </Grid>
             </Fade>
             <Fade>
               <Grid item xs={12}>
-                <img
-                  src={enquireFormImg2}
-                  alt="enq-form-img"
-                  className="enq-form-img"
-                />
+                <Box className="fl-ce">
+                  <img
+                    src={enquireFormImg2}
+                    alt="enq-form-img"
+                    className="enq-form-img"
+                  />
+                </Box>
               </Grid>
             </Fade>
           </Grid>
         </Grid>
-        <Grid item xs={12} md={7} lg={8}>
+        <Grid item xs={12} md={6}>
           <Fade>
             <Card className="enquire-form-container" elevation={3}>
               <CardHeader
