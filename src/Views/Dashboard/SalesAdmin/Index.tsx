@@ -16,7 +16,7 @@ import TableComponent from "../../../Components/TableComponent/TableComponent";
 import { leadForm, salesGridView } from "./metadata";
 import FormGenerator from "../FormGenerator";
 import { client } from "../../../utils/api.config";
-import { sendEmail, validateRoles } from "../../../utils/methods";
+import { validateRoles } from "../../../utils/methods";
 import { roles } from "../../../utils/actions";
 
 type openModalTypes = "executive" | "customer" | false;
@@ -34,7 +34,6 @@ const SalesDashboard = ({ setMessage }: SalesDashboardProps) => {
   };
 
   const handleSubmit = (e: any) => {
-    // sendEmail(e, setMessage);
     client.post("/customer/enquire", formData).then((res) => {
       setMessage({
         open: true,
