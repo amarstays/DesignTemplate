@@ -36,6 +36,19 @@
   flex-direction: column;
 }
 
+.call-phone {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  transition: all 0.4s;
+  transform: center bottom;
+}
+
+.call-phone:hover {
+  background: black;
+  color: white;
+}
+
 .fl-col {
   display: flex;
   flex-direction: column;

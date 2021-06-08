@@ -28,6 +28,9 @@ export const salesGridView: tableMetadata = {
     {
       header: "Phone",
       key: "phone",
+      columnActions: {
+        call: true,
+      },
     },
   ],
 };

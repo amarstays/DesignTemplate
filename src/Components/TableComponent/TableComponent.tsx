@@ -96,7 +96,16 @@ const TableComponent = ({ metadata, dashboardType }: TableComponentProps) => {
               <TableRow key={index}>
                 {metadata.columns.map((column: columnsType, key: number) => (
                   <TableCell align="center" key={key}>
-                    {element[column.key]}
+                    {column.columnActions?.call ? (
+                      <a
+                        href={`tel:${element[column.key]}`}
+                        className="call-phone"
+                      >
+                        {element[column.key]}
+                      </a>
+                    ) : (
+                      element[column.key]
+                    )}
                   </TableCell>
                 ))}
               </TableRow>
