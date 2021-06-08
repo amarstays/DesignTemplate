@@ -7,19 +7,19 @@ export const designerDetails = [
   {
     name: "Shagufta",
     designation: "Designer",
-    profile: teamUrls.shagufta,
+    image: teamUrls.shagufta,
     details: `Based in Delhi, very energetic and passionate about interiors. She defines designing is love and her design statememt says it all. `,
   },
   {
     name: "Sunil Nibbulal Vishwakarma",
     designation: "Designer",
-    profile: teamUrls.sunil,
+    image: teamUrls.sunil,
     details: `Based in Mumbai. Experienced Interior Designer with a demonstrated history of working in the architecture and planning Industry. `,
   },
   {
     name: "Nidhi Mehta",
     designation: "Designer",
-    profile: teamUrls.nidhi,
+    image: teamUrls.nidhi,
     details: `Based in Mumbai. Creative Interior Design with a strong background in project management, 
     space planning, and computer-aided design, seeking to take next career step with a respected design firm 
     focused on creating world-class hospitality and living spaces. `,
@@ -27,13 +27,13 @@ export const designerDetails = [
   {
     name: "Simran Lunkad",
     designation: "Designer",
-    profile: teamUrls.simran,
+    image: teamUrls.simran,
     details: `Based in Bangalore. An interior designer trying to decorate the beauty of houses and Making it a HOME. `,
   },
   {
     name: "Prachi",
     designation: "Designer",
-    profile: teamUrls.prachi,
+    image: teamUrls.prachi,
     details: `Based in Bhopal. Pliable designer executes to bring unique and passionate perspective & athletic design.
     Professional at measuring & planning designing details, examine & enhance asthetic & developing plans. 
     `,
@@ -41,7 +41,7 @@ export const designerDetails = [
   {
     name: "Mohd Furquan",
     designation: "Designer",
-    profile: teamUrls.furquan,
+    image: teamUrls.furquan,
     details: `Based in New Delhi. Worked on interior design, architectural design.
     Worked on air comfort planning in a house for RENSON Inc UK based company.
     Large Basements and Parking 3D Designing for Air Comfort and Flow Analysis. 
@@ -50,7 +50,7 @@ export const designerDetails = [
   {
     name: "Aditya Pavan Bhamidipati",
     designation: "Designer",
-    profile: teamUrls.aditya,
+    image: teamUrls.aditya,
     details: `Based in Hyderabad. Profound knowledge in the field of Interior Design & 
     hands-on experience handling many clients for their personalized requirements makes 
     Aditya standout from the rest 
@@ -60,14 +60,14 @@ export const designerDetails = [
   {
     name: "Shruti Verma",
     designation: "Designer",
-    profile: teamUrls.shruti,
+    image: teamUrls.shruti,
     details: `Based in Chandigarh. Worked on the sustainabilty bu using more the natural light in the areas than th artificial lights which maintain the thermal effect inside the areas and make it comfortable. 
     `,
   },
   {
     name: "Vishal Patel",
     designation: "Designer",
-    profile: teamUrls.vishal,
+    image: teamUrls.vishal,
     details: `Based in Guajarat. With more than 8 years of experience of architectural and interior design field
     so I can provide innovative and punctual solutions for various architectural problems.
     
@@ -76,7 +76,7 @@ export const designerDetails = [
   {
     name: "Divya Agarwal",
     designation: "Designer",
-    profile: teamUrls.divya,
+    image: teamUrls.divya,
     details: `Based in Delhi. Creative and disciplined interior designer collaborates with private and commercial clients to discover their styles, 
     developing environments that grow from costumer’s natural preferences.
     `,
@@ -84,13 +84,13 @@ export const designerDetails = [
   {
     name: "Rashika Singhal",
     designation: "Designer",
-    profile: teamUrls.rashika,
+    image: teamUrls.rashika,
     details: `Based in Jaipur. Has a keen interest in new and professional looking designs, working passionately and growing professionally in her way of living .`,
   },
   {
     name: "Apra Khandelwal",
     designation: "Designer",
-    profile: teamUrls.apra,
+    image: teamUrls.apra,
     details: `Based in Jaipur. Her work experience includes PG Specialisation Program - Interior Design from INIFD, 
     Jaipur & interior designing job at Celestial Spaces and The Village Shop in Jaipur, Rajasthan. 
     Appreciates design process and the importance of not only an appealing form, but also the essential function of a space.`,

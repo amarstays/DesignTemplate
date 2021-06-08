@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { TextField } from "@material-ui/core";
-import { uploadToS3 } from "../../utils/actions";
+import { MenuItem, TextField } from "@material-ui/core";
+import { uploadFile } from "../../utils/actions";
 
 export type formElement = {
   label: string;
@@ -10,6 +10,7 @@ export type formElement = {
   placeholder?: string;
   validation?: any;
   fieldProps?: any;
+  options?: any[];
 };
 
 interface FormGeneratorProps {
@@ -31,8 +32,16 @@ const FormGenerator = ({ metadata, getFormData }: FormGeneratorProps) => {
     });
   };
 
-  const handleFileUpload = (e: any) => {
-    uploadToS3(e.target.files[0]);
+  const handleFileUpload = async (e: any) => {
+    const name = e.target.name;
+    const response: any = await uploadFile(e.target.files[0]);
+
+    if (response?.data?.url) {
+      setFormData({
+        ...formData,
+        [name]: response.data.url,
+      });
+    }
   };
 
   return (
@@ -50,7 +59,14 @@ const FormGenerator = ({ metadata, getFormData }: FormGeneratorProps) => {
               formElement.type === "file" ? handleFileUpload : handleChange
             }
             {...formElement.fieldProps}
-          />
+          >
+            {formElement?.fieldProps?.select &&
+              formElement.options?.map((option: any, index: number) => (
+                <MenuItem key={index} value={option}>
+                  {option}
+                </MenuItem>
+              ))}
+          </TextField>
         );
       })}
     </form>

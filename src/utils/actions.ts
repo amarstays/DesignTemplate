@@ -1,52 +1,28 @@
-import AWS from "aws-sdk";
-import { getUser } from "./methods";
+import axios from "axios";
 
-export const uploadToS3 = async (file: File) => {
-  const config = {
-    bucketName: `test-design`,
-    region: "ap-south-1",
-    accessKeyId: "AKIA47WXKUSTPAJY7XCN",
-    secretAccessKey: "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",
-  };
+export type actionTypes = "superadmin" | "siteadmin" | "sales" | "designer";
 
-  AWS.config.update({
-    accessKeyId: config.accessKeyId,
-    secretAccessKey: config.secretAccessKey,
-    region: config.region,
-  });
+export enum roles {
+  SUPER_ADMIN = "superadmin",
+  SITE_ADMIN = "siteadmin",
+  SALES = "sales",
+  DESIGNER = "designer",
+}
 
-  const s3 = new AWS.S3();
+export const uploadFile = async (file: any) => {
+  const data = new FormData();
+  data.append("file", file);
+  data.append("upload_preset", "design");
 
   try {
-    const params = {
-      Bucket: config.bucketName,
-      Key: file.name,
-      ContentType: file.type,
-      Body: file,
-      ACL: "public-read",
-    };
+    const response = await axios.post(
+      "https://api.cloudinary.com/v1_1/yashwork2110/image/upload",
+      data
+    );
 
-    const res = await s3.putObject(params).promise();
-
-    console.log(res);
-    return res;
-  } catch (exception) {
-    console.log(exception);
-    return exception;
-  }
-};
-
-type actionTypes = "site_admin";
-
-export const validateUserRoles = (action: actionTypes) => {
-  const roles = getUser()?.roles ?? "";
-
-  switch (action) {
-    case "site_admin":
-      return (
-        roles.indexOf("site_admin") > -1 || roles.indexOf("superadmin") > -1
-      );
-    default:
-      return true;
+    return response;
+  } catch (error) {
+    console.log("upload failed", error);
+    return error;
   }
 };

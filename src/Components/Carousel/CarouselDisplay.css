@@ -59,6 +59,10 @@
   width: 100%;
 }
 
+.designer-actions > button {
+  margin-right: 10px;
+}
+
 .width-50 {
   width: 50%;
   position: relative;

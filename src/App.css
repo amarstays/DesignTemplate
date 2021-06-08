@@ -2,6 +2,10 @@
   font-family: "KoHo", sans-serif !important;
 }
 
+.content {
+  min-height: 80vh;
+}
+
 .drawer-list-item {
   text-align: center;
   font-weight: 600 !important;
@@ -25,6 +29,11 @@
 .modal-form > div {
   margin: 10px 0;
   width: 250px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
 }
 
 .fl-col {

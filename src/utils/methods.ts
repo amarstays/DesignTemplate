@@ -10,6 +10,22 @@ export const getUser = () => {
   else return user;
 };
 
+export const validateRoles = (roles: string[]) => {
+  var user: any = localStorage.getItem("user");
+  if (user) {
+    user = JSON.parse(user);
+    var isAllowed = false;
+
+    for (var i in roles) {
+      isAllowed = user[0].roles.indexOf(roles[i]) > -1;
+
+      if (isAllowed) return true;
+    }
+  }
+
+  return false;
+};
+
 export const getImages = (type: string) => {
   const keys: string[] = Object.keys(portfolio).filter((key) =>
     key.includes(type)

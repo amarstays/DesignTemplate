@@ -10,10 +10,13 @@ import {
   Grid,
   Typography,
 } from "@material-ui/core";
+import { Dispatch } from "react";
 import Carousel from "react-material-ui-carousel";
 import { useHistory } from "react-router";
 import { logos } from "../../assets/urls";
+import { client } from "../../utils/api.config";
 import { designerDetails } from "../../utils/constants";
+import { getAuthToken } from "../../utils/methods";
 import "./CarouselDisplay.css";
 
 const CarouselDisplay = () => {
@@ -63,13 +66,37 @@ const CarouselDisplay = () => {
 interface DesignerCardProps {
   designer: any;
   summaryCard?: boolean;
+  admin?: boolean;
+  setMessage?: Dispatch<any>;
 }
 
-export const DesignerCard = ({ designer, summaryCard }: DesignerCardProps) => {
+export const DesignerCard = ({
+  designer,
+  summaryCard,
+  admin = false,
+  setMessage,
+}: DesignerCardProps) => {
   const history = useHistory();
 
   const handleGalleryButtonClick = () => {
     history.push(`/gallery`);
+  };
+
+  const handleDeleteDesigner = () => {
+    client
+      .delete(`/designer/delete/${designer.id}`, {
+        headers: {
+          Authorization: getAuthToken(),
+        },
+      })
+      .then((res) => {
+        setMessage &&
+          setMessage({
+            open: true,
+            msg: res.data.message,
+            severity: "success",
+          });
+      });
   };
 
   return (
@@ -77,7 +104,7 @@ export const DesignerCard = ({ designer, summaryCard }: DesignerCardProps) => {
       <Card elevation={3}>
         <Box className="designer-card">
           <Box className="width-50">
-            <CardMedia className="designer-photo" image={designer.profile} />
+            <CardMedia className="designer-photo" image={designer.image} />
             <img src={logos.trans} alt="logo" className="carousel-logo" />
           </Box>
           <Box className="designer-details width-50">
@@ -108,6 +135,15 @@ export const DesignerCard = ({ designer, summaryCard }: DesignerCardProps) => {
                 >
                   GALLERY
                 </Button>
+                {admin && (
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={handleDeleteDesigner}
+                  >
+                    Delete
+                  </Button>
+                )}
               </Box>
             </CardActions>
           </Box>
