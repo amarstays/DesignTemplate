@@ -18,6 +18,7 @@ import { getUser } from "./utils/methods";
 import Dashboard from "./Views/Dashboard";
 import Footer from "./Components/Footer/Footer";
 import { Alert } from "@material-ui/lab";
+import SiteAdmin from "./Views/Dashboard/SiteAdmin/Index";
 
 function App() {
   const [message, setMessage] = useState<any>({});
@@ -66,6 +67,9 @@ function App() {
           </Route>
           <Route path="/login" exact>
             <Login />
+          </Route>
+          <Route path="/site-admin" exact>
+            <SiteAdmin />
           </Route>
         </Switch>
       </Router>

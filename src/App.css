@@ -9,6 +9,24 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.modal-parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-form {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 10px;
+}
+
+.modal-form > div {
+  margin: 10px 0;
+  width: 250px;
+}
+
 .fl-col {
   display: flex;
   flex-direction: column;
@@ -27,7 +45,6 @@
 
 .para {
   padding: 0px 30px;
-
   font-weight: 500 !important;
 }
 

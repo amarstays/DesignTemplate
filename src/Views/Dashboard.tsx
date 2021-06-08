@@ -23,13 +23,16 @@ import {
   Paper,
   makeStyles,
   MenuItem,
+  Grid,
 } from "@material-ui/core";
 import { getAuthToken, getUser } from "../utils/methods";
 import "./styles/Dashboard.css";
 import { client } from "../utils/api.config";
+import { useHistory } from "react-router";
 
 const Dashboard = () => {
   const classes = useStyles();
+  const history = useHistory();
   const [openModal, setOpenModal] = useState(false);
   const [customerEnquiries, setCustomerEnquiries] = useState<any[]>([]);
   const [users, setUsers] = useState<any[]>([]);
@@ -134,6 +137,18 @@ const Dashboard = () => {
         )}
       </Box>
       <Divider variant="middle" />
+      <Grid container style={{ padding: "20px" }}>
+        <Grid item xs={12} md={4}>
+          <Card onClick={() => history.push("/site-admin")}>
+            <CardActions>
+              <CardHeader title="Site Admin" />
+              <CardContent>
+                <Typography>Add, edit, remove designers.</Typography>
+              </CardContent>
+            </CardActions>
+          </Card>
+        </Grid>
+      </Grid>
       <Box className="table-parent">
         <TableContainer component={Paper} className="table-container">
           <Table aria-label="simple table">

@@ -11,7 +11,7 @@ import Menu from "@material-ui/icons/Menu";
 import "./Banner.css";
 import { useHistory } from "react-router";
 import { Zoom } from "react-awesome-reveal";
-import { getUser } from "../../utils/methods";
+import { getAuthToken, getUser } from "../../utils/methods";
 import { logos, videoBg } from "../../assets/urls";
 import DrawerSection from "../Drawer/Drawer";
 
@@ -65,7 +65,7 @@ const Banner = () => {
             >
               <Typography>Testimonials</Typography>
             </Button> */}
-            {/* {!Boolean(getAuthToken()) ? (
+            {!Boolean(getAuthToken()) ? (
               <Button color="secondary" onClick={() => history.push("/login")}>
                 <Typography>Login</Typography>
               </Button>
@@ -79,7 +79,7 @@ const Banner = () => {
               >
                 <Typography>Logout</Typography>
               </Button>
-            )} */}
+            )}
             {getUser() &&
             getUser()[0] &&
             getUser()[0].roles.includes("admin") ? (

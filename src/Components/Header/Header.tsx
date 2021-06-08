@@ -10,7 +10,7 @@ import {
 import Menu from "@material-ui/icons/Menu";
 import "./Header.css";
 import { useHistory } from "react-router";
-import { getUser } from "../../utils/methods";
+import { getAuthToken, getUser } from "../../utils/methods";
 import DrawerSection from "../Drawer/Drawer";
 import { logos } from "../../assets/urls";
 
@@ -65,7 +65,7 @@ const Header = () => {
               <Typography className="nav-item">Testimonials</Typography>
             </Button> */}
 
-            {/* {!Boolean(getAuthToken()) ? (
+            {!Boolean(getAuthToken()) ? (
               <Button color="secondary" onClick={() => history.push("/login")}>
                 <Typography className="nav-item">Login</Typography>
               </Button>
@@ -79,7 +79,7 @@ const Header = () => {
               >
                 <Typography className="nav-item">Logout</Typography>
               </Button>
-            )} */}
+            )}
             {getUser() &&
             getUser()[0] &&
             getUser()[0].roles.includes("admin") ? (
