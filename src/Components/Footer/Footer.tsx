@@ -1,4 +1,12 @@
-import { Box, Grid, IconButton, Paper, Typography } from "@material-ui/core";
+import {
+  Box,
+  Divider,
+  Grid,
+  IconButton,
+  Paper,
+  TextField,
+  Typography,
+} from "@material-ui/core";
 import { Email, Phone, Send } from "@material-ui/icons";
 import { useRef } from "react";
 import { Zoom } from "react-awesome-reveal";
@@ -18,25 +26,30 @@ const Footer = ({ setMessage }: FooterProps) => {
   };
 
   return (
-    <Paper className="footer" elevation={3}>
+    <Paper className="footer" elevation={4}>
       <Grid container>
         <Grid item xs={12} md={6}>
           <Box className="fl-col foo-email">
-            <Typography variant="h5">Enter your email</Typography>
+            <Typography variant="h5" style={{ color: "white" }}>
+              <b>Enter your email</b>
+            </Typography>
             <Box display="flex">
               <form
                 onSubmit={handleSubmit}
                 action="https://formspree.io/f/mknkrenb"
                 method="POST"
+                className="footer-form"
               >
-                <input
+                <TextField
                   name="email"
                   type="text"
-                  ref={emailRef}
+                  color="secondary"
+                  inputRef={emailRef}
+                  variant="filled"
                   className="foo-email-field"
                 />
                 <IconButton color="secondary" type="submit">
-                  <Send />
+                  <Send fontSize="large" />
                 </IconButton>
               </form>
             </Box>
@@ -53,8 +66,13 @@ const Footer = ({ setMessage }: FooterProps) => {
             </Zoom>
           </Box>
         </Grid>
+        <Grid item xs={12}>
+          <Box>
+            <Divider variant="middle" />
+          </Box>
+        </Grid>
         <Grid item xs={12} md={6}>
-          <Box className="text-ce foo-border-top">
+          <Box className="text-ce foo-border-top foo-sptop foo-bg-strip">
             <Typography variant="h6">
               <b>Terms & conditions</b>
             </Typography>
@@ -63,7 +81,7 @@ const Footer = ({ setMessage }: FooterProps) => {
           </Box>
         </Grid>
         <Grid item xs={12} md={6}>
-          <Box className="text-ce foo-sptop">
+          <Box className="text-ce foo-sptop foo-bg-strip">
             <Typography variant="h6">
               <b>Let's Connect</b>
             </Typography>
@@ -74,7 +92,7 @@ const Footer = ({ setMessage }: FooterProps) => {
                 hello@gruhamtiamore.com
               </a>
             </Typography>
-            <Typography className="foo-detail">
+            <Typography className="foo-detail ">
               <Phone /> &nbsp;
               <a href="tel:+91 9980149818">+91 9980149818</a>
             </Typography>
