@@ -18,8 +18,10 @@ import { getUser } from "./utils/methods";
 import Dashboard from "./Views/Dashboard";
 import Footer from "./Components/Footer/Footer";
 import { Alert } from "@material-ui/lab";
-import SiteAdmin from "./Views/Dashboard/SiteAdmin/Index";
-import SalesDashboard from "./Views/Dashboard/SalesAdmin/Index";
+import SiteAdmin from "./Views/Dashboard/SiteAdmin/Dashboard";
+import SalesDashboard from "./Views/Dashboard/Sales/Dashboard";
+import UserForm from "./Views/Dashboard/Customers/Index";
+import UserDashboard from "./Views/Dashboard/User/Dashboard";
 
 function App() {
   const [message, setMessage] = useState<any>({});
@@ -76,6 +78,12 @@ function App() {
             <Route path="/sales-dash" exact>
               <SalesDashboard setMessage={setMessage} />
             </Route>
+            <Route path="/users-dash" exact>
+              <UserDashboard setMessage={setMessage} />
+            </Route>
+            <Route path="/customer/:id" exact>
+              <UserForm setMessage={setMessage} />
+            </Route>
           </Switch>
         </Router>
       </div>
@@ -84,6 +92,7 @@ function App() {
         open={message.open}
         autoHideDuration={3000}
         onClose={() => setMessage({ ...message, open: false })}
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
       >
         <Alert severity={message?.severity}>{message?.msg}</Alert>
       </Snackbar>

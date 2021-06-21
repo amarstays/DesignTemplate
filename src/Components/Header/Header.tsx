@@ -37,6 +37,9 @@ const Header = () => {
             <Button color="secondary" onClick={() => history.push("/gallery")}>
               <Typography className="nav-item">Gallery</Typography>
             </Button>
+            <Button color="secondary" onClick={() => history.push("/services")}>
+              <Typography className="nav-item">Services</Typography>
+            </Button>
           </Box>
         </Grid>
         <Grid item md={2}>
@@ -51,19 +54,16 @@ const Header = () => {
         </Grid>
         <Grid item md={5}>
           <Box className="btn-container">
-            <Button color="secondary" onClick={() => history.push("/services")}>
-              <Typography className="nav-item">Services</Typography>
-            </Button>
             <Button color="secondary" onClick={() => history.push("/team")}>
               <Typography className="nav-item">Team</Typography>
             </Button>
 
-            {/* <Button
+            <Button
               color="secondary"
               onClick={() => history.push("/testimonials")}
             >
               <Typography className="nav-item">Testimonials</Typography>
-            </Button> */}
+            </Button>
 
             {!Boolean(getAuthToken()) ? (
               <Button color="secondary" onClick={() => history.push("/login")}>

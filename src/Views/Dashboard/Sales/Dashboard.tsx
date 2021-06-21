@@ -11,22 +11,19 @@ import {
   CardHeader,
   CardActions,
 } from "@material-ui/core";
-import UserManager from "../../../Components/User/UserManager";
 import TableComponent from "../../../Components/TableComponent/TableComponent";
 import { leadForm, salesGridView } from "./metadata";
-import FormGenerator from "../FormGenerator";
+import FormGenerator from "../../../Components/FormGenerator";
 import { client } from "../../../utils/api.config";
-import { validateRoles } from "../../../utils/methods";
-import { roles } from "../../../utils/actions";
-
-type openModalTypes = "executive" | "customer" | false;
+import { useHistory } from "react-router-dom";
 
 interface SalesDashboardProps {
   setMessage: Dispatch<any>;
 }
 
 const SalesDashboard = ({ setMessage }: SalesDashboardProps) => {
-  const [openModal, setOpenModal] = useState<openModalTypes>(false);
+  const history = useHistory();
+  const [openModal, setOpenModal] = useState<boolean>(false);
   const [formData, setFormData] = useState<any>();
 
   const getFormData = (data: any) => {
@@ -43,6 +40,10 @@ const SalesDashboard = ({ setMessage }: SalesDashboardProps) => {
     });
   };
 
+  const handleClickOfRow = (data: any) => {
+    history.push(`/customer/${data.id}`);
+  };
+
   return (
     <div>
       <Header />
@@ -50,37 +51,36 @@ const SalesDashboard = ({ setMessage }: SalesDashboardProps) => {
         <Typography variant="h3" className="title-co">
           Sales & Leads
         </Typography>
-        <Box className="column">
-          {validateRoles([roles.SUPER_ADMIN]) && (
-            <Button onClick={() => setOpenModal("executive")}>
-              Manage Sales Executives
-            </Button>
-          )}
-          <Button onClick={() => setOpenModal("customer")}>
+        <Box className="fl-ce title-button-container">
+          <Button
+            color="primary"
+            variant="contained"
+            onClick={() => setOpenModal(true)}
+          >
             Add a new lead
           </Button>
         </Box>
       </Box>
       <Divider variant="middle" />
-      <TableComponent metadata={salesGridView} dashboardType="customer" />
+      <TableComponent
+        metadata={salesGridView}
+        dashboardType="customer"
+        onRowClick={handleClickOfRow}
+      />
       <Modal
         open={Boolean(openModal)}
         onClose={() => setOpenModal(false)}
         className="modal-parent"
       >
-        {openModal === "executive" ? (
-          <UserManager roles={roles.SALES} />
-        ) : (
-          <Card>
-            <CardHeader title="Add lead" />
-            <CardContent>
-              <FormGenerator metadata={leadForm} getFormData={getFormData} />
-            </CardContent>
-            <CardActions>
-              <Button onClick={handleSubmit}>Add</Button>
-            </CardActions>
-          </Card>
-        )}
+        <Card style={{ width: "350px" }}>
+          <CardHeader title="Add lead" />
+          <CardContent>
+            <FormGenerator metadata={leadForm} getFormData={getFormData} />
+          </CardContent>
+          <CardActions>
+            <Button onClick={handleSubmit}>Add</Button>
+          </CardActions>
+        </Card>
       </Modal>
     </div>
   );

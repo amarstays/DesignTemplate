@@ -38,6 +38,9 @@ const Banner = () => {
             >
               <Typography>Philosophy</Typography>
             </Button>
+            <Button color="secondary" onClick={() => history.push("/services")}>
+              <Typography>Services</Typography>
+            </Button>
           </Box>
         </Grid>
         <Grid item md={2}>
@@ -52,19 +55,16 @@ const Banner = () => {
         </Grid>
         <Grid item md={5}>
           <Box className="btn-container">
-            <Button color="secondary" onClick={() => history.push("/services")}>
-              <Typography>Services</Typography>
-            </Button>
             <Button color="secondary" onClick={() => history.push("/team")}>
               <Typography>Team</Typography>
             </Button>
 
-            {/* <Button
+            <Button
               color="secondary"
               onClick={() => history.push("/testimonials")}
             >
               <Typography>Testimonials</Typography>
-            </Button> */}
+            </Button>
             {!Boolean(getAuthToken()) ? (
               <Button color="secondary" onClick={() => history.push("/login")}>
                 <Typography>Login</Typography>

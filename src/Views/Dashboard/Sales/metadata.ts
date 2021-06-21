@@ -1,6 +1,6 @@
 import { tableMetadata } from "../../../Components/TableComponent/columnTypes";
 import { projectTypes } from "../../../utils/constants";
-import { formElement } from "../FormGenerator";
+import { formElement } from "../../../Components/FormGenerator";
 
 export const salesGridView: tableMetadata = {
   title: "Sales",

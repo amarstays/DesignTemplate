@@ -3,7 +3,7 @@
 }
 
 .content {
-  min-height: 80vh;
+  min-height: 100vh;
 }
 
 .drawer-list-item {
@@ -26,9 +26,31 @@
   padding: 0px 10px;
 }
 
+.form-section-title {
+  background: black;
+  padding: 10px;
+  color: white;
+  margin: 0px -10px 10px -10px !important;
+}
+
+.table-click-row {
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+.table-click-row:hover {
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75) inset;
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75) inset;
+  -moz-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75) inset;
+}
+
+.modal-form-content {
+  width: 350px;
+}
+
 .modal-form > div {
   margin: 10px 0;
-  width: 250px;
+  width: 100%;
 }
 
 .column {
@@ -138,4 +160,16 @@
 .form-container > .input-field {
   margin: 10px 0px;
   width: 300px;
+}
+
+.form-field {
+  width: 100%;
+}
+
+.title-button-container {
+  margin: 20px 0;
+}
+
+.title-button-container > button {
+  margin: 0 10px;
 }

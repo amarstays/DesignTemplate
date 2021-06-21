@@ -13,15 +13,20 @@ import {
 import { client } from "../../utils/api.config";
 import { getAuthToken } from "../../utils/methods";
 import { columnsType, tableMetadata } from "./columnTypes";
+import classnames from "classnames";
 
 interface TableComponentProps {
   metadata: tableMetadata;
   dashboardType: string;
+  onRowClick?: any;
 }
 
-const TableComponent = ({ metadata, dashboardType }: TableComponentProps) => {
+const TableComponent = ({
+  metadata,
+  dashboardType,
+  onRowClick,
+}: TableComponentProps) => {
   const classes = useStyles();
-  const [formData, setFormData] = useState<any>({});
   const [data, setData] = useState<any[]>([]);
 
   useEffect(() => {
@@ -31,48 +36,13 @@ const TableComponent = ({ metadata, dashboardType }: TableComponentProps) => {
           Authorization: `Bearer ${getAuthToken()}`,
         },
       })
-      .then((data) => {
-        setData(data.data[dashboardType]);
-        const list: any = {};
-        data.data.enquiries.forEach((customer: any) => {
-          list[customer.id] = {
-            status: customer.status,
-            assigned_to: customer.assigned_to,
-          };
-        });
-        setFormData(list);
+      .then((res) => {
+        setData(res.data[dashboardType]);
       })
       .catch((err) => {
         console.log(err);
       });
   }, [dashboardType]);
-
-  // const handleChange = (id: number, name: string, value: any) => {
-  //   setFormData({
-  //     ...formData,
-  //     [id]: {
-  //       ...formData[id],
-  //       [name]: value,
-  //     },
-  //   });
-  // };
-
-  // const handleSubmit = (id: number) => {
-  //   const payload: any = {
-  //     status: formData[id].status,
-  //     assigned_to: formData[id].assigned_to,
-  //   };
-
-  //   Object.keys(payload).forEach((key: string) => {
-  //     if (payload[key] === undefined) delete payload[key];
-  //   });
-
-  //   client.put(`/customer/update/${id}`, payload, {
-  //     headers: {
-  //       Authorization: `Bearer ${getAuthToken()}`,
-  //     },
-  //   });
-  // };
 
   return (
     <Box className="table-parent">
@@ -93,7 +63,13 @@ const TableComponent = ({ metadata, dashboardType }: TableComponentProps) => {
           </TableHead>
           <TableBody>
             {data.map((element: any, index: number) => (
-              <TableRow key={index}>
+              <TableRow
+                key={index}
+                className={classnames({
+                  "table-click-row": Boolean(onRowClick),
+                })}
+                onClick={() => onRowClick(element)}
+              >
                 {metadata.columns.map((column: columnsType, key: number) => (
                   <TableCell align="center" key={key}>
                     {column.columnActions?.call ? (

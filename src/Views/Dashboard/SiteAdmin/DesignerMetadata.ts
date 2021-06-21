@@ -1,6 +1,6 @@
-import { formElement } from "../FormGenerator";
+import { formElement } from "../../../Components/FormGenerator";
 
-export const designerForm: formElement[] = [
+export const memeberForm: formElement[] = [
   {
     label: "Name",
     name: "name",
@@ -19,10 +19,20 @@ export const designerForm: formElement[] = [
     },
   },
   {
+    label: "Title",
+    name: "title",
+    type: "text",
+    variant: "outlined",
+  },
+  {
     label: "Role",
     name: "role",
     type: "text",
     variant: "outlined",
+    fieldProps: {
+      select: true,
+    },
+    options: ["Designer", "Team Member"],
   },
   {
     label: "",
@@ -32,5 +42,14 @@ export const designerForm: formElement[] = [
     fieldProps: {
       accept: "image/*",
     },
+  },
+];
+
+export const categoryMetadata: formElement[] = [
+  {
+    label: "Name of the category",
+    name: "category",
+    type: "text",
+    variant: "outlined",
   },
 ];

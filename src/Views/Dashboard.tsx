@@ -53,12 +53,24 @@ const Dashboard = ({ setMessage }: DashboardProps) => {
               className="dash-card"
             >
               <CardActions className="column">
-                <CardHeader
-                  title="Sales Dashboard"
-                  className="dash-card-header"
-                />
+                <CardHeader title="Sales" className="dash-card-header" />
                 <CardContent>
                   <Typography>Add & manage leads</Typography>
+                </CardContent>
+              </CardActions>
+            </Card>
+          </Grid>
+        )}
+        {validateRoles(["superadmin"]) && (
+          <Grid item xs={12} md={4}>
+            <Card
+              onClick={() => history.push("/users-dash")}
+              className="dash-card"
+            >
+              <CardActions className="column">
+                <CardHeader title="Users" className="dash-card-header" />
+                <CardContent>
+                  <Typography>Add & manage users</Typography>
                 </CardContent>
               </CardActions>
             </Card>

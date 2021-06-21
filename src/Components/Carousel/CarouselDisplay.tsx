@@ -1,3 +1,4 @@
+import { Dispatch, useEffect, useState } from "react";
 import {
   Box,
   Button,
@@ -10,16 +11,22 @@ import {
   Grid,
   Typography,
 } from "@material-ui/core";
-import { Dispatch } from "react";
 import Carousel from "react-material-ui-carousel";
 import { useHistory } from "react-router";
 import { logos } from "../../assets/urls";
 import { client } from "../../utils/api.config";
-import { designerDetails } from "../../utils/constants";
 import { getAuthToken } from "../../utils/methods";
 import "./CarouselDisplay.css";
 
 const CarouselDisplay = () => {
+  const [designerDetails, setDesignerDetails] = useState([]);
+
+  useEffect(() => {
+    client.get("/designer/getAll").then((res) => {
+      setDesignerDetails(res.data.designers);
+    });
+  }, []);
+
   return (
     <div>
       <Divider variant="middle" />
@@ -67,6 +74,7 @@ interface DesignerCardProps {
   designer: any;
   summaryCard?: boolean;
   admin?: boolean;
+  refreshData?: any;
   setMessage?: Dispatch<any>;
 }
 
@@ -75,6 +83,7 @@ export const DesignerCard = ({
   summaryCard,
   admin = false,
   setMessage,
+  refreshData,
 }: DesignerCardProps) => {
   const history = useHistory();
 
@@ -96,6 +105,7 @@ export const DesignerCard = ({
             msg: res.data.message,
             severity: "success",
           });
+        refreshData && refreshData();
       });
   };
 
