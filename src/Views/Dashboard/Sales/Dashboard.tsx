@@ -12,10 +12,11 @@ import {
   CardActions,
 } from "@material-ui/core";
 import TableComponent from "../../../Components/TableComponent/TableComponent";
-import { leadForm, salesGridView } from "./metadata";
+import { customerFilter, leadForm, salesGridView } from "./metadata";
 import FormGenerator from "../../../Components/FormGenerator";
 import { client } from "../../../utils/api.config";
 import { useHistory } from "react-router-dom";
+import { getUser } from "../../../utils/methods";
 
 interface SalesDashboardProps {
   setMessage: Dispatch<any>;
@@ -31,13 +32,18 @@ const SalesDashboard = ({ setMessage }: SalesDashboardProps) => {
   };
 
   const handleSubmit = (e: any) => {
-    client.post("/customer/enquire", formData).then((res) => {
-      setMessage({
-        open: true,
-        msg: "Refresh to see the changes",
-        severity: "success",
+    client
+      .post("/customer/enquire", {
+        ...formData,
+        added_by: getUser()?.[0]?.name ?? "Anonymous",
+      })
+      .then((res) => {
+        setMessage({
+          open: true,
+          msg: "Refresh to see the changes",
+          severity: "success",
+        });
       });
-    });
   };
 
   const handleClickOfRow = (data: any) => {
@@ -66,6 +72,7 @@ const SalesDashboard = ({ setMessage }: SalesDashboardProps) => {
         metadata={salesGridView}
         dashboardType="customer"
         onRowClick={handleClickOfRow}
+        filterMetadata={customerFilter}
       />
       <Modal
         open={Boolean(openModal)}

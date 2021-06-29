@@ -6,6 +6,7 @@ import {
   CardHeader,
   Typography,
   IconButton,
+  CardMedia,
 } from "@material-ui/core";
 import Delete from "@material-ui/icons/Delete";
 import { Dispatch, useCallback, useEffect, useState } from "react";
@@ -20,9 +21,15 @@ interface PortfolioHandlerProps {
   name: string;
   id: number;
   setMessage: Dispatch<any>;
+  refetchCallback?: any;
 }
 
-const PortfolioHandler = ({ name, id, setMessage }: PortfolioHandlerProps) => {
+const PortfolioHandler = ({
+  name,
+  id,
+  setMessage,
+  refetchCallback,
+}: PortfolioHandlerProps) => {
   const [images, setImages] = useState<any[]>([]);
   const [formData, setFormData] = useState<any>(null);
   const [loading, setLoading] = useState(false);
@@ -67,15 +74,16 @@ const PortfolioHandler = ({ name, id, setMessage }: PortfolioHandlerProps) => {
 
   const deleteCategoryHandler = () => {
     client
-      .delete(`/portfolio/delete/${id}`, {
+      .delete(`/portfolio/${id}`, {
         headers: {
           Authorization: getAuthToken(),
         },
       })
       .then(() => {
+        refetchCallback!();
         setMessage({
           open: true,
-          msg: "Deleted Succesfully, referesh",
+          msg: "Deleted Succesfully",
           severity: "success",
         });
       });
@@ -106,6 +114,23 @@ const PortfolioHandler = ({ name, id, setMessage }: PortfolioHandlerProps) => {
       });
   };
 
+  const deleteImage = (id: number) => {
+    client
+      .delete(`/portfolio/image/${id}`, {
+        headers: {
+          Authorization: getAuthToken(),
+        },
+      })
+      .then(() => {
+        getImages();
+        setMessage({
+          open: true,
+          msg: "Deleted Successfully",
+          severity: "success",
+        });
+      });
+  };
+
   return (
     <Card className="portfolio-card" elevation={3}>
       <CardHeader
@@ -122,16 +147,25 @@ const PortfolioHandler = ({ name, id, setMessage }: PortfolioHandlerProps) => {
         }
       />
       <CardContent>
-        <ReactSortable list={images} setList={setImages}>
+        <ReactSortable
+          list={images}
+          setList={setImages}
+          style={{ display: "flex" }}
+        >
           {images.map((data: any, index: number) => (
-            <img
-              className="portfolio-img"
-              src={data.url}
-              alt="portfolio"
-              key={index}
-              height="200"
-              width="200"
-            />
+            <Card key={index} style={{ marginRight: "10px" }}>
+              <CardHeader
+                action={
+                  <IconButton onClick={() => deleteImage(data.id)}>
+                    <Delete />
+                  </IconButton>
+                }
+              />
+              <CardMedia
+                image={data.url}
+                style={{ height: "200px", width: "200px" }}
+              />
+            </Card>
           ))}
         </ReactSortable>
       </CardContent>

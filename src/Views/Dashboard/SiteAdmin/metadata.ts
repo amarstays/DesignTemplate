@@ -53,3 +53,38 @@ export const categoryMetadata: formElement[] = [
     variant: "outlined",
   },
 ];
+
+export const testimonialMetadata: formElement[] = [
+  {
+    label: "Name",
+    name: "name",
+    type: "text",
+    variant: "outlined",
+  },
+  {
+    label: "Rating",
+    name: "rating",
+    type: "rating",
+    variant: "outlined",
+  },
+  {
+    label: "Message",
+    name: "message",
+    type: "text",
+    variant: "outlined",
+    fieldProps: {
+      multiline: true,
+      rows: 4,
+      rowsMax: 5,
+    },
+  },
+  {
+    label: "",
+    name: "url",
+    type: "file",
+    variant: "outlined",
+    fieldProps: {
+      accept: "image/*",
+    },
+  },
+];

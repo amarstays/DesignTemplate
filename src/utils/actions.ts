@@ -12,11 +12,11 @@ export enum roles {
 export const uploadFile = async (file: any) => {
   const data = new FormData();
   data.append("file", file);
-  data.append("upload_preset", "design");
+  data.append("upload_preset", "yglddbto");
 
   try {
     const response = await axios.post(
-      "https://api.cloudinary.com/v1_1/yashwork2110/image/upload",
+      "https://api.cloudinary.com/v1_1/gta/image/upload",
       data
     );
 

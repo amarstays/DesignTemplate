@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import {
   Box,
+  IconButton,
   Card,
   CardContent,
   CardHeader,
@@ -9,17 +10,37 @@ import {
   Grid,
   Typography,
 } from "@material-ui/core";
+import Delete from "@material-ui/icons/Delete";
 import { Fade } from "react-awesome-reveal";
 import { logos } from "../assets/urls";
 import Header from "../Components/Header/Header";
 import { client } from "../utils/api.config";
 import "./styles/Team.css";
+import { getAuthToken } from "../utils/methods";
 
 interface TeamCardProps {
   team: any;
+  admin?: boolean;
+  refetchCallback?: any;
 }
 
-export const TeamCard = ({ team }: TeamCardProps) => {
+export const TeamCard = ({
+  team,
+  admin = false,
+  refetchCallback,
+}: TeamCardProps) => {
+  const onDelete = (id: number) => {
+    client
+      .delete(`/team/delete/${id}`, {
+        headers: {
+          Authorization: getAuthToken(),
+        },
+      })
+      .then(() => {
+        refetchCallback!();
+      });
+  };
+
   return (
     <Card className="team-card" elevation={3}>
       <Box className="team-profile-img-container">
@@ -37,6 +58,13 @@ export const TeamCard = ({ team }: TeamCardProps) => {
             <Typography style={{ color: "white" }} className="member-role">
               {team.title}
             </Typography>
+          }
+          action={
+            admin && (
+              <IconButton onClick={() => onDelete(team.id)}>
+                <Delete style={{ color: "red" }} />
+              </IconButton>
+            )
           }
           className="team-card-header"
         />

@@ -6,11 +6,17 @@ import {
   Button,
   IconButton,
   Typography,
+  Menu,
+  MenuItem,
 } from "@material-ui/core";
-import Menu from "@material-ui/icons/Menu";
+import MenuIcon from "@material-ui/icons/Menu";
 import "./Header.css";
 import { useHistory } from "react-router";
-import { getAuthToken, getUser } from "../../utils/methods";
+import {
+  getAuthToken,
+  getUser,
+  handleRedirectionToDash,
+} from "../../utils/methods";
 import DrawerSection from "../Drawer/Drawer";
 import { logos } from "../../assets/urls";
 
@@ -18,6 +24,7 @@ const Header = () => {
   const classes = useStyles();
   const history = useHistory();
   const [openDrawer, setOpenDrawer] = useState(false);
+  const [menuAnchor, setMenuAnchor] = useState<any>(null);
 
   const toggleDrawer = () => {
     setOpenDrawer(!openDrawer);
@@ -64,28 +71,10 @@ const Header = () => {
             >
               <Typography className="nav-item">Testimonials</Typography>
             </Button>
-
-            {!Boolean(getAuthToken()) ? (
-              <Button color="secondary" onClick={() => history.push("/login")}>
-                <Typography className="nav-item">Login</Typography>
-              </Button>
-            ) : (
+            {getUser()?.[0]?.roles !== "user" ? (
               <Button
                 color="secondary"
-                onClick={() => {
-                  localStorage.clear();
-                  history.push("/login");
-                }}
-              >
-                <Typography className="nav-item">Logout</Typography>
-              </Button>
-            )}
-            {getUser() &&
-            getUser()[0] &&
-            getUser()[0].roles.includes("admin") ? (
-              <Button
-                color="secondary"
-                onClick={() => history.push("/dashboard")}
+                onClick={() => handleRedirectionToDash(history)}
               >
                 <Typography className="nav-item">DASHBOARD</Typography>
               </Button>
@@ -96,6 +85,37 @@ const Header = () => {
               >
                 <Typography className="nav-item">Enquire</Typography>
               </Button>
+            )}
+            {!Boolean(getAuthToken()) ? (
+              <Button color="secondary" onClick={() => history.push("/login")}>
+                <Typography className="nav-item">Login</Typography>
+              </Button>
+            ) : (
+              <>
+                <Button
+                  color="secondary"
+                  onClick={(e) => setMenuAnchor(e.target)}
+                >
+                  <Typography className="nav-item">
+                    {getUser()?.[0].name}
+                  </Typography>
+                </Button>
+                <Menu
+                  anchorEl={menuAnchor}
+                  open={Boolean(menuAnchor)}
+                  keepMounted
+                  onClose={() => setMenuAnchor(null)}
+                >
+                  <MenuItem
+                    onClick={() => {
+                      localStorage.clear();
+                      history.push("/login");
+                    }}
+                  >
+                    Logout
+                  </MenuItem>
+                </Menu>
+              </>
             )}
           </Box>
         </Grid>
@@ -108,7 +128,7 @@ const Header = () => {
       <Grid container>
         <Grid item xs={4}>
           <IconButton onClick={toggleDrawer}>
-            <Menu color="primary" />
+            <MenuIcon color="primary" />
           </IconButton>
         </Grid>
         <Grid item xs={8}>

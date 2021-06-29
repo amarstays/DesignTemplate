@@ -10,17 +10,14 @@ export const getUser = () => {
   else return user;
 };
 
-export const validateRoles = (roles: string[]) => {
+export const validateRoles = (roles: string) => {
   var user: any = localStorage.getItem("user");
   if (user) {
     user = JSON.parse(user);
-    var isAllowed = false;
+    var isAllowed =
+      user?.[0]?.roles === "superadmin" || user?.[0]?.roles === roles;
 
-    for (var i in roles) {
-      isAllowed = user[0].roles.indexOf(roles[i]) > -1;
-
-      if (isAllowed) return true;
-    }
+    return isAllowed;
   }
 
   return false;
@@ -64,4 +61,19 @@ export const sendEmail = (ev: any, setMessage: any) => {
   };
   xhr.send(data);
   return false;
+};
+
+export const handleRedirectionToDash = (history: any) => {
+  const user = getUser()?.[0];
+
+  if (user) {
+    if (user.roles === "superadmin") history.push("/dashboard");
+    else if (user.roles === "Site Admin") history.push("/site-admin");
+    else if (
+      user.roles === "Sales Executive" ||
+      user.roles === "Designer" ||
+      user.roles === "Execution Partner"
+    )
+      history.push("/users-dash");
+  }
 };

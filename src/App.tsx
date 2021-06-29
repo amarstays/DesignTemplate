@@ -22,6 +22,7 @@ import SiteAdmin from "./Views/Dashboard/SiteAdmin/Dashboard";
 import SalesDashboard from "./Views/Dashboard/Sales/Dashboard";
 import UserForm from "./Views/Dashboard/Customers/Index";
 import UserDashboard from "./Views/Dashboard/User/Dashboard";
+import Testimonials from "./Views/Testimonials";
 
 function App() {
   const [message, setMessage] = useState<any>({});
@@ -36,7 +37,7 @@ function App() {
               <EnquireSection />
               <CarouselDisplay />
             </Route>
-            {getUser() && getUser()?.[0]?.roles.includes("admin") && (
+            {getUser()?.[0]?.roles.includes("admin") && (
               <Route path="/dashboard" exact>
                 <Dashboard setMessage={setMessage} />
               </Route>
@@ -55,11 +56,11 @@ function App() {
               <EnquireSection />
               <CarouselDisplay />
             </Route>
-            {/* <Route path="/testimonials" exact>
-            <Testimonials />
-            <EnquireSection />
-            <CarouselDisplay />
-          </Route> */}
+            <Route path="/testimonials" exact>
+              <Testimonials />
+              <EnquireSection />
+              <CarouselDisplay />
+            </Route>
             <Route path="/team" exact>
               <Team />
               <EnquireSection />
@@ -70,7 +71,7 @@ function App() {
               <CarouselDisplay />
             </Route>
             <Route path="/login" exact>
-              <Login />
+              <Login setMessage={setMessage} />
             </Route>
             <Route path="/site-admin" exact>
               <SiteAdmin setMessage={setMessage} />

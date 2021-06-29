@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, ChangeEvent } from "react";
 import {
   Box,
   TableContainer,
@@ -8,28 +8,41 @@ import {
   TableCell,
   TableRow,
   TableBody,
-  makeStyles,
+  Typography,
+  TableSortLabel,
+  InputAdornment,
+  Input,
+  InputLabel,
+  FormControl,
 } from "@material-ui/core";
 import { client } from "../../utils/api.config";
 import { getAuthToken } from "../../utils/methods";
 import { columnsType, tableMetadata } from "./columnTypes";
 import classnames from "classnames";
+import { formElement } from "../FormGenerator";
+import Filter from "../Filter/Filter";
+import Search from "@material-ui/icons/Search";
 
 interface TableComponentProps {
   metadata: tableMetadata;
   dashboardType: string;
   onRowClick?: any;
+  refresh?: any;
+  filterMetadata?: formElement[];
 }
 
 const TableComponent = ({
   metadata,
   dashboardType,
   onRowClick,
+  refresh,
+  filterMetadata,
 }: TableComponentProps) => {
-  const classes = useStyles();
   const [data, setData] = useState<any[]>([]);
+  const [order, setOrder] = useState<any>("asc");
+  const [orderBy, setOrderBy] = useState<string>();
 
-  useEffect(() => {
+  const getData = useCallback(() => {
     client
       .get(`/${dashboardType}/getAll`, {
         headers: {
@@ -44,8 +57,74 @@ const TableComponent = ({
       });
   }, [dashboardType]);
 
+  useEffect(() => {
+    getData();
+  }, [refresh, getData]);
+
+  useEffect(() => {
+    if (orderBy) {
+      var dataToBeSorted = data;
+      const factor = order === "asc" ? -1 : 1;
+
+      dataToBeSorted.sort((a, b) =>
+        a[orderBy] < b[orderBy] ? factor : 0 - factor
+      );
+
+      setData(() => dataToBeSorted);
+    }
+  }, [orderBy, order, data]);
+
+  const handleRequestSort = (property: string) => {
+    const isAsc = orderBy === property && order === "asc";
+    setOrder(isAsc ? "desc" : "asc");
+    setOrderBy(property);
+  };
+
+  const handleSearch = (
+    e: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
+  ) => {
+    const searchString = e.target.value;
+
+    if (!searchString) getData();
+
+    if (searchString.length < 2) return;
+
+    var dataCopy = data.filter((item: any, index: number) => {
+      const values = Object.values(item);
+      var str = "";
+      values.forEach((val: any) => {
+        if (val) str += val.toString();
+      });
+
+      return str.indexOf(searchString) > -1;
+    });
+
+    setData(dataCopy);
+  };
+
   return (
     <Box className="table-parent">
+      {filterMetadata && (
+        <Filter
+          data={data}
+          setData={setData}
+          metadata={filterMetadata}
+          refetchCallback={getData}
+        />
+      )}
+      <Box className="search-bar">
+        <FormControl>
+          <InputLabel htmlFor="input-with-icon-adornment">Search</InputLabel>
+          <Input
+            onChange={handleSearch}
+            endAdornment={
+              <InputAdornment position="end">
+                <Search />
+              </InputAdornment>
+            }
+          />
+        </FormControl>
+      </Box>
       <TableContainer component={Paper} className="table-container">
         <Table aria-label="simple table">
           <TableHead>
@@ -53,10 +132,18 @@ const TableComponent = ({
               {metadata.columns.map((column: columnsType, index: number) => (
                 <TableCell
                   key={index}
-                  className={classes.header}
                   align="center"
+                  sortDirection={orderBy === column.key ? order : false}
                 >
-                  {column.header}
+                  <TableSortLabel
+                    active={orderBy === column.key}
+                    direction={orderBy === column.key ? order : "asc"}
+                    onClick={(e) => handleRequestSort(column.key)}
+                  >
+                    <Typography style={{ textTransform: "uppercase" }}>
+                      <b>{column.header}</b>
+                    </Typography>
+                  </TableSortLabel>
                 </TableCell>
               ))}
             </TableRow>
@@ -94,10 +181,3 @@ const TableComponent = ({
 };
 
 export default TableComponent;
-
-const useStyles = makeStyles((theme) => ({
-  header: {
-    background: theme.palette.primary.main,
-    color: "white",
-  },
-}));

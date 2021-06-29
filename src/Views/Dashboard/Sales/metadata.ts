@@ -18,10 +18,6 @@ export const salesGridView: tableMetadata = {
       key: "project_type",
     },
     {
-      header: "Message",
-      key: "message",
-    },
-    {
       header: "Status",
       key: "status",
     },
@@ -31,6 +27,14 @@ export const salesGridView: tableMetadata = {
       columnActions: {
         call: true,
       },
+    },
+    {
+      header: "Designer",
+      key: "designer",
+    },
+    {
+      header: "Execution Partner",
+      key: "execution_partner",
     },
   ],
 };
@@ -73,5 +77,45 @@ export const leadForm: formElement[] = [
       required: true,
     },
     options: projectTypes,
+  },
+  {
+    label: "Status",
+    name: "status",
+    type: "text",
+    variant: "outlined",
+    fieldProps: {
+      select: true,
+      required: true,
+    },
+    options: ["Hot", "Stale", "Active"],
+  },
+];
+
+export const customerFilter: formElement[] = [
+  {
+    label: "Designer",
+    name: "designer",
+    type: "text",
+    variant: "outlined",
+    fieldProps: {
+      select: true,
+    },
+    options: "async",
+    optionsEntity: "/user/Designer",
+    optionKeyName: "name",
+    ratio: 6,
+  },
+  {
+    label: "Execution Partner",
+    name: "execution_partner",
+    type: "text",
+    variant: "outlined",
+    fieldProps: {
+      select: true,
+    },
+    options: "async",
+    optionsEntity: "/user/Execution Partner",
+    optionKeyName: "name",
+    ratio: 6,
   },
 ];

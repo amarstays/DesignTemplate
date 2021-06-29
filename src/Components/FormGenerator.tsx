@@ -10,7 +10,10 @@ import {
   FormControlLabel,
   Checkbox,
   Box,
+  Grid,
+  GridSize,
 } from "@material-ui/core";
+import { Rating } from "@material-ui/lab";
 import File from "@material-ui/icons/FileCopy";
 import { uploadFile } from "../utils/actions";
 import { getAuthToken } from "../utils/methods";
@@ -25,11 +28,12 @@ export type formElement = {
   validation?: any;
   fieldProps?: any;
   options?: any[] | "async";
-  optionsEntity?: "/user/Designer";
+  optionsEntity?: "/user/Designer" | "/user/Execution Partner";
   optionKeyName?: "name";
   title?: string;
   checkboxes?: string[];
   display?: boolean;
+  ratio?: GridSize;
 };
 
 interface FormGeneratorProps {
@@ -149,96 +153,125 @@ const FormGenerator = ({
 
   return (
     <form className="modal-form">
-      {metadata.map((formElement: formElement, index: number) => {
-        if (formElement.title)
-          return (
-            <Typography key={index} variant="h5" className="form-section-title">
-              {formElement.title}
-            </Typography>
-          );
-
-        if (formElement.type === "checkboxControl") {
-          return (
-            <FormGroup>
-              <FormLabel>
-                <Typography variant="subtitle1">
-                  <b>{formElement.label}</b>
+      <Grid container spacing={1}>
+        {metadata.map((formElement: formElement, index: number) => {
+          if (formElement.title)
+            return (
+              <Grid xs={12}>
+                <Typography
+                  key={index}
+                  variant="h5"
+                  className="form-section-title"
+                >
+                  {formElement.title}
                 </Typography>
-              </FormLabel>
-              <Box>
-                {formElement.checkboxes?.map((item: string, index: number) => (
-                  <FormControlLabel
-                    key={index}
-                    control={<Checkbox color="primary" name={item} />}
-                    label={item}
-                    checked={formData[formElement.name]?.indexOf(item) > -1}
-                    onChange={(event: any) =>
-                      handleChangeOfChecbox(event, formElement)
-                    }
-                  />
-                ))}
-              </Box>
-            </FormGroup>
-          );
-        }
+              </Grid>
+            );
 
-        return (
-          <FormControl
-            key={index}
-            style={{
-              display: formElement.display === false ? "none" : "block",
-            }}
-          >
-            <FormLabel>
-              <Typography variant="subtitle1">
-                <b>{formElement.label}</b>
-              </Typography>
-            </FormLabel>
-            <TextField
-              key={index}
-              name={formElement.name}
-              type={formElement.type}
-              placeholder={formElement.placeholder}
-              variant={formElement.variant}
-              value={
-                initialData
-                  ? getDeafultValue(formElement, formData[formElement.name])
-                  : undefined
-              }
-              className="form-field"
-              onChange={
-                formElement.type === "file" ? handleFileUpload : handleChange
-              }
-              InputProps={{
-                endAdornment: formElement.type === "file" &&
-                  formData[formElement.name] && (
-                    <InputAdornment position="end">
-                      <a
-                        href={formData[formElement.name]}
-                        rel="noopener noreferrer"
-                        target="_blank"
-                      >
-                        <File color="primary" />
-                      </a>
-                    </InputAdornment>
-                  ),
-              }}
-              {...formElement.fieldProps}
-            >
-              {formElement?.fieldProps?.select &&
-                options[
-                  formElement.options === "async"
-                    ? formElement.optionsEntity!
-                    : formElement.name
-                ]?.map((option: any, key: number) => (
-                  <MenuItem key={key} value={option}>
-                    {option}
-                  </MenuItem>
-                ))}
-            </TextField>
-          </FormControl>
-        );
-      })}
+          if (formElement.type === "checkboxControl") {
+            return (
+              <FormGroup>
+                <FormLabel>
+                  <Typography variant="subtitle1">
+                    <b>{formElement.label}</b>
+                  </Typography>
+                </FormLabel>
+                <Box>
+                  {formElement.checkboxes?.map(
+                    (item: string, index: number) => (
+                      <FormControlLabel
+                        key={index}
+                        control={<Checkbox color="primary" name={item} />}
+                        label={item}
+                        checked={formData[formElement.name]?.indexOf(item) > -1}
+                        onChange={(event: any) =>
+                          handleChangeOfChecbox(event, formElement)
+                        }
+                      />
+                    )
+                  )}
+                </Box>
+              </FormGroup>
+            );
+          }
+
+          if (formElement.type === "rating") {
+            return (
+              <Rating
+                name={formElement.name}
+                value={formData[formElement.name]}
+                onChange={(event, newValue) => {
+                  setFormData({
+                    ...formData,
+                    [formElement.name]: newValue,
+                  });
+                }}
+              />
+            );
+          }
+
+          return (
+            <Grid item xs={12} md={formElement.ratio ?? 12}>
+              <FormControl
+                key={index}
+                style={{
+                  display: formElement.display === false ? "none" : "block",
+                }}
+              >
+                <FormLabel>
+                  <Typography variant="subtitle1">
+                    <b>{formElement.label}</b>
+                  </Typography>
+                </FormLabel>
+                <TextField
+                  key={index}
+                  name={formElement.name}
+                  type={formElement.type}
+                  placeholder={formElement.placeholder}
+                  variant={formElement.variant}
+                  value={
+                    initialData
+                      ? getDeafultValue(formElement, formData[formElement.name])
+                      : undefined
+                  }
+                  className="form-field"
+                  onChange={
+                    formElement.type === "file"
+                      ? handleFileUpload
+                      : handleChange
+                  }
+                  InputProps={{
+                    endAdornment: formElement.type === "file" &&
+                      formData[formElement.name] && (
+                        <InputAdornment position="end">
+                          <a
+                            href={formData[formElement.name]}
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            <File color="primary" />
+                          </a>
+                        </InputAdornment>
+                      ),
+                  }}
+                  {...formElement.fieldProps}
+                >
+                  {formElement?.fieldProps?.select &&
+                    options[
+                      formElement.options === "async"
+                        ? formElement.optionsEntity!
+                        : formElement.name
+                    ]?.map((option: any, key: number) => (
+                      <MenuItem key={key} value={option}>
+                        {option}
+                      </MenuItem>
+                    ))}
+                </TextField>
+              </FormControl>
+            </Grid>
+          );
+        })}
+      </Grid>
     </form>
   );
 };

@@ -13,7 +13,7 @@ import Header from "../Components/Header/Header";
 import { client } from "../utils/api.config";
 import { useHistory } from "react-router";
 
-const Login = () => {
+const Login = ({ setMessage }: any) => {
   const history = useHistory();
   const [isLogin, setIsLogin] = useState<boolean>(true);
   const [loading, setLoading] = useState<boolean>(false);
@@ -22,27 +22,36 @@ const Login = () => {
   const passRef = useRef<any>();
 
   const handleSubmit = async () => {
-    let data;
-    setLoading(true);
-    if (!isLogin) {
-      data = await client.post("/user/signup", {
-        name: nameRef.current.value,
-        email: emailRef.current.value,
-        password: passRef.current.value,
-      });
-    } else {
-      data = await client.post("/user/login", {
-        email: emailRef.current.value,
-        password: passRef.current.value,
-      });
-    }
+    try {
+      let data;
+      setLoading(true);
+      if (!isLogin) {
+        data = await client.post("/user/signup", {
+          name: nameRef.current.value,
+          email: emailRef.current.value,
+          password: passRef.current.value,
+        });
+      } else {
+        data = await client.post("/user/login", {
+          email: emailRef.current.value,
+          password: passRef.current.value,
+        });
+      }
 
-    data = data.data;
-    setLoading(false);
-    const { token, user }: any = data;
-    localStorage.setItem("user", JSON.stringify(user));
-    localStorage.setItem("XKEY", token);
-    history.push("/");
+      data = data.data;
+      setLoading(false);
+      const { token, user }: any = data;
+      localStorage.setItem("user", JSON.stringify(user));
+      localStorage.setItem("XKEY", token);
+      history.push("/");
+    } catch (error) {
+      setMessage({
+        open: true,
+        severity: "error",
+        msg: "User does not exist",
+      });
+      setLoading(false);
+    }
   };
 
   return (

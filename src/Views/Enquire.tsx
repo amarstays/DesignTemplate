@@ -57,7 +57,10 @@ const Enquire = ({ setMessage }: EnquireProps) => {
 
   const handleSubmit = async (e: any) => {
     sendEmail(e, setMessage);
-    await client.post("/customer/enquire", formData);
+    await client.post("/customer/enquire", {
+      ...formData,
+      added_by: "customer",
+    });
   };
 
   return (

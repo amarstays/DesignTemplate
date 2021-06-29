@@ -26,12 +26,14 @@ const UserDashboard = ({ setMessage }: UserDashboardProps) => {
   const [openModal, setOpenModal] = useState(false);
   const [formData, setFormData] = useState({});
   const [selectedUser, setSelectedUser] = useState<any>(null);
+  const [refreshFlag, setRefreshFlag] = useState<any>();
 
   const submitForm = () => {
     if (!Boolean(selectedUser)) {
       client
         .post("/user/signup", formData)
         .then(() => {
+          setRefreshFlag(new Date());
           setMessage({
             open: true,
             msg: "New user added",
@@ -53,6 +55,7 @@ const UserDashboard = ({ setMessage }: UserDashboardProps) => {
           },
         })
         .then(() => {
+          setRefreshFlag(new Date());
           setMessage({
             open: true,
             msg: "User updated",
@@ -70,15 +73,34 @@ const UserDashboard = ({ setMessage }: UserDashboardProps) => {
   };
 
   const deleteUser = () => {
-    client.delete(`/user/${selectedUser.id}`, {
-      headers: {
-        Authorization: getAuthToken(),
-      },
-    });
+    client
+      .delete(`/user/${selectedUser.id}`, {
+        headers: {
+          Authorization: getAuthToken(),
+        },
+      })
+      .then(() => {
+        setRefreshFlag(new Date());
+        setMessage({
+          open: true,
+          msg: "User deleted",
+          severity: "success",
+        });
+      })
+      .catch(() => {
+        setMessage({
+          open: true,
+          msg: "Try again later",
+          severity: "error",
+        });
+      });
   };
 
   const toggleModal = () => {
     setOpenModal(!openModal);
+    if (openModal === false) {
+      setSelectedUser(null);
+    }
   };
 
   const getFormData = (data: any) => {
@@ -109,6 +131,7 @@ const UserDashboard = ({ setMessage }: UserDashboardProps) => {
           metadata={usersGridView}
           dashboardType="users"
           onRowClick={handleRowClick}
+          refresh={refreshFlag}
         />
       </Box>
       <Modal open={openModal} onClose={toggleModal} className="modal-parent">

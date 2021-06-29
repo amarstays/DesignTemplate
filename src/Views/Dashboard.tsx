@@ -31,7 +31,7 @@ const Dashboard = ({ setMessage }: DashboardProps) => {
       </Box>
       <Divider variant="middle" />
       <Grid container style={{ padding: "20px" }}>
-        {validateRoles(["siteadmin", "superadmin"]) && (
+        {validateRoles("Site Admin") && (
           <Grid item xs={12} md={4}>
             <Card
               onClick={() => history.push("/site-admin")}
@@ -46,7 +46,7 @@ const Dashboard = ({ setMessage }: DashboardProps) => {
             </Card>
           </Grid>
         )}
-        {validateRoles(["superadmin", "sales"]) && (
+        {validateRoles("Sales Executive") && (
           <Grid item xs={12} md={4}>
             <Card
               onClick={() => history.push("/sales-dash")}
@@ -61,7 +61,7 @@ const Dashboard = ({ setMessage }: DashboardProps) => {
             </Card>
           </Grid>
         )}
-        {validateRoles(["superadmin"]) && (
+        {validateRoles("superadmin") && (
           <Grid item xs={12} md={4}>
             <Card
               onClick={() => history.push("/users-dash")}
