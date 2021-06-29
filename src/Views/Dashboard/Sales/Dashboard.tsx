@@ -12,7 +12,7 @@ import {
   CardActions,
 } from "@material-ui/core";
 import TableComponent from "../../../Components/TableComponent/TableComponent";
-import { customerFilter, leadForm, salesGridView } from "./metadata";
+import { leadForm, salesGridView } from "./metadata";
 import FormGenerator from "../../../Components/FormGenerator";
 import { client } from "../../../utils/api.config";
 import { useHistory } from "react-router-dom";
@@ -72,7 +72,6 @@ const SalesDashboard = ({ setMessage }: SalesDashboardProps) => {
         metadata={salesGridView}
         dashboardType="customer"
         onRowClick={handleClickOfRow}
-        filterMetadata={customerFilter}
       />
       <Modal
         open={Boolean(openModal)}

@@ -19,8 +19,6 @@ import { client } from "../../utils/api.config";
 import { getAuthToken } from "../../utils/methods";
 import { columnsType, tableMetadata } from "./columnTypes";
 import classnames from "classnames";
-import { formElement } from "../FormGenerator";
-import Filter from "../Filter/Filter";
 import Search from "@material-ui/icons/Search";
 
 interface TableComponentProps {
@@ -28,7 +26,6 @@ interface TableComponentProps {
   dashboardType: string;
   onRowClick?: any;
   refresh?: any;
-  filterMetadata?: formElement[];
 }
 
 const TableComponent = ({
@@ -36,7 +33,6 @@ const TableComponent = ({
   dashboardType,
   onRowClick,
   refresh,
-  filterMetadata,
 }: TableComponentProps) => {
   const [data, setData] = useState<any[]>([]);
   const [order, setOrder] = useState<any>("asc");
@@ -104,14 +100,6 @@ const TableComponent = ({
 
   return (
     <Box className="table-parent">
-      {filterMetadata && (
-        <Filter
-          data={data}
-          setData={setData}
-          metadata={filterMetadata}
-          refetchCallback={getData}
-        />
-      )}
       <Box className="search-bar">
         <FormControl>
           <InputLabel htmlFor="input-with-icon-adornment">Search</InputLabel>

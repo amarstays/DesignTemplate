@@ -90,32 +90,3 @@ export const leadForm: formElement[] = [
     options: ["Hot", "Stale", "Active"],
   },
 ];
-
-export const customerFilter: formElement[] = [
-  {
-    label: "Designer",
-    name: "designer",
-    type: "text",
-    variant: "outlined",
-    fieldProps: {
-      select: true,
-    },
-    options: "async",
-    optionsEntity: "/user/Designer",
-    optionKeyName: "name",
-    ratio: 6,
-  },
-  {
-    label: "Execution Partner",
-    name: "execution_partner",
-    type: "text",
-    variant: "outlined",
-    fieldProps: {
-      select: true,
-    },
-    options: "async",
-    optionsEntity: "/user/Execution Partner",
-    optionKeyName: "name",
-    ratio: 6,
-  },
-];
