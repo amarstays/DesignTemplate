@@ -10,11 +10,9 @@ import Services from "./Views/Services";
 import Philosophy from "./Views/Philosophy";
 import EnquireSection from "./Components/Enquire/EnquireSection";
 import Team from "./Views/Team";
-// import Testimonials from "./Views/Testimonials";
 import Enquire from "./Views/Enquire";
 import CarouselDisplay from "./Components/Carousel/CarouselDisplay";
 import Login from "./Views/Login";
-import { getUser } from "./utils/methods";
 import Dashboard from "./Views/Dashboard";
 import Footer from "./Components/Footer/Footer";
 import { Alert } from "@material-ui/lab";
@@ -37,11 +35,9 @@ function App() {
               <EnquireSection />
               <CarouselDisplay />
             </Route>
-            {getUser()?.[0]?.roles.includes("admin") && (
-              <Route path="/dashboard" exact>
-                <Dashboard setMessage={setMessage} />
-              </Route>
-            )}
+            <Route path="/dashboard" exact>
+              <Dashboard setMessage={setMessage} />
+            </Route>
             <Route path="/gallery" exact>
               <Gallery />
               <EnquireSection />
