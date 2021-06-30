@@ -15,7 +15,7 @@ import { useHistory } from "react-router";
 
 const Login = ({ setMessage }: any) => {
   const history = useHistory();
-  const [isLogin, setIsLogin] = useState<boolean>(true);
+  const [isLogin] = useState<boolean>(true);
   const [loading, setLoading] = useState<boolean>(false);
   const nameRef = useRef<any>();
   const emailRef = useRef<any>();
@@ -113,12 +113,12 @@ const Login = ({ setMessage }: any) => {
                   "Submit"
                 )}
               </Button>
-              <Button
+              {/* <Button
                 className="submit-btn"
                 onClick={() => setIsLogin(!isLogin)}
               >
                 {isLogin ? "Don't" : "Already"} have an account?
-              </Button>
+              </Button> */}
             </form>
           </CardContent>
         </Card>
