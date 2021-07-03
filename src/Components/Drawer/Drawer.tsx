@@ -8,7 +8,11 @@ import {
 import { Dispatch } from "react";
 import { useHistory } from "react-router";
 import { navOptions } from "../../utils/constants";
-import { getUser } from "../../utils/methods";
+import {
+  getAuthToken,
+  getUser,
+  handleRedirectionToDash,
+} from "../../utils/methods";
 
 interface DrawerSectionProps {
   openDrawer: boolean;
@@ -35,7 +39,7 @@ const DrawerSection = ({ openDrawer, setOpenDrawer }: DrawerSectionProps) => {
             />
           </ListItem>
         ))}
-        {/* {!Boolean(getAuthToken()) ? (
+        {!Boolean(getAuthToken()) ? (
           <ListItem color="secondary" onClick={() => history.push("/login")}>
             <ListItemText
               primary={
@@ -57,11 +61,11 @@ const DrawerSection = ({ openDrawer, setOpenDrawer }: DrawerSectionProps) => {
               }
             />
           </ListItem>
-        )} */}
-        {getUser() && getUser()[0] && getUser()[0].roles.includes("admin") ? (
+        )}
+        {getUser()?.[0]?.roles !== "user" ? (
           <ListItem
             color="secondary"
-            onClick={() => history.push("/dashboard")}
+            onClick={() => handleRedirectionToDash(history)}
           >
             <ListItemText
               primary={

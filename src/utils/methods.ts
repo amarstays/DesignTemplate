@@ -10,6 +10,19 @@ export const getUser = () => {
   else return user;
 };
 
+export const validateRoles = (roles: string) => {
+  var user: any = localStorage.getItem("user");
+  if (user) {
+    user = JSON.parse(user);
+    var isAllowed =
+      user?.[0]?.roles === "superadmin" || user?.[0]?.roles === roles;
+
+    return isAllowed;
+  }
+
+  return false;
+};
+
 export const getImages = (type: string) => {
   const keys: string[] = Object.keys(portfolio).filter((key) =>
     key.includes(type)
@@ -48,4 +61,19 @@ export const sendEmail = (ev: any, setMessage: any) => {
   };
   xhr.send(data);
   return false;
+};
+
+export const handleRedirectionToDash = (history: any) => {
+  const user = getUser()?.[0];
+
+  if (user) {
+    if (user.roles === "superadmin") history.push("/dashboard");
+    else if (user.roles === "Site Admin") history.push("/site-admin");
+    else if (
+      user.roles === "Sales Executive" ||
+      user.roles === "Designer" ||
+      user.roles === "Execution Partner"
+    )
+      history.push("/users-dash");
+  }
 };

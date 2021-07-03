@@ -1,5 +1,7 @@
+import { useEffect, useState } from "react";
 import {
   Box,
+  IconButton,
   Card,
   CardContent,
   CardHeader,
@@ -8,13 +10,83 @@ import {
   Grid,
   Typography,
 } from "@material-ui/core";
+import Delete from "@material-ui/icons/Delete";
 import { Fade } from "react-awesome-reveal";
 import { logos } from "../assets/urls";
 import Header from "../Components/Header/Header";
-import { team } from "../utils/constants";
+import { client } from "../utils/api.config";
 import "./styles/Team.css";
+import { getAuthToken } from "../utils/methods";
+
+interface TeamCardProps {
+  team: any;
+  admin?: boolean;
+  refetchCallback?: any;
+}
+
+export const TeamCard = ({
+  team,
+  admin = false,
+  refetchCallback,
+}: TeamCardProps) => {
+  const onDelete = (id: number) => {
+    client
+      .delete(`/team/delete/${id}`, {
+        headers: {
+          Authorization: getAuthToken(),
+        },
+      })
+      .then(() => {
+        refetchCallback!();
+      });
+  };
+
+  return (
+    <Card className="team-card" elevation={3}>
+      <Box className="team-profile-img-container">
+        <CardMedia image={team.image} className="team-profile-img" />
+        <img src={logos.trans} alt="logo-trans" className="team-logo-trans" />
+      </Box>
+      <Box>
+        <CardHeader
+          title={
+            <Typography variant="h5" className="member-name">
+              {team.name}
+            </Typography>
+          }
+          subheader={
+            <Typography style={{ color: "white" }} className="member-role">
+              {team.title}
+            </Typography>
+          }
+          action={
+            admin && (
+              <IconButton onClick={() => onDelete(team.id)}>
+                <Delete style={{ color: "red" }} />
+              </IconButton>
+            )
+          }
+          className="team-card-header"
+        />
+        <CardContent>
+          <Typography paragraph className="member-summary">
+            {team.details}
+          </Typography>
+        </CardContent>
+      </Box>
+    </Card>
+  );
+};
 
 const Team = () => {
+  const [teams, setTeams] = useState<any[]>([]);
+
+  useEffect(() => {
+    client.get("/team/getAll").then((res) => {
+      setTeams(res.data.team);
+    });
+  }, []);
+
   return (
     <div>
       <Header />
@@ -37,45 +109,10 @@ const Team = () => {
       </Box>
       <Divider variant="middle" />
       <Grid container className="team-container">
-        {team.map((item, index) => (
+        {teams.map((item: any, index: number) => (
           <Grid item xs={12} key={index}>
             <Fade>
-              <Card className="team-card" elevation={3}>
-                <Box className="team-profile-img-container">
-                  <CardMedia
-                    image={item.profile_image}
-                    className="team-profile-img"
-                  />
-                  <img
-                    src={logos.trans}
-                    alt="logo-trans"
-                    className="team-logo-trans"
-                  />
-                </Box>
-                <Box>
-                  <CardHeader
-                    title={
-                      <Typography variant="h5" className="member-name">
-                        {item.name}
-                      </Typography>
-                    }
-                    subheader={
-                      <Typography
-                        style={{ color: "white" }}
-                        className="member-role"
-                      >
-                        {item.role}
-                      </Typography>
-                    }
-                    className="team-card-header"
-                  />
-                  <CardContent>
-                    <Typography paragraph className="member-summary">
-                      {item.summary}
-                    </Typography>
-                  </CardContent>
-                </Box>
-              </Card>
+              <TeamCard team={item} />
             </Fade>
           </Grid>
         ))}

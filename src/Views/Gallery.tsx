@@ -11,17 +11,26 @@ import { useEffect, useState } from "react";
 import { Fade } from "react-awesome-reveal";
 import { logos } from "../assets/urls";
 import Header from "../Components/Header/Header";
-import { rooms } from "../utils/constants";
+import { client } from "../utils/api.config";
 import "./styles/Porfolio.css";
 
 const Gallery = () => {
-  const [room, setRoom] = useState<any>(rooms);
+  const [portfolios, setPortfolios] = useState<any[]>([]);
+  const [selectedImages, setSelectedImages] = useState<any>();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [room]);
+    if (selectedImages === undefined) {
+      window.scrollTo(0, 0);
+    }
+  }, [selectedImages]);
 
-  if (room.length === rooms.length)
+  useEffect(() => {
+    client.get("/portfolio/getAll/true").then((res) => {
+      setPortfolios(res.data.portfolio);
+    });
+  }, []);
+
+  if (selectedImages === undefined)
     return (
       <div>
         <Header />
@@ -42,12 +51,16 @@ const Gallery = () => {
         </Box>
         <Divider variant="middle" />
         <Grid container className="image-grid">
-          {room?.map((item: any, index: number) => {
+          {portfolios?.map((item: any, index: number) => {
             return (
               <Grid item xs={12} md={6} key={index}>
                 <Fade>
                   <Box className="port-img-parent">
-                    <img src={item.images[0]} alt="bg-port" className="image" />
+                    <img
+                      src={item.images?.[0]?.url}
+                      alt="bg-port"
+                      className="image"
+                    />
                     <Box className="room-txt">
                       <Paper elevation={2} className="hover-paper">
                         <Button
@@ -55,12 +68,13 @@ const Gallery = () => {
                           color="secondary"
                           size="large"
                           onClick={() =>
-                            setRoom(
-                              rooms.filter((room) => room.key === item.key)
-                            )
+                            setSelectedImages({
+                              images: item.images,
+                              category: item.category,
+                            })
                           }
                         >
-                          {item.room}
+                          {item.category}
                         </Button>
                       </Paper>
                     </Box>
@@ -79,15 +93,8 @@ const Gallery = () => {
       <Fade>
         <Box className="title-container">
           <Typography variant="h3" className="title-co">
-            {room?.[0]?.room}
+            {selectedImages.category}
           </Typography>
-          <Box className="desc-co">
-            <Typography>
-              <i>{room?.[0]?.quote}</i>
-              <br />
-              <br />- {room?.[0]?.author}
-            </Typography>
-          </Box>
         </Box>
       </Fade>
       <Divider variant="middle" />
@@ -98,34 +105,28 @@ const Gallery = () => {
             startIcon={<ArrowBack />}
             variant="outlined"
             color="primary"
-            onClick={() => setRoom(rooms)}
+            onClick={() => setSelectedImages(undefined)}
           >
             Back to Gallery
           </Button>
         </Grid>
 
-        {room?.map((item: any, index: number) => {
-          return (
-            <Grid item xs={12} key={index}>
-              <Grid container>
-                {item.images.map((img: any, i: number) => (
-                  <Grid key={i} item xs={12} md={6} className="grid-item">
-                    <Fade>
-                      <Box className="port-img-parent">
-                        <img src={img} alt="bg-port" className="image" />
-                        <img
-                          src={logos.trans}
-                          alt="turq-logo"
-                          className="thumbnail-logo"
-                        />
-                      </Box>
-                    </Fade>
-                  </Grid>
-                ))}
-              </Grid>
+        <Grid container>
+          {selectedImages.images?.map((img: any, i: number) => (
+            <Grid key={i} item xs={12} md={6} className="grid-item">
+              <Fade>
+                <Box className="port-img-parent">
+                  <img src={img.url} alt="bg-port" className="image" />
+                  <img
+                    src={logos.trans}
+                    alt="turq-logo"
+                    className="thumbnail-logo"
+                  />
+                </Box>
+              </Fade>
             </Grid>
-          );
-        })}
+          ))}
+        </Grid>
       </Grid>
     </div>
   );

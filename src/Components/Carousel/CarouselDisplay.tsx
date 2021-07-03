@@ -1,3 +1,4 @@
+import { Dispatch, useEffect, useState } from "react";
 import {
   Box,
   Button,
@@ -13,10 +14,19 @@ import {
 import Carousel from "react-material-ui-carousel";
 import { useHistory } from "react-router";
 import { logos } from "../../assets/urls";
-import { designerDetails } from "../../utils/constants";
+import { client } from "../../utils/api.config";
+import { getAuthToken } from "../../utils/methods";
 import "./CarouselDisplay.css";
 
 const CarouselDisplay = () => {
+  const [designerDetails, setDesignerDetails] = useState([]);
+
+  useEffect(() => {
+    client.get("/designer/getAll").then((res) => {
+      setDesignerDetails(res.data.designers);
+    });
+  }, []);
+
   return (
     <div>
       <Divider variant="middle" />
@@ -63,13 +73,40 @@ const CarouselDisplay = () => {
 interface DesignerCardProps {
   designer: any;
   summaryCard?: boolean;
+  admin?: boolean;
+  refreshData?: any;
+  setMessage?: Dispatch<any>;
 }
 
-export const DesignerCard = ({ designer, summaryCard }: DesignerCardProps) => {
+export const DesignerCard = ({
+  designer,
+  summaryCard,
+  admin = false,
+  setMessage,
+  refreshData,
+}: DesignerCardProps) => {
   const history = useHistory();
 
   const handleGalleryButtonClick = () => {
     history.push(`/gallery`);
+  };
+
+  const handleDeleteDesigner = () => {
+    client
+      .delete(`/designer/delete/${designer.id}`, {
+        headers: {
+          Authorization: getAuthToken(),
+        },
+      })
+      .then((res) => {
+        setMessage &&
+          setMessage({
+            open: true,
+            msg: res.data.message,
+            severity: "success",
+          });
+        refreshData && refreshData();
+      });
   };
 
   return (
@@ -77,7 +114,7 @@ export const DesignerCard = ({ designer, summaryCard }: DesignerCardProps) => {
       <Card elevation={3}>
         <Box className="designer-card">
           <Box className="width-50">
-            <CardMedia className="designer-photo" image={designer.profile} />
+            <CardMedia className="designer-photo" image={designer.image} />
             <img src={logos.trans} alt="logo" className="carousel-logo" />
           </Box>
           <Box className="designer-details width-50">
@@ -108,6 +145,15 @@ export const DesignerCard = ({ designer, summaryCard }: DesignerCardProps) => {
                 >
                   GALLERY
                 </Button>
+                {admin && (
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={handleDeleteDesigner}
+                  >
+                    Delete
+                  </Button>
+                )}
               </Box>
             </CardActions>
           </Box>

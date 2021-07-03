@@ -6,12 +6,18 @@ import {
   IconButton,
   makeStyles,
   Typography,
+  Menu,
+  MenuItem,
 } from "@material-ui/core";
-import Menu from "@material-ui/icons/Menu";
+import MenuIcon from "@material-ui/icons/Menu";
 import "./Banner.css";
 import { useHistory } from "react-router";
 import { Zoom } from "react-awesome-reveal";
-import { getUser } from "../../utils/methods";
+import {
+  getAuthToken,
+  getUser,
+  handleRedirectionToDash,
+} from "../../utils/methods";
 import { logos, videoBg } from "../../assets/urls";
 import DrawerSection from "../Drawer/Drawer";
 
@@ -19,6 +25,7 @@ const Banner = () => {
   const classes = useStyles();
   const history = useHistory();
   const [openDrawer, setOpenDrawer] = useState(false);
+  const [menuAnchor, setMenuAnchor] = useState<any>(null);
 
   const toggleDrawer = () => {
     setOpenDrawer(!openDrawer);
@@ -38,6 +45,9 @@ const Banner = () => {
             >
               <Typography>Philosophy</Typography>
             </Button>
+            <Button color="secondary" onClick={() => history.push("/services")}>
+              <Typography>Services</Typography>
+            </Button>
           </Box>
         </Grid>
         <Grid item md={2}>
@@ -52,40 +62,20 @@ const Banner = () => {
         </Grid>
         <Grid item md={5}>
           <Box className="btn-container">
-            <Button color="secondary" onClick={() => history.push("/services")}>
-              <Typography>Services</Typography>
-            </Button>
             <Button color="secondary" onClick={() => history.push("/team")}>
               <Typography>Team</Typography>
             </Button>
 
-            {/* <Button
+            <Button
               color="secondary"
               onClick={() => history.push("/testimonials")}
             >
               <Typography>Testimonials</Typography>
-            </Button> */}
-            {/* {!Boolean(getAuthToken()) ? (
-              <Button color="secondary" onClick={() => history.push("/login")}>
-                <Typography>Login</Typography>
-              </Button>
-            ) : (
+            </Button>
+            {getUser()?.[0]?.roles !== "user" ? (
               <Button
                 color="secondary"
-                onClick={() => {
-                  localStorage.clear();
-                  history.push("/login");
-                }}
-              >
-                <Typography>Logout</Typography>
-              </Button>
-            )} */}
-            {getUser() &&
-            getUser()[0] &&
-            getUser()[0].roles.includes("admin") ? (
-              <Button
-                color="secondary"
-                onClick={() => history.push("/dashboard")}
+                onClick={() => handleRedirectionToDash(history)}
               >
                 <Typography>Dashboard</Typography>
               </Button>
@@ -96,6 +86,35 @@ const Banner = () => {
               >
                 <Typography>Enquire</Typography>
               </Button>
+            )}
+            {!Boolean(getAuthToken()) ? (
+              <Button color="secondary" onClick={() => history.push("/login")}>
+                <Typography>Login</Typography>
+              </Button>
+            ) : (
+              <>
+                <Button
+                  color="secondary"
+                  onClick={(e) => setMenuAnchor(e.target)}
+                >
+                  <Typography>{getUser()?.[0]?.name}</Typography>
+                </Button>
+                <Menu
+                  anchorEl={menuAnchor}
+                  open={Boolean(menuAnchor)}
+                  keepMounted
+                  onClose={() => setMenuAnchor(null)}
+                >
+                  <MenuItem
+                    onClick={() => {
+                      localStorage.clear();
+                      history.push("/login");
+                    }}
+                  >
+                    Logout
+                  </MenuItem>
+                </Menu>
+              </>
             )}
           </Box>
         </Grid>
@@ -108,7 +127,7 @@ const Banner = () => {
       <Grid container>
         <Grid item xs={4}>
           <IconButton onClick={toggleDrawer}>
-            <Menu color="secondary" />
+            <MenuIcon color="secondary" />
           </IconButton>
         </Grid>
         <Grid item xs={8}>

@@ -1,47 +1,76 @@
 import {
   Avatar,
   Box,
-  Button,
   Card,
-  CardActions,
   CardContent,
   CardHeader,
   Divider,
   Grid,
   makeStyles,
-  Modal,
-  TextField,
   Typography,
+  IconButton,
 } from "@material-ui/core";
+import Delete from "@material-ui/icons/Delete";
 import Header from "../Components/Header/Header";
 import { Rating } from "@material-ui/lab";
-import { testimonials } from "../utils/constants";
 import { Fade } from "react-awesome-reveal";
 import "./styles/Testimonials.css";
-import { useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { client } from "../utils/api.config";
 import { getAuthToken } from "../utils/methods";
 
-const Testimonials = () => {
-  const classes = useStyles();
-  const [openModal, setOpenModal] = useState(false);
-  const ratingRef = useRef<any>();
-  const messageRef = useRef<any>();
+interface TestimonialCardProps {
+  testimonial: any;
+  admin?: boolean;
+  refetchCallback?: any;
+}
 
-  const handleSubmit = () => {
-    client.post(
-      "/customer/testimonial",
-      {
-        rating: ratingRef.current.value,
-        message: messageRef.current.value,
-      },
-      {
+export const TestimonialCard = ({
+  testimonial,
+  admin = false,
+  refetchCallback,
+}: TestimonialCardProps) => {
+  const classes = useStyles();
+
+  const onDelete = (id: number) => {
+    client
+      .delete(`/customer/testimonial/${id}`, {
         headers: {
-          Authorization: `Bearer ${getAuthToken()}`,
+          Authorization: getAuthToken(),
         },
-      }
-    );
+      })
+      .then(() => refetchCallback!());
   };
+
+  return (
+    <Card elevation={3} className="review-card">
+      <CardHeader
+        avatar={<Avatar className={classes.avatar} src={testimonial.url} />}
+        title={<Typography>{testimonial.name}</Typography>}
+        subheader={<Rating value={testimonial.rating} />}
+        action={
+          admin && (
+            <IconButton onClick={() => onDelete!(testimonial.id)}>
+              <Delete />
+            </IconButton>
+          )
+        }
+      />
+      <CardContent>
+        <Typography paragraph>{testimonial.message}</Typography>
+      </CardContent>
+    </Card>
+  );
+};
+
+const Testimonials = () => {
+  const [testimonials, setTestimonials] = useState<any[]>([]);
+
+  useEffect(() => {
+    client.get("/customer/testimonial/getAll").then((res) => {
+      setTestimonials(res.data.testimonials);
+    });
+  }, []);
 
   return (
     <div>
@@ -50,69 +79,18 @@ const Testimonials = () => {
         <Typography variant="h3" className="title-co">
           Testimonials
         </Typography>
-        <Button onClick={() => setOpenModal(true)}>Give us feedback</Button>
       </Box>
       <Divider variant="middle" />
       <Grid container>
         {testimonials.map((testimonial, index) => (
           <Grid item xs={12} key={index} className="review-card-container">
             <Fade>
-              <Box display="flex" justifyContent="center">
-                <Card elevation={0} className="review-card">
-                  <CardHeader
-                    avatar={<Avatar className={classes.avatar}>H</Avatar>}
-                    title={
-                      <Typography variant="h6">{testimonial.title}</Typography>
-                    }
-                    subheader={<Rating value={4.0} />}
-                  />
-                  <CardContent>
-                    <Typography>{testimonial.desc}</Typography>
-                  </CardContent>
-                </Card>
-              </Box>
+              <TestimonialCard testimonial={testimonial} />
             </Fade>
             {index + 1 !== testimonials.length && <Divider variant="middle" />}
           </Grid>
         ))}
       </Grid>
-      <Modal
-        open={openModal}
-        onClose={() => setOpenModal(false)}
-        className="testimonial-modal"
-      >
-        <Card>
-          <CardHeader title="How did we do?" />
-          <CardContent>
-            <form className="testimonial-form">
-              <Box className="rating-parent">
-                <Typography>Rating</Typography>
-                <Rating
-                  className="rating-control"
-                  onChange={(e: any, value: any) => {
-                    ratingRef.current = {};
-                    ratingRef.current.value = value;
-                  }}
-                />
-              </Box>
-              <TextField
-                label="Message"
-                name="details"
-                variant="outlined"
-                placeholder="Leave us a message"
-                inputRef={messageRef}
-                multiline
-                rows={4}
-              />
-            </form>
-          </CardContent>
-          <CardActions>
-            <Button variant="contained" color="primary" onClick={handleSubmit}>
-              Submit
-            </Button>
-          </CardActions>
-        </Card>
-      </Modal>
     </div>
   );
 };
