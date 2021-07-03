@@ -71,7 +71,7 @@ const Header = () => {
             >
               <Typography className="nav-item">Testimonials</Typography>
             </Button>
-            {getUser()?.[0]?.roles !== "user" ? (
+            {getAuthToken() && getUser()?.[0]?.roles !== "user" ? (
               <Button
                 color="secondary"
                 onClick={() => handleRedirectionToDash(history)}

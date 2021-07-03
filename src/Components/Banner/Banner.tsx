@@ -72,7 +72,7 @@ const Banner = () => {
             >
               <Typography>Testimonials</Typography>
             </Button>
-            {getUser()?.[0]?.roles !== "user" ? (
+            {getAuthToken() && getUser()?.[0]?.roles !== "user" ? (
               <Button
                 color="secondary"
                 onClick={() => handleRedirectionToDash(history)}

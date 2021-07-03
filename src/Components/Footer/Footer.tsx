@@ -45,11 +45,12 @@ const Footer = ({ setMessage }: FooterProps) => {
                   type="text"
                   color="secondary"
                   inputRef={emailRef}
-                  variant="filled"
+                  variant="outlined"
                   className="foo-email-field"
+                  size="small"
                 />
                 <IconButton color="secondary" type="submit">
-                  <Send fontSize="large" />
+                  <Send />
                 </IconButton>
               </form>
             </Box>

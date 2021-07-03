@@ -62,7 +62,7 @@ const DrawerSection = ({ openDrawer, setOpenDrawer }: DrawerSectionProps) => {
             />
           </ListItem>
         )}
-        {getUser()?.[0]?.roles !== "user" ? (
+        {getAuthToken() && getUser()?.[0]?.roles !== "user" ? (
           <ListItem
             color="secondary"
             onClick={() => handleRedirectionToDash(history)}
