@@ -156,7 +156,7 @@ export const userFormMetadata: formElement[] = [
       select: true,
       required: true,
     },
-    options: ["Hot", "Stale", "Active"],
+    options: ["Cold", "Dead", "Completed", "Assigned"],
   },
   {
     title: "Meeting Details",

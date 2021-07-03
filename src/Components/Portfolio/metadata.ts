@@ -6,5 +6,8 @@ export const addImageMetadata: formElement[] = [
     name: "url",
     type: "file",
     variant: "outlined",
+    fieldProps: {
+      accept: "image/*",
+    },
   },
 ];

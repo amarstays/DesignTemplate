@@ -87,6 +87,6 @@ export const leadForm: formElement[] = [
       select: true,
       required: true,
     },
-    options: ["Hot", "Stale", "Active"],
+    options: ["Cold", "Dead", "Completed", "Assigned"],
   },
 ];

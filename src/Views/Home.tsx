@@ -11,8 +11,8 @@ const Home = () => {
       <Banner />
       <Box className="desc-container">
         <Typography paragraph className="para">
-          Gruham Ti'Amore is an interior design studio based in Bangalore. A
-          home is where your story begins. We pride ourselves in turning that
+          Gruham Ti'Amore is a Luxury Interior Design Studio based in Bangalore.
+          A home is where your story begins. We pride ourselves in turning that
           story into an impeccable work of art. Everyone lives in a house. But,
           at Gruham Ti'Amore, an incredible metamorphosis happens. Your "house"
           turns into the "home" of your dreams. We visualize and create
