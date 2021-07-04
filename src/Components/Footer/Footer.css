@@ -12,6 +12,10 @@
   align-items: center;
 }
 
+.footer-form {
+  transform: scaleY(0.7);
+}
+
 .footer-form > button {
   margin-top: 10px;
   transform: rotate(-30deg);

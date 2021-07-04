@@ -45,7 +45,7 @@ const Footer = ({ setMessage }: FooterProps) => {
                   type="text"
                   color="secondary"
                   inputRef={emailRef}
-                  variant="outlined"
+                  variant="filled"
                   className="foo-email-field"
                   size="small"
                 />
