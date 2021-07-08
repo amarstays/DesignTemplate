@@ -1,7 +1,13 @@
 import { teamUrls, imgs } from "../assets/urls";
 import { getImages } from "./methods";
 
-export const navOptions = ["Philosophy", "Services", "Team", "Gallery"];
+export const navOptions = [
+  "Philosophy",
+  "Services",
+  "Team",
+  "Gallery",
+  "Testimonials",
+];
 
 export const designerDetails = [
   {
